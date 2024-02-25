@@ -1,0 +1,20 @@
+{
+    "projects": [
+        {
+            "name": "devC",
+            "shortInfo": "A linux command line utility to build 'python venv' like reusable virtualenv from Dockerfile/Containerfile or directly from a container image. Virtualenv for containers!",
+            "source": "https://github.com/bruttazz/devc",
+            "license": "GPLv3",
+            "link": "https://bruttazz.github.io/devc",
+            "coverimage": "https://raw.githubusercontent.com/bRuttaZz/devc/main/assets/tad.png"
+        },
+        {
+            "name": "Colbaking",
+            "shortInfo": "Nothing but an old school chrome-dino-game clone!",
+            "source": "https://github.com/bruttazz/colbaking",
+            "license": "MIT",
+            "link": "https://bruttazz.github.io/colbaking",
+            "coverimage": "https://raw.githubusercontent.com/bRuttaZz/colbaking/main/game/preview.png"
+        }
+    ]
+}

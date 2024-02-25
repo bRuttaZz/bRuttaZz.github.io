@@ -1,0 +1,35 @@
+{
+    "shortInfo": "\"Just another Software Enthusiast, FOSS Lover And Philanthropist!\"",
+    "generalInfo": {
+        "dob": "28-10-2001",
+        "height": "not yet measured",
+        "occupation": "R&D Engineer, Pixdynamics Pvt Ltd",
+        "localization": "Kochi, Kerala",
+        "expertise": "Web Technologies, Applied AI, System Design, Containers",
+        "proficient-human-languages": "Malayalam, English",
+        "proficient-computer-languages": "Python, JS, Go, C++",
+        "areas-of-interest": "System Design, System Kernal, Computer Networking",
+        "pgp-keys": "<a href=\"./facts/pgp.key\" >download</a>",
+        "github": "<a href=\"https://github.com/bruttazz\">bRuttaZz</a>"
+    },
+    "contacts": {
+        "email": "agrajpdas@gmail.com",
+        "phone": "+91 9207322658",
+        "telegram": "<a href=\"https://t.me/bruttazz57\">@bruttazz57</a>",
+        "matrix": "<a href=\"https://matrix.to/#/@bruttazz:matrix.org\">@bruttazz:matrix.org</a>"
+    },
+    "socialMedia": {
+        "mastodon": "https://fosstodon.org/@bRuttaZz",
+        "github": "https://github.com/bruttazz",
+        "instagram": "https://www.instagram.com/bRuttaZz",
+        "linkedin": "https://www.linkedin.com/in/agraj-p-das-a656a423b",
+        "twitter": "https://twitter.com/bruttazz_"
+    },
+    "socialMediaList": {
+        "github": "./assets/images/socialmedia/github.png",
+        "mastodon": "./assets/images/socialmedia/mastodon.png",
+        "instagram": "./assets/images/socialmedia/insta.png",
+        "linkedin": "./assets/images/socialmedia/linkedin.png",
+        "twitter": "./assets/images/socialmedia/twitter.png"
+    }
+}

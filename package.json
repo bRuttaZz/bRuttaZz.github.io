@@ -1,0 +1,27 @@
+{
+  "name": "bruttazz.github.io",
+  "version": "1.0.0",
+  "description": "just a profile webpage",
+  "main": "webpack.config.js",
+  "scripts": {
+    "start": "http-server",
+    "test": "http-server",
+    "build": "webpack",
+    "dev": "webpack --watch & http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/bruttazz/bruttazz.github.io"
+  },
+  "keywords": [
+    "website",
+    "bruttazz"
+  ],
+  "author": "bRuttaZz",
+  "license": "MIT",
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4"
+  }
+}

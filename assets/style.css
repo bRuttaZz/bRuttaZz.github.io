@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;;
+}
+a {
+    text-decoration: none;
+}
+
+.profile-cover {
+    background-color: antiquewhite;
+    margin: 10px;
+        margin-top: 20px;
+    padding: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    border-radius: 10px;
+}
+
+.profile-cover .short-catch {
+    margin-top: -20px;
+    color: rgb(124, 124, 123);
+}
+
+.profile-cover .container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;   
+    font-size: smaller;
+}
+
+@media (max-width: 768px) {
+    .profile-cover .container {
+      flex-direction: column; /* Stack divs vertically */
+    }
+  }
+
+.profile-cover .container .bio {
+    text-align: left;
+    justify-content: left;
+    min-width: 50%;
+}
+
+.profile-cover .container .bio-info {
+    padding-top: 10px;
+    color: rgb(73, 73, 73);
+    font-family: 'Roboto', monospace;;
+}
+
+.profile-cover .container .bio-info span {
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    background-color: rgb(158, 191, 253);
+    border-radius: 6px;
+    color: rgb(88, 88, 88);
+}
+
+.profile-cover .container .profile-img img {
+    border-radius: 30px;
+    max-width: 180px;
+    min-width: 180px;
+    margin-right: 20px;
+}
+
+.profile-about {
+    margin-top: 20px;
+    border-radius: 10px;
+    width: calc(100% - 20px);
+    background-color: rgba(131, 238, 117, 0.658);
+    padding: 10px;
+    color: rgb(75, 75, 75);
+    font-size: medium;
+}
+
+.profile-about .container-about {
+    color: rgb(109, 109, 109);
+    font-size: smaller;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.profile-about .container-about .left {
+    text-align: left;
+    justify-content: left;
+}
+.profile-about .container-about .right {
+    text-align: right;
+    justify-content: right;
+}
+
+.project-sec {
+    background-color: rgba(191, 206, 87, 0.4);
+    width: calc(100% - 20px);
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 10px;
+        padding-bottom: 20px;
+}
+
+.project-sec .project-sec-heading span img {
+    margin-bottom: -5px;
+} 
+
+.project-sec .project-sec-heading {
+    color: gray;
+}
+
+.project-sec .project-cards {
+    overflow-x: scroll;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    text-align: left;
+}
+
+.project-sec .project-card {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    text-align: left;
+    background-color: antiquewhite;
+    min-width: 400px;
+    max-width: 600px;
+    height: 160px;
+    border-radius: 5px;
+    padding: 8px;
+        padding-bottom: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: smaller;
+}
+
+.project-sec .project-card div b {
+    font-size: large;
+    font-weight: 800;
+}
+
+.project-sec .project-card div {
+    color: rgb(80, 80, 80);
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.project-sec .project-card .license {
+    background-color: rgba(158, 191, 253);
+    padding: 2px;
+        padding-left: 8px;
+        padding-right: 8px;
+    border-radius: 8px;
+}
+
+.project-sec .project-card .source-link {
+    background-color: rgba(158, 191, 253);
+    padding: 2px;
+        padding-left: 8px;
+        padding-right: 8px;
+    border-radius: 8px;
+}
+
+
+.d-none {
+    display: none;
+}
