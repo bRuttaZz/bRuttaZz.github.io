@@ -1,41 +1,59 @@
 "use strict"
-import about from "../../facts/about.me.json";
-import projects from "../../facts/projects.json";
+const about = require("../facts/about.me.json");
+const projects = require("../facts/projects.json");
 
-export function renderBio() {
+function renderBio() {
     const bioString = `<div class="bio-info">
         <span>KEYY</span><b> VALL </b>
     </div>`
-    const bioPart = document.getElementById("bio-text");
 
+    let outString = ""
     for (let key in about.generalInfo) {
-        bioPart.innerHTML += bioString
+        outString += bioString
             .replaceAll("VALL", about.generalInfo[key])
             .replaceAll("KEYY", key.replaceAll("-", " "))
     }
+    return outString
 }
 
-export function renderAbout() {
-    const shortinfo = document.getElementById("shortinfo")
-    shortinfo.innerHTML = `<center> ${about["shortInfo"]} </center>`
 
-    const contactKeys = document.getElementById("contact-keys")
-    const contactVals = document.getElementById("contact-vals")
 
+function renderAbout() {
+    let contactKeys = ""
+    let contactVals = ""
     for (let key in about.contacts) {
-        contactKeys.innerHTML += `<div><b>${key} : </b></div>`
-        contactVals.innerHTML += `<div> &nbsp${about.contacts[key]}</div>`
+        contactKeys += `<div><b>${key} : </b></div>`
+        contactVals += `<div> &nbsp${about.contacts[key]}</div>`
     }
 
-    const socialMedia = document.getElementById("social-media")
+    // social media rendering
+    let socialMedia = ""
     for (let key in about.socialMediaList) {
-        socialMedia.innerHTML += `<a href=${about.socialMedia[key]}>
+        socialMedia += `<a href=${about.socialMedia[key]}>
             <img src=\"${about.socialMediaList[key]}\" width=20px> 
         </a>`
     }
+
+    const contactInfo = `
+        <p><center> ${about["shortInfo"]} </center></p>
+        <div class="container-about">
+            <div id="contact-keys" class="right">
+                ${contactKeys}
+            </div>
+            <div id="contact-vals" class="left">
+                ${contactVals}
+            </div>
+        </div>
+        <center>
+            <p>
+                ${socialMedia}
+            </p>
+        </center>
+    `
+    return contactInfo;
 }
 
-export function renderProjectCards() {
+function renderProjectCards() {
     const cardTemplate = `<div class="project-card">
         <div>
             <center>
@@ -56,12 +74,20 @@ export function renderProjectCards() {
         </div>
     </div>`
 
+    let cards = ""
     for (let obj of projects.projects) {
-        document.querySelector(".project-cards").innerHTML += cardTemplate.replaceAll("PROJECT_NAME", obj.name)
+        cards += cardTemplate.replaceAll("PROJECT_NAME", obj.name)
             .replaceAll("PROJECT_LINK", obj.link)
             .replaceAll("IMAGE_LINK", obj.coverimage)
             .replaceAll("SHORT_INFO", obj.shortInfo)
             .replaceAll("SOURCE_LINK", obj.source)
             .replaceAll("LICENSE_NAME", obj.license)
     }
+    return cards;
+}
+
+module.exports = {
+    renderAbout, 
+    renderBio, 
+    renderProjectCards
 }
