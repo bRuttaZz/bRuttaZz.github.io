@@ -8,11 +8,12 @@ function build(inFile="./src/template.ejs", outFile="index.html") {
         console.log("[build] reading template..")
         const dat = fs.readFileSync(inFile, { encoding: "utf-8" });
         console.log("[build] rendering html..")
-        const html = ejs.render(dat, {
+        let html = ejs.render(dat, {
             bioDat: renderBio(),
             contactPortion: renderAbout(),
             projectCards: renderProjectCards(),
-        })
+        },)
+        html = ejs.render(html, {rmWhitespace: true})
         console.log("[build] dumping out..")
         fs.writeFileSync(outFile, html, { encoding: "utf-8" })
         console.log("[build] build complete!")

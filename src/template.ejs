@@ -27,7 +27,6 @@
 
             <div class="profile-img">
                 <img src="./assets/images/me.jpg" class="realtar">
-                <img src="./assets/images/avatar.jpg" class="d-none avatar">
             </div>
 
             <div class="bio">
@@ -59,16 +58,23 @@
     </div>
 
     <script>
-        const avatar = document.querySelector(".avatar")
+        const avatar = document.createElement("img")
+        avatar.classList.add("avatar")
+        avatar.src = "./assets/images/avatar.jpg"
+
+        const profileImageContainer = document.querySelector(".profile-img")
         const realtar = document.querySelector(".realtar")
-        document.querySelector(".profile-img").addEventListener("click", () => {
-            if (realtar.classList.contains("d-none")) {
-                realtar.classList.remove("d-none")
-                avatar.classList.add("d-none")
+        let avatarFlag = true;
+        profileImageContainer.addEventListener("click", () => {
+            if (avatarFlag) {
+                profileImageContainer.removeChild(realtar);
+                profileImageContainer.append(avatar);
             } else {
-                realtar.classList.add("d-none")
-                avatar.classList.remove("d-none")
+                const currentChild = document.querySelector(".avatar")
+                profileImageContainer.removeChild(currentChild);
+                profileImageContainer.append(realtar);
             }
+            avatarFlag = !avatarFlag
         });
     </script>
     <noscript>Pardon! This page require Javascript to render. Kindly use a modern browser :)</noscript>
