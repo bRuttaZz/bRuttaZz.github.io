@@ -1,54 +1,56 @@
-:root {
-    background-color: #fafafa;
-    --profile-cover-bg: antiquewhite;
-    --profile-cover-text-color: #0e0d0d;
-    --profile-cover-secondary-text-color: rgb(124, 124, 123);
-    --profile-cover-bio-text-color: rgb(73, 73, 73);
-    --profile-cover-bio-badge-bg-color: rgb(158, 191, 253);
-    --profile-cover-bio-badge-text-color: rgb(88, 88, 88);
-    --profile-cover-about-bg: rgba(131, 238, 117, 0.658);
-    --profile-cover-about-text: rgb(75, 75, 75);
-    --profile-cover-about-text-secondary: rgb(109, 109, 109);
-    --project-section-bg: rgba(191, 206, 87, 0.4);
-    --project-section-text: gray;
-    --project-card-bg: antiquewhite;
-    --project-card-text: rgb(80, 80, 80);
-    --project-card-badge-bg: rgba(158, 191, 253);
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        background-color: #0d1117;
-        --profile-cover-bg: #1e2227;
-        --profile-cover-text-color: #fafafa;
-        --profile-cover-secondary-text-color: rgb(124, 124, 123);
-        --profile-cover-bio-text-color: #949494;
-        --profile-cover-bio-badge-bg-color: rgb(158, 191, 253);
-        --profile-cover-bio-badge-text-color: #1e2227;
-        --profile-cover-about-bg: rgba(179, 179, 179, 0.2);
-        --profile-cover-about-text: rgb(208, 208, 208);
-        --profile-cover-about-text-secondary: rgb(142, 162, 133);
-        --project-section-bg: rgba(179, 179, 179, 0.2);
-        --project-section-text: gray;
-        --project-card-bg: #c1bfbf66;
-        --project-card-text: rgb(34, 34, 34);
-        --project-card-badge-bg: rgb(145, 152, 166);   
-    }
-    a {
-        color: #cef083;
-    }
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
 
 body {
     font-family: 'Roboto', sans-serif;
-    ;
 }
 
 a {
     text-decoration: none;
+    color: #cef083;
 }
+
+:root {
+    background-color: #0d1117;
+    --profile-cover-bg: #1e2227;
+    --profile-cover-text-color: #fafafa;
+    --profile-cover-secondary-text-color: rgb(124, 124, 123);
+    --profile-cover-bio-text-color: #949494;
+    --profile-cover-bio-badge-bg-color: rgb(158, 191, 253);
+    --profile-cover-bio-badge-text-color: #1e2227;
+    --profile-cover-about-bg: rgba(179, 179, 179, 0.2);
+    --profile-cover-about-text: rgb(208, 208, 208);
+    --profile-cover-about-text-secondary: rgb(142, 162, 133);
+    --project-section-bg: rgba(179, 179, 179, 0.2);
+    --project-section-text: gray;
+    --project-card-bg: #c1bfbf66;
+    --project-card-text: rgb(34, 34, 34);
+    --project-card-badge-bg: rgb(145, 152, 166);
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        background-color: #fafafa;
+        --profile-cover-bg: antiquewhite;
+        --profile-cover-text-color: #0e0d0d;
+        --profile-cover-secondary-text-color: rgb(124, 124, 123);
+        --profile-cover-bio-text-color: rgb(73, 73, 73);
+        --profile-cover-bio-badge-bg-color: rgb(158, 191, 253);
+        --profile-cover-bio-badge-text-color: rgb(88, 88, 88);
+        --profile-cover-about-bg: rgba(131, 238, 117, 0.658);
+        --profile-cover-about-text: rgb(75, 75, 75);
+        --profile-cover-about-text-secondary: rgb(109, 109, 109);
+        --project-section-bg: rgba(191, 206, 87, 0.4);
+        --project-section-text: gray;
+        --project-card-bg: antiquewhite;
+        --project-card-text: rgb(80, 80, 80);
+        --project-card-badge-bg: rgba(158, 191, 253);
+    }
+
+    a {
+        color: #177d97;
+    }
+}
+
 
 .profile-cover {
     background-color: var(--profile-cover-bg);
@@ -213,3 +215,33 @@ a {
 .d-none {
     display: none;
 }
+
+/* .switch-box {
+    background-color: var(--profile-cover-about-bg);
+    width: 23px;
+    height: 23px;
+    border-radius: 5px;
+    position: absolute;
+    top: 35px;
+    left: auto;
+    right: 35px;
+    padding: 5px;
+}
+
+.switch-box img {
+    width: 100%;
+    object-fit: cover;
+}
+
+@media (prefers-color-scheme: light) {
+    .switch-box img {
+        content: url("./images/craps/dark.png");
+    }
+}
+
+
+@media (prefers-color-scheme: dark) {
+    .switch-box img {
+        content: url("./images/craps/light.png");
+    }
+} */
