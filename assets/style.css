@@ -1,39 +1,85 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
-body {
-    font-family: 'Roboto', sans-serif;;
+:root {
+    background-color: #fafafa;
+    --profile-cover-bg: antiquewhite;
+    --profile-cover-text-color: #0e0d0d;
+    --profile-cover-secondary-text-color: rgb(124, 124, 123);
+    --profile-cover-bio-text-color: rgb(73, 73, 73);
+    --profile-cover-bio-badge-bg-color: rgb(158, 191, 253);
+    --profile-cover-bio-badge-text-color: rgb(88, 88, 88);
+    --profile-cover-about-bg: rgba(131, 238, 117, 0.658);
+    --profile-cover-about-text: rgb(75, 75, 75);
+    --profile-cover-about-text-secondary: rgb(109, 109, 109);
+    --project-section-bg: rgba(191, 206, 87, 0.4);
+    --project-section-text: gray;
+    --project-card-bg: antiquewhite;
+    --project-card-text: rgb(80, 80, 80);
+    --project-card-badge-bg: rgba(158, 191, 253);
 }
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        background-color: #0d1117;
+        --profile-cover-bg: #1e2227;
+        --profile-cover-text-color: #fafafa;
+        --profile-cover-secondary-text-color: rgb(124, 124, 123);
+        --profile-cover-bio-text-color: #949494;
+        --profile-cover-bio-badge-bg-color: rgb(158, 191, 253);
+        --profile-cover-bio-badge-text-color: #1e2227;
+        --profile-cover-about-bg: rgba(179, 179, 179, 0.2);
+        --profile-cover-about-text: rgb(208, 208, 208);
+        --profile-cover-about-text-secondary: rgb(142, 162, 133);
+        --project-section-bg: rgba(179, 179, 179, 0.2);
+        --project-section-text: gray;
+        --project-card-bg: #c1bfbf66;
+        --project-card-text: rgb(34, 34, 34);
+        --project-card-badge-bg: rgb(145, 152, 166);   
+    }
+    a {
+        color: #cef083;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    ;
+}
+
 a {
     text-decoration: none;
 }
 
 .profile-cover {
-    background-color: antiquewhite;
+    background-color: var(--profile-cover-bg);
+    color: var(--profile-cover-text-color);
     margin: 10px;
-        margin-top: 20px;
+    margin-top: 20px;
     padding: 20px;
-        padding-top: 20px;
-        padding-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     border-radius: 10px;
 }
 
 .profile-cover .short-catch {
     margin-top: -20px;
-    color: rgb(124, 124, 123);
+    color: var(--profile-cover-secondary-text-color);
 }
 
 .profile-cover .container {
     display: flex;
     align-items: center;
     text-align: center;
-    justify-content: center;   
+    justify-content: center;
     font-size: smaller;
 }
 
 @media (max-width: 768px) {
     .profile-cover .container {
-      flex-direction: column; /* Stack divs vertically */
+        flex-direction: column;
+        /* Stack divs vertically */
     }
-  }
+}
 
 .profile-cover .container .bio {
     text-align: left;
@@ -43,8 +89,9 @@ a {
 
 .profile-cover .container .bio-info {
     padding-top: 10px;
-    color: rgb(73, 73, 73);
-    font-family: 'Roboto', monospace;;
+    color: var(--profile-cover-bio-text-color);
+    font-family: 'Roboto', monospace;
+    ;
 }
 
 .profile-cover .container .bio-info span {
@@ -52,9 +99,9 @@ a {
     padding-left: 10px;
     padding-right: 10px;
 
-    background-color: rgb(158, 191, 253);
+    background-color: var(--profile-cover-bio-badge-bg-color);
     border-radius: 6px;
-    color: rgb(88, 88, 88);
+    color: var(--profile-cover-bio-badge-text-color);
 }
 
 .profile-cover .container .profile-img img {
@@ -68,44 +115,46 @@ a {
     margin-top: 20px;
     border-radius: 10px;
     width: calc(100% - 20px);
-    background-color: rgba(131, 238, 117, 0.658);
+    background-color: var(--profile-cover-about-bg);
     padding: 10px;
-    color: rgb(75, 75, 75);
+    color: var(--profile-cover-about-text);
     font-size: medium;
 }
 
 .profile-about .container-about {
-    color: rgb(109, 109, 109);
+    color: var(--profile-cover-about-text-secondary);
     font-size: smaller;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
+
 .profile-about .container-about .left {
     text-align: left;
     justify-content: left;
 }
+
 .profile-about .container-about .right {
     text-align: right;
     justify-content: right;
 }
 
 .project-sec {
-    background-color: rgba(191, 206, 87, 0.4);
+    background-color: var(--project-section-bg);
     width: calc(100% - 20px);
     border-radius: 10px;
     margin-top: 20px;
     padding: 10px;
-        padding-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 .project-sec .project-sec-heading span img {
     margin-bottom: -5px;
-} 
+}
 
 .project-sec .project-sec-heading {
-    color: gray;
+    color: var(--project-section-text);
 }
 
 .project-sec .project-cards {
@@ -121,13 +170,13 @@ a {
     justify-content: left;
     align-items: left;
     text-align: left;
-    background-color: antiquewhite;
+    background-color: var(--project-card-bg);
     min-width: 400px;
     max-width: 600px;
     height: 160px;
     border-radius: 5px;
     padding: 8px;
-        padding-bottom: 10px;
+    padding-bottom: 10px;
     margin-top: 10px;
     margin-right: 10px;
     font-size: smaller;
@@ -139,24 +188,24 @@ a {
 }
 
 .project-sec .project-card div {
-    color: rgb(80, 80, 80);
+    color: var(--project-card-text);
     padding-left: 5px;
     padding-right: 5px;
 }
 
 .project-sec .project-card .license {
-    background-color: rgba(158, 191, 253);
+    background-color: var(--project-card-badge-bg);
     padding: 2px;
-        padding-left: 8px;
-        padding-right: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
     border-radius: 8px;
 }
 
 .project-sec .project-card .source-link {
-    background-color: rgba(158, 191, 253);
+    background-color: var(--project-card-badge-bg);
     padding: 2px;
-        padding-left: 8px;
-        padding-right: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
     border-radius: 8px;
 }
 
