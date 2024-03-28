@@ -4,7 +4,7 @@ const projects = require("../facts/projects.json");
 
 function renderBio() {
     const bioString = `<div class="bio-info">
-        <span>KEYY</span><b> VALL </b>
+        <span>KEYY</span><b> &nbspVALL </b>
     </div>`
 
     let outString = ""
@@ -30,7 +30,7 @@ function renderAbout() {
     let socialMedia = ""
     for (let key in about.socialMediaList) {
         socialMedia += `<a href=${about.socialMedia[key]}>
-            <img src=\"${about.socialMediaList[key]}\" width=20px> 
+            <span class=\"${about.socialMediaList[key]}\"></span> 
         </a>`
     }
 
@@ -45,7 +45,7 @@ function renderAbout() {
             </div>
         </div>
         <center>
-            <p>
+            <p class="social-media-icons">
                 ${socialMedia}
             </p>
         </center>
