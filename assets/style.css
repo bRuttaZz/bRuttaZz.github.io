@@ -6,19 +6,19 @@ body {
 
 :root {
      /* default to light mode  */
-    --background-color: #fafafa;
-    --profile-cover-bg: antiquewhite;
-    --profile-cover-text-color: #0e0d0d;
+    --background-color: #ffffff;
+    --profile-cover-bg: #e6e6e6;
+    --profile-cover-text-color: #464646;
     --profile-cover-secondary-text-color: rgb(124, 124, 123);
     --profile-cover-bio-text-color: rgb(73, 73, 73);
     --profile-cover-bio-badge-bg-color: rgb(158, 191, 253);
     --profile-cover-bio-badge-text-color: rgb(88, 88, 88);
-    --profile-cover-about-bg: rgba(131, 238, 117, 0.658);
+    --profile-cover-about-bg: #d0d0d0;
     --profile-cover-about-text: rgb(75, 75, 75);
     --profile-cover-about-text-secondary: rgb(109, 109, 109);
-    --project-section-bg: rgba(191, 206, 87, 0.4);
+    --project-section-bg: #d0d0d0;
     --project-section-text: gray;
-    --project-card-bg: antiquewhite;
+    --project-card-bg: white;
     --project-card-text: rgb(80, 80, 80);
     --project-card-badge-bg: rgba(158, 191, 253);
     --anchor-txt-color: #177d97;
