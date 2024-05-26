@@ -2,5 +2,6 @@ import { bindAvatarSwitch, bindThemeSwitch } from "./lib/ui.js"
 
 window.onload = () => {
     bindThemeSwitch();
-    bindAvatarSwitch();
+    if (window.pageIdentifier === "about")
+        bindAvatarSwitch();
 }

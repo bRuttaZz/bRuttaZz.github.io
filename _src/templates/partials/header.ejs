@@ -6,28 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="description"
-        content="Agraj P Das (@bRUttaZz)! A software enthusiast. Find my projects and connection info over here!">
+        content="<%= description %>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
 
-    <title>bRuttaZz</title>
+    <title><%= title %></title>
     <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@id": "https://brutt.site",
-            "@type": "WebPage",
-            "name": "Agraj P Das (bRuttaZz)",
-            "url": "https://brutt.site",
-            "description": "Agraj P Das (@bRUttaZz)! A software enthusiast. Find my projects and connection info over here!",
-            "logo": "https://brutt.site/assets/images/avatar.jpg",
-            "sameAs": [
-                "https://twitter.com/bruttazz_",
-                "https://github.com/bruttazz",
-                "https://instagram.com/bruttazz",
-                "https://fosstodon.org/@bRUttaZz"
-            ]
-        }
+        <%- ldJson %>
     </script>
 
     <link rel="stylesheet" href="./assets/style.css">
@@ -37,16 +23,16 @@
 
     <meta property="og:locale" content="en_GB">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Agraj P Das (@bRuttaZz)">
+    <meta property="og:title" content="<%= title %>">
     <meta property="og:description"
-        content="Agraj P Das (@bRUttaZz)! A software enthusiast. Find my projects and connection info over here!">
+        content="<%= description %>">
     <meta property="og:url" content="https://brutt.site">
-    <meta property="og:site_name" content="bRuttaZz">
+    <meta property="og:site_name" content="<%= title %>">
     <meta property="og:image" content="https://brutt.site/assets/images/avatar.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Agraj P Das (@bRuttaZz)">
+    <meta name="twitter:title" content="<%= title %>">
     <meta name="twitter:description"
-        content="Agraj P Das (@bRUttaZz)! A software enthusiast. Find my projects and connection info over here!">
+        content="<%= description %>">
     <meta name="twitter:site" content="@bRuttaZz">
     <meta name="twitter:creator" content="@bRuttaZz">
     <meta name="twitter:image" content="https://brutt.site/assets/images/avatar.jpg">
@@ -59,7 +45,9 @@
         <div style="color: red;">Pardon! This page require Javascript to render. Kindly use a modern browser :)</div>
     </center>
 </noscript> -->
-
+<script>
+    window.pageIdentifier = "<%= name %>"
+</script>
 <body>
     <div class="profile-cover nav-bar d-flex">
         <a href="./">

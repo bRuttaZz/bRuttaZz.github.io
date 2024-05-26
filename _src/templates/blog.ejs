@@ -1,0 +1,20 @@
+<!-- varriables : title, description, url -->
+<%- include('partials/header.ejs', {
+    name: "blog",
+    title: title,
+    description: description, 
+    ldJson: `{
+        "@context": "https://schema.org",
+        "@id": "https://brutt.site",
+        "@type": "WebPage",
+        "name": title,
+        "url": "https://brutt.site/blogs/" + url,
+        "description": description,
+        "logo": "https://brutt.site/assets/images/avatar.jpg",
+    }` }); %>
+
+    <!-- projects tab  -->
+    TODO
+
+
+<%- include('partials/footer'); %>
