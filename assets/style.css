@@ -1,11 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+@font-face {
+    font-family: 'RedHatMono';
+    font-weight: 200;
+    src: url(./fonts/red_hat_mono/mono/RedHatMono-Medium.woff2) format(woff2);
+}
+
+@font-face {
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'RedHatMonoRegular';
+    font-weight: 200;
+    src: url(./fonts/red_hat_mono/mono/RedHatMono-Regular.woff2) format(woff2);
+}
+
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'RedHatMono', monospace;
 }
 
 :root {
-     /* default to light mode  */
+    /* default to light mode  */
     --background-color: #ffffff;
     --profile-cover-bg: #e6e6e6;
     --profile-cover-text-color: #464646;
@@ -65,19 +77,31 @@ a {
 .profile-cover .short-catch {
     margin-top: -20px;
     color: var(--profile-cover-secondary-text-color);
+    font-size: small;
 }
 
 .profile-cover .container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     text-align: center;
     justify-content: center;
     font-size: smaller;
 }
 
-@media (max-width: 768px) {
-    .profile-cover .container {
+@media screen and (orientation: landscape) {
+    body {
+        display: flex;
         flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-cover {
+        width: 60%;
+    }
+
+    .profile-cover .container {
+        flex-direction: row;
         /* Stack divs vertically */
     }
 }
@@ -91,8 +115,6 @@ a {
 .profile-cover .container .bio-info {
     padding-top: 10px;
     color: var(--profile-cover-bio-text-color);
-    font-family: 'Roboto', monospace;
-    ;
 }
 
 .profile-cover .container .bio-info span {
@@ -162,7 +184,6 @@ a {
     overflow-x: scroll;
     display: flex;
     justify-content: left;
-    align-items: left;
     text-align: left;
 }
 
@@ -172,14 +193,15 @@ a {
     align-items: left;
     text-align: left;
     background-color: var(--project-card-bg);
-    min-width: 400px;
-    max-width: 600px;
-    height: 160px;
+    min-width: calc(190px * 2.5);
+    max-width: calc(190px * 3);
+    height: 190px;
     border-radius: 5px;
     padding: 8px;
     padding-bottom: 10px;
     margin-top: 10px;
     margin-right: 10px;
+    font-family: 'RedHatMonoRegular' monospace;
     font-size: smaller;
 }
 
@@ -210,9 +232,16 @@ a {
     border-radius: 8px;
 }
 
+.d-flex {
+    display: flex;
+}
 
 .d-none {
     display: none;
+}
+
+.vertical-align-center {
+    align-content: center;
 }
 
 /* .switch-box {
@@ -227,19 +256,45 @@ a {
     padding: 5px;
 } */
 
-.theme-swticher {
+.nav-bar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.nav-item {
+    display: table;
+    vertical-align: center;
+    text-align: center;
+    margin-right: 15px;
+    cursor: pointer;
+    height: 100%;
+}
+
+.nav-item-text {
+    display: table-cell;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+.selected-nav {
+    text-decoration: underline;
+}
+
+.header-btn {
     border-radius: 5px;
     background-color: var(--profile-cover-about-bg);
     vertical-align: center;
     text-align: center;
+    cursor: pointer;
+}
+
+.theme-swticher {
     width: 23px;
     height: 23px;
-    font-size: larger;
-    position: absolute;
-    top: 35px;
-    left: auto;
-    right: 35px;
     padding: 8px;
+    margin-right: 0;
+    margin-left: auto;
+    font-size: larger;
 }
 
 .social-media-icons {

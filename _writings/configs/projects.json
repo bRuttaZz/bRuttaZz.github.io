@@ -1,28 +1,35 @@
 {
-    "projects": [
-        {
+    "pinned": [
+        "devc",
+        "stmp"
+    ],
+    "projects": {
+        "devc": {
             "name": "devC",
             "shortInfo": "A linux command line utility to build 'python venv' like reusable virtualenv from Dockerfile/Containerfile or directly from a container image. Virtualenv for containers!",
+            "detailedInfo": "A linux command line utility to build 'python venv' like reusable virtualenv from Dockerfile/Containerfile or directly from a container image. Virtualenv for containers!",
             "source": "https://github.com/bruttazz/devc",
             "license": "GPLv3",
             "link": "https://bruttazz.github.io/devc",
             "coverimage": "https://raw.githubusercontent.com/bRuttaZz/devc/main/assets/tad.png"
         },
-        {
+        "stmp": {
             "name": "STMP",
-            "shortInfo": "STMP: Sitty Talky Messaging Protocol : A primitive zero-configuration local network protocol purely written in python, originally intended for tinkering with your office mates over LAN!",
+            "shortInfo": "STMP: Sitty Talky Messaging Protocol, a primitive zero-configuration local network protocol purely written in python, originally intended for tinkering with your office mates over LAN!",
+            "detailedInfo": "STMP: Sitty Talky Messaging Protocol, a primitive zero-configuration local network protocol purely written in python, originally intended for tinkering with your office mates over LAN!",
             "source": "https://github.com/bRuttaZz/stmp",
             "license": "MIT",
             "link": "https://github.com/bRuttaZz/stmp",
             "coverimage": "https://github.com/bRuttaZz/stmp/raw/main/.assets/logo.png"
         },
-        {
+        "colbaking": {
             "name": "Colbaking",
             "shortInfo": "Nothing but an old school chrome-dino-game clone!",
+            "detailedInfo": "Nothing but an old school chrome-dino-game clone!",
             "source": "https://github.com/bruttazz/colbaking",
             "license": "MIT",
             "link": "https://bruttazz.github.io/colbaking",
             "coverimage": "https://raw.githubusercontent.com/bRuttaZz/colbaking/main/game/preview.png"
         }
-    ]
+    }
 }

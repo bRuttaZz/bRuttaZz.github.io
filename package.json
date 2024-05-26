@@ -5,9 +5,9 @@
   "main": "webpack.config.js",
   "scripts": {
     "start": "http-server",
-    "test": "node build",
-    "build": "node build",
-    "dev": "nodemon build & http-server"
+    "test": "node _src/index.js",
+    "build": "node _src/index.js",
+    "dev": "nodemon -e js,ejs,json _src/index.js & http-server"
   },
   "repository": {
     "type": "git",

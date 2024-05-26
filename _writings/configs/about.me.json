@@ -5,9 +5,9 @@
         "height": "not yet measured",
         "occupation": "R&D Engineer, Pixdynamics Pvt Ltd",
         "localization": "Kochi, Kerala",
-        "expertise": "Web Technologies, Applied AI, System Design, Containers",
-        "proficient-human-languages": "Malayalam, English",
-        "proficient-computer-languages": "Python, JS, Go, C++",
+        "good-at": "Web Technologies, Applied AI, System Design, Containers",
+        "human-languages": "Malayalam, English",
+        "computer-languages": "Python, JS, Go, C",
         "ask-me-about": "System Design, Containers, Computer Networking",
         "pgp-keys": "<a href=\"./facts/pgp.key\" >4546 EC98 5FA6 E6CD E09A 5114 18CD 31EE 87B1 AA02</a>",
         "github": "<a href=\"https://github.com/bruttazz\">bRuttaZz</a>"

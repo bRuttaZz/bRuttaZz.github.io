@@ -1,0 +1,42 @@
+<%- include('partials/header.ejs', {name: "about" }); %>
+
+    <!-- about tab  -->
+
+    <h1>Agraj P Das</h1>
+    <p class="short-catch">This site is intentionally being simple..</p>
+    <div class="container">
+
+        <div class="profile-img">
+            <img src="./assets/images/me.jpg" class="realtar">
+        </div>
+
+        <div class="bio">
+            <%- bioDat %>
+                <!-- will be filled with about.me.json content  -->
+        </div>
+
+    </div>
+
+    <!-- the contact card  -->
+    <div class="profile-about">
+        <%- contactPortion %>
+
+    </div>
+
+    <!-- the projects section  -->
+    <div class="project-sec">
+        <b class="project-sec-heading">
+            <span class="mdi mdi-pin"></span>
+            some "good looking" projects
+        </b>
+        <div class="project-cards">
+            <%- projectCards %>
+                <!-- project cards comes here  -->
+        </div>
+    </div>
+    <center>
+        <a rel="me" href="https://fosstodon.org/@bRuttaZz" style="color: blue;">-</a>
+    </center>
+
+
+<%- include('partials/footer'); %>

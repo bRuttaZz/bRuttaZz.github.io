@@ -1,9 +1,9 @@
 const fs = require("fs");
 const ejs = require("ejs");
-const { renderBio, renderAbout, renderProjectCards } = require("./render.js");
+const { renderBio, renderAbout, renderProjectCards } = require("./lib/render.js");
 
 
-function build(inFile="./src/template.ejs", outFile="index.html") {
+function build(inFile="./_src/templates/about.ejs", outFile="index.html") {
     try {
         console.log("[build] reading template..")
         const dat = fs.readFileSync(inFile, { encoding: "utf-8" });
@@ -12,7 +12,9 @@ function build(inFile="./src/template.ejs", outFile="index.html") {
             bioDat: renderBio(),
             contactPortion: renderAbout(),
             projectCards: renderProjectCards(),
-        },)
+        },{
+            views: ["./_src/templates"]
+        })
         html = ejs.render(html, {rmWhitespace: true})
         console.log("[build] dumping out..")
         fs.writeFileSync(outFile, html, { encoding: "utf-8" })
@@ -24,4 +26,4 @@ function build(inFile="./src/template.ejs", outFile="index.html") {
     }
 }
 
-module.exports = { build }
+build()

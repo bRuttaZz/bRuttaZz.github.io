@@ -49,12 +49,36 @@ content="Agraj P Das (@bRUttaZz)! A software enthusiast. Find my projects and co
 <meta name="google-site-verification" content="yy0W_kqfIlLBRYX7Eeqw8CKlFTdJ6Gp-ZlJSmWBMW04" />
 <meta name="google-site-verification" content="OJKRiwUcAniBZKSSyY64QsZPA6mXm99Rx3vc_PrN4gs" />
 </head>
+<!-- <noscript>
+<center>
+<div style="color: red;">Pardon! This page require Javascript to render. Kindly use a modern browser :)</div>
+</center>
+</noscript> -->
 <body>
-<div class="profile-cover">
-<h1>Agraj P Das</h1>
-<div class="theme-swticher theme-switcher-btn text-center m-md-4 ">
+<div class="profile-cover nav-bar d-flex">
+<a href="./">
+<div class="nav-item"> <span
+class="nav-item-text   selected-nav ">me</span>
+</div>
+</a>
+<a href="./projects">
+<div class="nav-item  "> <span
+class=" nav-item-text ">myProjects</span></div>
+</a>
+<a href=" ./blogs">
+<div class="nav-item "> <span
+class=" nav-item-text">
+myBlogs</span></div>
+</a>
+<div class="header-btn theme-swticher theme-switcher-btn text-center m-md-4 d-none">
 <span class="mdi mdi-brightness-6 fs-5"></span>
 </div>
+</div>
+<div class="profile-cover">
+<!-- content  -->
+<!-- ...  -->
+<!-- about tab  -->
+<h1>Agraj P Das</h1>
 <p class="short-catch">This site is intentionally being simple..</p>
 <div class="container">
 <div class="profile-img">
@@ -70,11 +94,11 @@ content="Agraj P Das (@bRUttaZz)! A software enthusiast. Find my projects and co
 </div><div class="bio-info">
 <span>localization</span><b> &nbspKochi, Kerala </b>
 </div><div class="bio-info">
-<span>expertise</span><b> &nbspWeb Technologies, Applied AI, System Design, Containers </b>
+<span>good at</span><b> &nbspWeb Technologies, Applied AI, System Design, Containers </b>
 </div><div class="bio-info">
-<span>proficient human languages</span><b> &nbspMalayalam, English </b>
+<span>human languages</span><b> &nbspMalayalam, English </b>
 </div><div class="bio-info">
-<span>proficient computer languages</span><b> &nbspPython, JS, Go, C++ </b>
+<span>computer languages</span><b> &nbspPython, JS, Go, C </b>
 </div><div class="bio-info">
 <span>ask me about</span><b> &nbspSystem Design, Containers, Computer Networking </b>
 </div><div class="bio-info">
@@ -116,11 +140,11 @@ content="Agraj P Das (@bRUttaZz)! A software enthusiast. Find my projects and co
 <div class="project-sec">
 <b class="project-sec-heading">
 <span class="mdi mdi-pin"></span>
-pinned projects
+some "good looking" projects
 </b>
 <div class="project-cards">
 <div class="project-card">
-<div>
+<div class="vertical-align-center">
 <center>
 <a href="https://bruttazz.github.io/devc">
 <img width="130px" src="https://raw.githubusercontent.com/bRuttaZz/devc/main/assets/tad.png">
@@ -128,7 +152,7 @@ pinned projects
 <br><b>devC</b>
 </center>
 </div>
-<div>
+<div class="vertical-align-center">
 <p>A linux command line utility to build 'python venv' like reusable virtualenv from Dockerfile/Containerfile or directly from a container image. Virtualenv for containers!</p>
 <p>
 <a href="https://github.com/bruttazz/devc">
@@ -138,7 +162,7 @@ pinned projects
 </p>
 </div>
 </div><div class="project-card">
-<div>
+<div class="vertical-align-center">
 <center>
 <a href="https://github.com/bRuttaZz/stmp">
 <img width="130px" src="https://github.com/bRuttaZz/stmp/raw/main/.assets/logo.png">
@@ -146,28 +170,10 @@ pinned projects
 <br><b>STMP</b>
 </center>
 </div>
-<div>
-<p>STMP: Sitty Talky Messaging Protocol : A primitive zero-configuration local network protocol purely written in python, originally intended for tinkering with your office mates over LAN!</p>
+<div class="vertical-align-center">
+<p>STMP: Sitty Talky Messaging Protocol, a primitive zero-configuration local network protocol purely written in python, originally intended for tinkering with your office mates over LAN!</p>
 <p>
 <a href="https://github.com/bRuttaZz/stmp">
-<span class="source-link">source</span>
-</a>
-<span class="license">license : MIT</span>
-</p>
-</div>
-</div><div class="project-card">
-<div>
-<center>
-<a href="https://bruttazz.github.io/colbaking">
-<img width="130px" src="https://raw.githubusercontent.com/bRuttaZz/colbaking/main/game/preview.png">
-</a>
-<br><b>Colbaking</b>
-</center>
-</div>
-<div>
-<p>Nothing but an old school chrome-dino-game clone!</p>
-<p>
-<a href="https://github.com/bruttazz/colbaking">
 <span class="source-link">source</span>
 </a>
 <span class="license">license : MIT</span>
@@ -177,63 +183,13 @@ pinned projects
 <!-- project cards comes here  -->
 </div>
 </div>
-</div>
-<script>
-const avatar = document.createElement("img")
-avatar.classList.add("avatar")
-avatar.src = "./assets/images/avatar.jpg"
-const profileImageContainer = document.querySelector(".profile-img")
-const realtar = document.querySelector(".realtar")
-let avatarFlag = true;
-profileImageContainer.addEventListener("click", () => {
-if (avatarFlag) {
-profileImageContainer.removeChild(realtar);
-profileImageContainer.append(avatar);
-} else {
-const currentChild = document.querySelector(".avatar")
-profileImageContainer.removeChild(currentChild);
-profileImageContainer.append(realtar);
-}
-avatarFlag = !avatarFlag
-});
-/**
-* Bind theming switching and ..you knw..!
-*/
-(function bindThemeSwitch() {
-const systemMode = window.matchMedia("(prefers-color-scheme: dark)");
-const setSysTheme = () => {
-if (systemMode.matches) {
-document.documentElement.classList.add("dark")
-sessionStorage.setItem("theme-selection", "dark");
-} else {
-document.documentElement.classList.remove("dark")
-sessionStorage.setItem("theme-selection", "light");
-}
-}
-// set sys theme
-const cachedState = sessionStorage.getItem("theme-selection")
-if (cachedState === "dark")
-document.documentElement.classList.add("dark")
-else if (!cachedState)
-setSysTheme()
-systemMode.addEventListener("change", setSysTheme)
-// add custom button functionality
-document.querySelector(".theme-switcher-btn")?.addEventListener("click", (e) => {
-if (document.documentElement.classList.contains("dark")) {
-document.documentElement.classList.remove("dark");
-sessionStorage.setItem("theme-selection", "light");
-} else {
-document.documentElement.classList.add("dark")
-sessionStorage.setItem("theme-selection", "dark");
-}
-})
-})();
-</script>
-<noscript>Pardon! This page require Javascript to render. Kindly use a modern browser :)</noscript>
-</body>
-<footer>
 <center>
 <a rel="me" href="https://fosstodon.org/@bRuttaZz" style="color: blue;">-</a>
 </center>
+<!-- content  -->
+</div>
+<script src="./assets/js/index.js" type="module"></script>
+</body>
+<footer>
 </footer>
 </html>
