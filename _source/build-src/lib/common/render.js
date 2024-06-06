@@ -1,5 +1,19 @@
 const fs = require("fs");
 const ejs = require("ejs");
+const { TEMPLATE_DIR } = require("../settings")
+
+/**
+ * Render html string from file
+ * @param {String} infile - template file path
+ * @param {Object} data - data object to be passed 
+ * @param {Array} templateDirs - array of paths containing templates/partials 
+ */
+function renderFromFile(infile, data={}, templateDirs=[TEMPLATE_DIR]) {
+    const dat = fs.readFileSync(infile, { encoding: "utf-8" });
+    return ejs.render(dat, data, {
+        views: templateDirs
+    })
+}
 
 
 /**
@@ -13,15 +27,11 @@ function build(
     inFile,
     outFile,
     data = {},
-    templateDirs = ["./_src/templates"]
+    templateDirs = [TEMPLATE_DIR]
 ) {
     try {
         console.log(`[build](${outFile}) reading template..`)
-        const dat = fs.readFileSync(inFile, { encoding: "utf-8" });
-        console.log(`[build](${outFile}) rendering html..`)
-        let html = ejs.render(dat, data, {
-            views: templateDirs
-        })
+        html = renderFromFile(inFile, data, templateDirs)
         html = ejs.render(html, { rmWhitespace: true })
         console.log(`[build](${outFile}) dumping out..`)
         fs.writeFileSync(outFile, html, { encoding: "utf-8" })
@@ -32,4 +42,4 @@ function build(
     }
 }
 
-module.exports = { build }
+module.exports = { build, renderFromFile }

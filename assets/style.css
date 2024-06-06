@@ -172,29 +172,37 @@ a {
     padding-bottom: 20px;
 }
 
-.project-sec .project-sec-heading span img {
+.project-sec-heading span img {
     margin-bottom: -5px;
 }
 
-.project-sec .project-sec-heading {
+.project-sec-heading {
     color: var(--project-section-text);
 }
 
-.project-sec .project-cards {
+.project-cards {
     overflow-x: scroll;
     display: flex;
     justify-content: left;
     text-align: left;
 }
 
+
+.project-only-sec .project-card {
+    margin-bottom: 18px;
+}
+
 .project-sec .project-card {
+    min-width: calc(190px * 2.5);
+    max-width: calc(190px * 3);
+}
+
+.project-card {
     display: flex;
     justify-content: left;
     align-items: left;
     text-align: left;
     background-color: var(--project-card-bg);
-    min-width: calc(190px * 2.5);
-    max-width: calc(190px * 3);
     height: 190px;
     border-radius: 5px;
     padding: 8px;
@@ -205,18 +213,18 @@ a {
     font-size: smaller;
 }
 
-.project-sec .project-card div b {
+.project-card div b {
     font-size: large;
     font-weight: 800;
 }
 
-.project-sec .project-card div {
+.project-card div {
     color: var(--project-card-text);
     padding-left: 5px;
     padding-right: 5px;
 }
 
-.project-sec .project-card .license {
+.project-card .license {
     background-color: var(--project-card-badge-bg);
     padding: 2px;
     padding-left: 8px;
@@ -224,12 +232,28 @@ a {
     border-radius: 8px;
 }
 
-.project-sec .project-card .source-link {
+.project-card .source-link {
     background-color: var(--project-card-badge-bg);
     padding: 2px;
     padding-left: 8px;
     padding-right: 8px;
     border-radius: 8px;
+}
+
+.ps-1 {
+    padding-left: 5px;
+}
+
+.pe-1 {
+    padding-right: 5px;
+}
+
+.pt-1 {
+    padding-top: 5px;
+}
+
+.pb-1 {
+    padding-bottom: 5px;
 }
 
 .d-flex {

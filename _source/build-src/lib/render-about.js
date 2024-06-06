@@ -1,6 +1,7 @@
 "use strict"
-const about = require("../../_writings/configs/about.me.json");
-const projects = require("../../_writings/configs/projects.json");
+const renderers = require("./common/renderers")
+const about = require("../../writings/configs/about.me.json")
+const projects = require("../../writings/configs/projects.json")
 
 function renderBio() {
     const bioString = `<div class="bio-info">
@@ -15,7 +16,6 @@ function renderBio() {
     }
     return outString
 }
-
 
 
 function renderAbout() {
@@ -54,37 +54,7 @@ function renderAbout() {
 }
 
 function renderProjectCards() {
-    const cardTemplate = `<div class="project-card">
-        <div class="vertical-align-center">
-            <center>
-                <a href="PROJECT_LINK">
-                    <img width="130px" src="IMAGE_LINK">
-                </a>
-                <br><b>PROJECT_NAME</b>
-            </center>
-        </div>
-        <div class="vertical-align-center">
-            <p>SHORT_INFO</p>
-            <p>
-                <a href="SOURCE_LINK">
-                    <span class="source-link">source</span>
-                </a>
-                <span class="license">license : LICENSE_NAME</span>
-            </p>
-        </div>
-    </div>`
-
-    let cards = ""
-    for (let obj of projects.pinned) {
-        const pro = projects.projects[obj]
-        cards += cardTemplate.replaceAll("PROJECT_NAME", pro.name)
-            .replaceAll("PROJECT_LINK", pro.link)
-            .replaceAll("IMAGE_LINK", pro.coverimage)
-            .replaceAll("SHORT_INFO", pro.shortInfo)
-            .replaceAll("SOURCE_LINK", pro.source)
-            .replaceAll("LICENSE_NAME", pro.license)
-    }
-    return cards;
+    return renderers.renderProjectCards(projects.projects, projects.pinned)
 }
 
 module.exports = {
