@@ -8,13 +8,22 @@
         "@id": "https://brutt.site",
         "@type": "WebPage",
         "name": title,
-        "url": "https://brutt.site/blogs/" + url,
+        "url": url,
         "description": description,
         "logo": "https://brutt.site/assets/images/avatar.jpg",
-    }` }); %>
+    }`,
+    keywords: keywords
+    }); %>
 
-    <!-- projects tab  -->
-    TODO
+    <!-- blog portion  -->
+    <div class="blog-content">
+        <div>
+            <span class="blog-date-badge">Last Edited : <%= lastUpdateDate %></span>
+        </div>
+        <br>
+        <%- content %>    
+    </div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/default.min.css">
 
 
 <%- include('partials/footer'); %>

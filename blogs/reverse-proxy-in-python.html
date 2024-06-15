@@ -1,3 +1,4 @@
+<!-- varriables : title, description, url -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,34 +6,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="description" content="<%= description %>">
-    <meta name="keywords" content="<%= keywords %>">
+    <meta name="description" content="If you ever plans to create a HTTP reverse proxy, Of course python is not the answer. But if you insists so, I got some handy code snippets (I also instsisted the same, long back)">
+    <meta name="keywords" content="reverse-proxy, python, gaetway, apigateway, proxy-in-python">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
 
     <title>
-        <%= title %>
+        Let&#39;s do the sin: Creating a HTTP reverse proxy in Python :)
     </title>
     <script type="application/ld+json">
-        <%- ldJson %>
+        {
+        "@context": "https://schema.org",
+        "@id": "https://brutt.site",
+        "@type": "WebPage",
+        "name": title,
+        "url": url,
+        "description": description,
+        "logo": "https://brutt.site/assets/images/avatar.jpg",
+    }
     </script>
 
-    <link rel="stylesheet" href="<%= baseUrl %>./assets/style.css">
-    <link rel="shortcut icon" href="<%= baseUrl %>./assets/images/avatar.jpg" type="image/x-icon">
+    <link rel="stylesheet" href=".././assets/style.css">
+    <link rel="shortcut icon" href=".././assets/images/avatar.jpg" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet"
         crossorigin="anonymous">
-    <script src="<%= baseUrl %>./assets/js/index.js" type="module"></script>
+    <script src=".././assets/js/index.js" type="module"></script>
     <meta property="og:locale" content="en_GB">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="<%= title %>">
-    <meta property="og:description" content="<%= description %>">
+    <meta property="og:title" content="Let&#39;s do the sin: Creating a HTTP reverse proxy in Python :)">
+    <meta property="og:description" content="If you ever plans to create a HTTP reverse proxy, Of course python is not the answer. But if you insists so, I got some handy code snippets (I also instsisted the same, long back)">
     <meta property="og:url" content="https://brutt.site">
-    <meta property="og:site_name" content="<%= title %>">
+    <meta property="og:site_name" content="Let&#39;s do the sin: Creating a HTTP reverse proxy in Python :)">
     <meta property="og:image" content="https://brutt.site/assets/images/avatar.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="<%= title %>">
-    <meta name="twitter:description" content="<%= description %>">
+    <meta name="twitter:title" content="Let&#39;s do the sin: Creating a HTTP reverse proxy in Python :)">
+    <meta name="twitter:description" content="If you ever plans to create a HTTP reverse proxy, Of course python is not the answer. But if you insists so, I got some handy code snippets (I also instsisted the same, long back)">
     <meta name="twitter:site" content="@bRuttaZz">
     <meta name="twitter:creator" content="@bRuttaZz">
     <meta name="twitter:image" content="https://brutt.site/assets/images/avatar.jpg">
@@ -88,22 +97,22 @@
     </center>
 </noscript> -->
 <script>
-    window.pageIdentifier = "<%= name %>"
+    window.pageIdentifier = "blog"
 </script>
 
 <body>
     <div class="profile-cover nav-bar d-flex">
         <a href="/">
             <div class="nav-item"> <span
-                    class="nav-item-text  <% if (name==='about') { %> selected-nav <% } %>">me</span>
+                    class="nav-item-text  ">me</span>
             </div>
         </a>
         <a href="/projects">
-            <div class="nav-item  <% if (name==='projects') { %> selected-nav <% } %>"> <span
+            <div class="nav-item  "> <span
                     class=" nav-item-text ">myProjects</span></div>
         </a>
         <a href="/blogs">
-            <div class="nav-item <% if (name==='blogs') { %> selected-nav <% } %>"> <span class=" nav-item-text">
+            <div class="nav-item "> <span class=" nav-item-text">
                     myBlogs</span></div>
         </a>
         <div class="header-btn theme-swticher theme-switcher-btn text-center m-md-4 d-none">
@@ -114,3 +123,30 @@
 
         <!-- content  -->
         <!-- ...  -->
+
+    <!-- blog portion  -->
+    <div class="blog-content">
+        <div>
+            <span class="blog-date-badge">Last Edited : 15 Jun 2024</span>
+        </div>
+        <br>
+        <html><head></head><body><h1>Let's do the sin: Creating a HTTP reverse proxy in Python :)</h1>
+<p><br><br></p>
+<center>
+<img src="/./_source/writings/blogs/11.reverse-proxy-in-python/./py.nginx.png" height="15%">
+</center>
+<p><br><br>
+<strong>NB</strong>: Python in a wonderful language. Due to the same reason, it can be used to solve many problem that it's not meant for. And this one is such a problem.</p>
+</body></html>    
+    </div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/default.min.css">
+
+
+<!-- content  -->
+
+        </div>
+    </body>
+    <footer>
+    
+    </footer>
+</html>

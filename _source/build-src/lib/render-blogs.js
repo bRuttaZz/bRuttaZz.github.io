@@ -23,8 +23,9 @@ async function listBlogs() {
                         console.error(`SUFFICIENT META KEYS NOT FOUND : ${file.name}`)
                         continue    
                     } 
+                
                 blogs[blog_rank] = {
-                    name: file.name,
+                    name: file.name.split(".").splice(1).join(),
                     base: `${BLOGS_SRC_DIR}/${file.name}`, 
                     meta: meta,
                     main: `${BLOGS_SRC_DIR}/${file.name}/main.md`,

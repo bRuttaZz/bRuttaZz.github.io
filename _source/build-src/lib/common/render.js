@@ -27,12 +27,14 @@ function build(
     inFile,
     outFile,
     data = {},
-    templateDirs = [TEMPLATE_DIR]
+    templateDirs = [TEMPLATE_DIR],
+    removeWhiteSpace = true
 ) {
     try {
         console.log(`[build](${outFile}) reading template..`)
         html = renderFromFile(inFile, data, templateDirs)
-        html = ejs.render(html, { rmWhitespace: true })
+        if (removeWhiteSpace)
+            html = ejs.render(html, { rmWhitespace: true })
         console.log(`[build](${outFile}) dumping out..`)
         fs.writeFileSync(outFile, html, { encoding: "utf-8" })
         console.log(`[build](${outFile}) build complete!`)

@@ -4,12 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="description"
-content="Blogs of bRuttaZz (Agraj P Das) | List of some of my blog posts..">
+<meta name="description" content="Blogs of bRuttaZz (Agraj P Das) | List of some of my blog posts..">
+<meta name="keywords" content="blogs, allblogs, writings, docs, agraj, agrajpdas, bruttazz, brutt, bruttsite, brutt.site">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index,follow">
 <meta name="googlebot" content="index,follow">
-<title>Blogs | bRuttaZz</title>
+<title>
+Blogs | bRuttaZz
+</title>
 <script type="application/ld+json">
 {
 "@context": "https://schema.org",
@@ -29,20 +31,55 @@ crossorigin="anonymous">
 <meta property="og:locale" content="en_GB">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Blogs | bRuttaZz">
-<meta property="og:description"
-content="Blogs of bRuttaZz (Agraj P Das) | List of some of my blog posts..">
+<meta property="og:description" content="Blogs of bRuttaZz (Agraj P Das) | List of some of my blog posts..">
 <meta property="og:url" content="https://brutt.site">
 <meta property="og:site_name" content="Blogs | bRuttaZz">
 <meta property="og:image" content="https://brutt.site/assets/images/avatar.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Blogs | bRuttaZz">
-<meta name="twitter:description"
-content="Blogs of bRuttaZz (Agraj P Das) | List of some of my blog posts..">
+<meta name="twitter:description" content="Blogs of bRuttaZz (Agraj P Das) | List of some of my blog posts..">
 <meta name="twitter:site" content="@bRuttaZz">
 <meta name="twitter:creator" content="@bRuttaZz">
 <meta name="twitter:image" content="https://brutt.site/assets/images/avatar.jpg">
 <meta name="google-site-verification" content="yy0W_kqfIlLBRYX7Eeqw8CKlFTdJ6Gp-ZlJSmWBMW04" />
 <meta name="google-site-verification" content="OJKRiwUcAniBZKSSyY64QsZPA6mXm99Rx3vc_PrN4gs" />
+<script>
+/**
+* Bind theming switching and ..you knw..!
+*/
+(() => {
+const systemMode = window.matchMedia("(prefers-color-scheme: dark)");
+const setSysTheme = () => {
+if (systemMode.matches) {
+document.documentElement.classList.add("dark")
+localStorage.setItem("theme-selection", "dark");
+} else {
+document.documentElement.classList.remove("dark")
+localStorage.setItem("theme-selection", "light");
+}
+}
+// set sys theme
+const cachedState = localStorage.getItem("theme-selection")
+if (cachedState === "dark")
+document.documentElement.classList.add("dark")
+else if (!cachedState)
+setSysTheme()
+systemMode.addEventListener("change", setSysTheme)
+// add custom button functionality
+window.addEventListener('load', () => {
+document.querySelector(".theme-swticher").classList.remove("d-none");
+document.querySelector(".theme-switcher-btn")?.addEventListener("click", (e) => {
+if (document.documentElement.classList.contains("dark")) {
+document.documentElement.classList.remove("dark");
+localStorage.setItem("theme-selection", "light");
+} else {
+document.documentElement.classList.add("dark")
+localStorage.setItem("theme-selection", "dark");
+}
+})
+})
+})();
+</script>
 </head>
 <!-- <noscript>
 <center>
@@ -64,8 +101,7 @@ class="nav-item-text  ">me</span>
 class=" nav-item-text ">myProjects</span></div>
 </a>
 <a href="/blogs">
-<div class="nav-item  selected-nav "> <span
-class=" nav-item-text">
+<div class="nav-item  selected-nav "> <span class=" nav-item-text">
 myBlogs</span></div>
 </a>
 <div class="header-btn theme-swticher theme-switcher-btn text-center m-md-4 d-none">
@@ -79,7 +115,7 @@ myBlogs</span></div>
 <h3 class="ps-1 blogs-heading">Some of my "fair enough" writings..</h3>
 <div class="blogs-only-sec">
 <div class="blog-card">
-<a href="blogs/1.life-is-no-a-function-of-time">
+<a href="/blogs/life-is-no-a-function-of-time">
 <div class="vertical-align-center">
 <b class="title">Good thing is: Life is not a function of time, or is it?</b>
 <p>
@@ -91,19 +127,20 @@ Just a super simplified yet reasonable proof that Laplace&#39;s deamon can not b
 </div>
 </a>
 </div><div class="blog-card">
-<a href="blogs/11.reverse-proxy-in-python">
+<a href="/blogs/reverse-proxy-in-python">
 <div class="vertical-align-center">
 <b class="title">Let&#39;s do the sin: Creating a HTTP reverse proxy in Python :)</b>
 <p>
 If you ever plans to create a HTTP reverse proxy, Of course python is not the answer. But if you insists so, I got some handy code snippets (I also instsisted the same, long back)
 <div>
-<span class="badge">Last Modified: </span>
+<span class="badge">Last Modified: 15 Jun 2024</span>
 </div>
 </p>
 </div>
 </a>
 </div>
 </div>
+<!-- TODO : add pagination to the blogs page  -->
 <!-- content  -->
 </div>
 </body>

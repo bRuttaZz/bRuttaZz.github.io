@@ -15,8 +15,8 @@
         },
         "stmp": {
             "name": "STMP",
-            "shortInfo": "STMP: Sitty Talky Messaging Protocol, a primitive zero-configuration local network protocol purely written in python, originally intended for tinkering with your office mates over LAN!",
-            "detailedInfo": "STMP: Sitty Talky Messaging Protocol, a primitive zero-configuration local network protocol purely written in python, originally intended for tinkering with your office mates over LAN!",
+            "shortInfo": "STMP: Sitty Talky Messaging Protocol, a primitive zero-configuration local network protocol purely written in python, originally intended for tinkering with my office mates over LAN!",
+            "detailedInfo": "STMP: Sitty Talky Messaging Protocol, a primitive zero-configuration local network protocol purely written in python, originally intended for tinkering with my office mates over LAN!",
             "source": "https://github.com/bRuttaZz/stmp",
             "license": "MIT",
             "link": "https://github.com/bRuttaZz/stmp",

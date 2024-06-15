@@ -3,6 +3,7 @@ const { TEMPLATE_DIR } = require("./settings")
 const aboutPage = require("./render-about")
 const projectsPage = require("./render-projects")
 const blogs = require("./render-blogs")
+const blog = require("./render-blog")
 
 
 let renderData
@@ -32,6 +33,8 @@ async function buildAll() {
     build(`${TEMPLATE_DIR}/about.ejs`, "index.html", renderData.about);
     build(`${TEMPLATE_DIR}/projects.ejs`, "projects.html", renderData.projects);
     build(`${TEMPLATE_DIR}/blogs.ejs`, "blogs/index.html", renderData.blogs);
+    console.log("Building blog files..")
+    blog.buildAllBlogs(`${TEMPLATE_DIR}/blog.ejs`, 'blogs', await blog.prepareBlogData())
 }
 
 module.exports = { buildAll }
