@@ -34,6 +34,9 @@ body {
     --project-card-text: rgb(80, 80, 80);
     --project-card-badge-bg: rgba(158, 191, 253);
     --anchor-txt-color: #177d97;
+    --blog-content-text: #252323b0;
+    --hlgs-bg: #f3f3f3;        /** code snippet **/
+    --hlgs-text: #444;
 
     background-color: var(--background-color);
 }
@@ -56,6 +59,9 @@ body {
     --project-card-text: rgb(34, 34, 34);
     --project-card-badge-bg: rgb(145, 152, 166);
     --anchor-txt-color: #cef083;
+    --blog-content-text: #fafafaa3;
+    --hlgs-bg: #f3f3f30d;        /** code snippet **/
+    --hlgs-text: #fff;
 }
 
 a {
@@ -386,6 +392,23 @@ a {
 }
 
 .blog-content {
-    font-family: 'RedHatMonoRegular' monospace;
+    font-family: 'RedHatMono', monospace;
     font-size: medium;
+    color: var(--blog-content-text);
+}
+
+.blog-content h1 {
+    color: var(--profile-cover-text-color);
+}
+
+.blog-content p {
+    text-align: unset;
+}
+
+.blog-content center p {
+    text-align: unset;
+}
+
+.copyright {
+    color: #868686b0;
 }

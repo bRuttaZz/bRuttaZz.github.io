@@ -1,3 +1,4 @@
+const fs = require("fs")
 const { build } = require("./common/render")
 const { TEMPLATE_DIR } = require("./settings")
 const aboutPage = require("./render-about")
@@ -32,6 +33,8 @@ async function buildAll() {
     await updateRenderData()
     build(`${TEMPLATE_DIR}/about.ejs`, "index.html", renderData.about);
     build(`${TEMPLATE_DIR}/projects.ejs`, "projects.html", renderData.projects);
+    fs.rmSync('blogs', {recursive:true, force:true})
+    fs.mkdirSync('blogs')
     build(`${TEMPLATE_DIR}/blogs.ejs`, "blogs/index.html", renderData.blogs);
     console.log("Building blog files..")
     blog.buildAllBlogs(`${TEMPLATE_DIR}/blog.ejs`, 'blogs', await blog.prepareBlogData())
