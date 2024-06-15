@@ -50,6 +50,7 @@ async function prepareBlogData() {
             baseUrl: '../',
             lastUpdateDate: blog.mdate,
             content: renderHtmlFromMd(blog.main),
+            shareImage: blog.meta.shareImage,
         })
     }
     return blogs
