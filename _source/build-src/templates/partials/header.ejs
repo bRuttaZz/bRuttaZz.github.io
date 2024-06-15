@@ -16,11 +16,11 @@
         <%- ldJson %>
     </script>
 
-    <link rel="stylesheet" href="./assets/style.css">
-    <link rel="shortcut icon" href="./assets/images/avatar.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="<%= baseUrl %>./assets/style.css">
+    <link rel="shortcut icon" href="<%= baseUrl %>./assets/images/avatar.jpg" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet"
         crossorigin="anonymous">
-
+    <script src="<%= baseUrl %>./assets/js/index.js" type="module"></script>
     <meta property="og:locale" content="en_GB">
     <meta property="og:type" content="website">
     <meta property="og:title" content="<%= title %>">
@@ -50,16 +50,16 @@
 </script>
 <body>
     <div class="profile-cover nav-bar d-flex">
-        <a href="./">
+        <a href="/">
             <div class="nav-item"> <span
                     class="nav-item-text  <% if (name==='about') { %> selected-nav <% } %>">me</span>
             </div>
         </a>
-        <a href="./projects">
+        <a href="/projects">
             <div class="nav-item  <% if (name==='projects') { %> selected-nav <% } %>"> <span
                     class=" nav-item-text ">myProjects</span></div>
         </a>
-        <a href=" ./blogs">
+        <a href="/blogs">
             <div class="nav-item <% if (name==='blogs') { %> selected-nav <% } %>"> <span
                     class=" nav-item-text">
                     myBlogs</span></div>

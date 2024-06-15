@@ -26,4 +26,28 @@ function renderProjectCards(projects, keyList=[]) {
     return cards;
 }
 
-module.exports = { renderProjectCards }
+/**
+ * Render blog card html from bloglist object
+ * @param {Object} blogs - object of blogs
+ * @param {Array} blogList - array of keynames of the blogs to be included
+ * @param {Boolean} shortInfo - If true, will render the shortdescription instead of longdescription 
+ * @returns 
+ */
+function renderBlogCards(blogs, blogList=[], shortInfo=false) {
+    let blogs_html = ""
+    if (!blogList.length) {
+        blogList = Object.keys(blogs).filter(key=>key!=="pinned")
+    }
+    for (let blogn of blogList) {
+        const blog = blogs[blogn]
+        blogs_html += renderFromFile(`${TEMPLATE_DIR}/partials/blog-card.ejs`, {
+            url: `blogs/${blog.name}`,
+            title: blog.meta.title,
+            longDescription: shortInfo? blog.meta.shortDescription: blog.meta.longDescription,
+            mdate: blog.mdate,
+        })
+    }
+    return blogs_html
+}
+
+module.exports = { renderProjectCards, renderBlogCards }
