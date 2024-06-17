@@ -1,4 +1,5 @@
 const fs = require("fs")
+const { DOMAIN, PROTOCOL } = require("./settings")
 const { build } = require("./common/render")
 const { TEMPLATE_DIR } = require("./settings")
 const aboutPage = require("./render-about")
@@ -43,7 +44,12 @@ async function buildAll() {
 
     // create sitemap
     console.log("Generating sitemap..")
-    const sitemap = urls.join("\n")
+    let sitemap = ""
+    for (let route of urls){
+        if (route.slice(-1)==="/")
+            route = route.slice(0, -1)
+        sitemap += `${PROTOCOL}://${DOMAIN}${route.length?'/'+route : ''}\n`
+    }
     fs.writeFileSync("sitemap.txt", sitemap, {encoding: 'utf-8'})
     console.log("BUILD COMPLETE!")
 }
