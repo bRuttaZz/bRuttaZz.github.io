@@ -52,14 +52,14 @@ const systemMode = window.matchMedia("(prefers-color-scheme: dark)");
 const setSysTheme = () => {
 if (systemMode.matches) {
 document.documentElement.classList.add("dark")
-localStorage.setItem("theme-selection", "dark");
+sessionStorage.setItem("theme-selection", "dark");
 } else {
 document.documentElement.classList.remove("dark")
-localStorage.setItem("theme-selection", "light");
+sessionStorage.setItem("theme-selection", "light");
 }
 }
 // set sys theme
-const cachedState = localStorage.getItem("theme-selection")
+const cachedState = sessionStorage.getItem("theme-selection")
 if (cachedState === "dark")
 document.documentElement.classList.add("dark")
 else if (!cachedState)
@@ -71,10 +71,10 @@ document.querySelector(".theme-swticher").classList.remove("d-none");
 document.querySelector(".theme-switcher-btn")?.addEventListener("click", (e) => {
 if (document.documentElement.classList.contains("dark")) {
 document.documentElement.classList.remove("dark");
-localStorage.setItem("theme-selection", "light");
+sessionStorage.setItem("theme-selection", "light");
 } else {
 document.documentElement.classList.add("dark")
-localStorage.setItem("theme-selection", "dark");
+sessionStorage.setItem("theme-selection", "dark");
 }
 })
 })
