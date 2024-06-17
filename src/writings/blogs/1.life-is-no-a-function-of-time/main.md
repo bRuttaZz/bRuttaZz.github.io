@@ -1,5 +1,5 @@
 
-# Good thing is: Life is not a function of time. Or is it?
+# Good thing is: Life is not a univariate function of time. Or is it?
 
 <center>    
 <img src="./laplace-deamon.jpg" width="75%" alt="Viktor Beekman’s rendition of Laplace’s demon">
@@ -52,7 +52,7 @@ Fortunately, as implied by **[second law of thermodynamics](https://en.wikipedia
 
 Aand what does it mean?? 
 <br>Laplace's demon is not a possible one. 
-<br>The universe is not a function of time. 
+<br>The universe is not solely a function of time (at least we cannot predict it with time alone).
 <br>And the future cannot be predicted.
 
 
@@ -62,4 +62,6 @@ That's it! When you wake up from your bed, if you ever feel like life is boring,
 
 > Wait a min, where does the additional information come from? Not sure, maybe from the events when quantum mechanical [wave functions collapses](https://en.wikipedia.org/wiki/Wave_function_collapse)..
 
-> There is a problem. Even in this case, the newly emerging information is completely random, right? Still, nothing is within our control, right?? (Leave me alone! I'm tired of these questions.)
+> There is a problem. Even in this case, the newly emerging information is completely random, right? Still, nothing is within our control, right?? 
+
+> (Leave me alone! I'm tired of these questions.)
