@@ -63,9 +63,11 @@ async function prepareBlogData() {
  * @param {Object} blogData - array of blog data objects
  */
 function buildAllBlogs(template, dumpDir, blogData = []) {
+    const urls = []
     for (let blog of blogData) {
-        build(template, `${dumpDir}/${blog.name}.html`, blog, [TEMPLATE_DIR], false)
+        urls.push(build(template, `${dumpDir}/${blog.name}.html`, blog, [TEMPLATE_DIR], false))
     }
+    return urls
 }
 
 

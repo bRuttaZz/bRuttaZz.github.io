@@ -1,0 +1,4 @@
+/
+projects
+blogs/
+blogs/life-is-no-a-function-of-time

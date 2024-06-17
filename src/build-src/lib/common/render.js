@@ -38,6 +38,14 @@ function build(
         console.log(`[build](${outFile}) dumping out..`)
         fs.writeFileSync(outFile, html, { encoding: "utf-8" })
         console.log(`[build](${outFile}) build complete!`)
+        
+        if (outFile.slice(-5) === ".html")
+            outFile = outFile.slice(0, -5)
+        if (outFile.slice(-5) === "index" && ['', '/'].includes(outFile.slice(-6, -5)))
+            outFile = outFile.slice(0, -5)
+        if (outFile.length===0)
+            outFile = '/'
+        return outFile
     } catch (e) {
         console.error(`[ERROR][build](${outFile}) error renderig html`, e)
         process.exit(1);
