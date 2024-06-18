@@ -1,6 +1,7 @@
 {
     "pinned": [
         "devc",
+        "sittytalky",
         "stmp"
     ],
     "projects": {
@@ -12,6 +13,15 @@
             "license": "GPLv3",
             "link": "https://bruttazz.github.io/devc",
             "coverimage": "https://raw.githubusercontent.com/bRuttaZz/devc/main/assets/tad.png"
+        },
+        "sittytalky": {
+            "name": "SittyTalky",
+            "shortInfo": "SittyTalky: a primitive zero-configuration local network GTK4 GNOME based application purely written in python, originally intended for tinkering with my office mates over LAN!",
+            "detailedInfo": "SittyTalky: a primitive zero-configuration local network GTK4 GNOME based application purely written in python, originally intended for tinkering with my office mates over LAN!",
+            "source": "https://github.com/bRuttaZz/sittytalky",
+            "license": "GPLv3",
+            "link": "https://github.com/bRuttaZz/sittytalky",
+            "coverimage": "https://github.com/bRuttaZz/sittytalky/raw/DEV/data/icons/hicolor/scalable/apps/site.brutt.sittytalky.svg"
         },
         "stmp": {
             "name": "STMP",
