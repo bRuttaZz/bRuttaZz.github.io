@@ -1,8 +1,0 @@
-{
-    "title": "Let's do the sin: Creating a HTTP reverse proxy in Python :)",
-    "shortDescription": "If you ever insists to build a http reverse proxy in Python, I got some handy code snippets (I also instsisted for the same, long back)",
-    "longDescription": "If you ever plans to create a HTTP reverse proxy, Of course python is not the answer. But if you insists so, I got some handy code snippets (I also instsisted the same, long back)",
-    "keyWords": [
-        "reverse-proxy", "python", "gaetway", "apigateway", "proxy-in-python"
-    ]
-}
