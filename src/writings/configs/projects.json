@@ -16,8 +16,8 @@
         },
         "sittytalky": {
             "name": "SittyTalky",
-            "shortInfo": "SittyTalky: a primitive zero-configuration local network GTK4 GNOME based application purely written in python, originally intended for tinkering with my office mates over LAN!",
-            "detailedInfo": "SittyTalky: a primitive zero-configuration local network GTK4 GNOME based application purely written in python, originally intended for tinkering with my office mates over LAN!",
+            "shortInfo": "SittyTalky: a primitive zero-configuration local network GNOME application purely written in python, originally intended for tinkering with my office mates over LAN!",
+            "detailedInfo": "SittyTalky: a primitive zero-configuration local network GNOME application purely written in python, originally intended for tinkering with my office mates over LAN!",
             "source": "https://github.com/bRuttaZz/sittytalky",
             "license": "GPLv3",
             "link": "https://github.com/bRuttaZz/sittytalky",
