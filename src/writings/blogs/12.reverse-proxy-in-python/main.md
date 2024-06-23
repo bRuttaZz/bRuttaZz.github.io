@@ -2,7 +2,7 @@
 # Let's do the sin: Creating a reverse proxy in Python :)
 <br><br>
 <center>
-<img src="./py.nginx.png" height="15%">
+<img src="./py.nginx.png" height="15%" style="max-width: 75%; max-height: 18%">
 </center>
 
 <br><br>
@@ -22,7 +22,7 @@ Quoting [wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy) *"In computer n
 
 Simply, it acts as an intermediary between the client and your actual web server. By extending its functionality, one can use it to manage multiple servers under the same domain, handle authentication, manage application access, and many more. `Nginx` is good example.
 
-<center><img src="./reverse-proxy.png" height="15%"></center>
+<center><img src="./reverse-proxy.png" style="max-width: 75%; max-height: 18%"></center>
 
 Basically that's it. Let's jump to the code 
 

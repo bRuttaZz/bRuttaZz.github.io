@@ -2,3 +2,4 @@ https://brutt.site
 https://brutt.site/projects
 https://brutt.site/blogs
 https://brutt.site/blogs/life-is-no-a-function-of-time
+https://brutt.site/blogs/reverse-proxy-in-python

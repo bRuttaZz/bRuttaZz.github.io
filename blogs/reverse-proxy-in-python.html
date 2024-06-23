@@ -1,0 +1,431 @@
+<!-- varriables : title, description, url -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="If you ever plans to create a HTTP/WS reverse proxy, Of course python is not the answer. But if you insists so, I got some handy code snippets (I also instsisted the same, long back)">
+    <meta name="keywords" content="reverse-proxy, python, gaetway, apigateway, proxy-in-python, ws-proxying, websocket">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+
+    <title>
+        Let&#39;s do the sin: Creating a reverse proxy in Python :)
+    </title>
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@id": "https://brutt.site",
+        "@type": "WebPage",
+        "name": title,
+        "url": url,
+        "description": description,
+        "logo": "https://brutt.site/assets/images/avatar.jpg",
+    }
+    </script>
+
+    <link rel="stylesheet" href=".././assets/style.css">
+    <link rel="shortcut icon" href=".././assets/images/avatar.jpg" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+    <script src=".././assets/js/index.js" type="module"></script>
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Let&#39;s do the sin: Creating a reverse proxy in Python :)">
+    <meta property="og:description" content="If you ever plans to create a HTTP/WS reverse proxy, Of course python is not the answer. But if you insists so, I got some handy code snippets (I also instsisted the same, long back)">
+    <meta property="og:url" content="https://brutt.site">
+    <meta property="og:site_name" content="Let&#39;s do the sin: Creating a reverse proxy in Python :)">
+    <meta property="og:image" content="https://bruttazz.github.io/src/writings/blogs/1.life-is-no-a-function-of-time/laplace-deamon.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Let&#39;s do the sin: Creating a reverse proxy in Python :)">
+    <meta name="twitter:description" content="If you ever plans to create a HTTP/WS reverse proxy, Of course python is not the answer. But if you insists so, I got some handy code snippets (I also instsisted the same, long back)">
+    <meta name="twitter:site" content="@bRuttaZz">
+    <meta name="twitter:creator" content="@bRuttaZz">
+    <meta name="twitter:image" content="https://bruttazz.github.io/src/writings/blogs/1.life-is-no-a-function-of-time/laplace-deamon.jpg">
+    <meta name="google-site-verification" content="yy0W_kqfIlLBRYX7Eeqw8CKlFTdJ6Gp-ZlJSmWBMW04" />
+    <meta name="google-site-verification" content="OJKRiwUcAniBZKSSyY64QsZPA6mXm99Rx3vc_PrN4gs" />
+
+    <script>
+        /**
+         * Bind theming switching and ..you knw..!
+         */
+        (() => {
+            const systemMode = window.matchMedia("(prefers-color-scheme: dark)");
+            const setSysTheme = () => {
+                if (systemMode.matches) {
+                    document.documentElement.classList.add("dark")
+                    sessionStorage.setItem("theme-selection", "dark");
+                } else {
+                    document.documentElement.classList.remove("dark")
+                    sessionStorage.setItem("theme-selection", "light");
+                }
+            }
+
+            // set sys theme
+            const cachedState = sessionStorage.getItem("theme-selection")
+            if (cachedState === "dark")
+                document.documentElement.classList.add("dark")
+            else if (!cachedState)
+                setSysTheme()
+
+
+            systemMode.addEventListener("change", setSysTheme)
+
+            // add custom button functionality
+            window.addEventListener('load', () => {
+                document.querySelector(".theme-swticher").classList.remove("d-none");
+                document.querySelector(".theme-switcher-btn")?.addEventListener("click", (e) => {
+                    if (document.documentElement.classList.contains("dark")) {
+                        document.documentElement.classList.remove("dark");
+                        sessionStorage.setItem("theme-selection", "light");
+                    } else {
+                        document.documentElement.classList.add("dark")
+                        sessionStorage.setItem("theme-selection", "dark");
+                    }
+                })
+            })
+        })();
+    </script>
+</head>
+
+<!-- <noscript>
+    <center>
+        <div style="color: red;">Pardon! This page require Javascript to render. Kindly use a modern browser :)</div>
+    </center>
+</noscript> -->
+<script>
+    window.pageIdentifier = "blog"
+</script>
+
+<body>
+    <div class="profile-cover nav-bar d-flex">
+        <a href="/">
+            <div class="nav-item"> <span
+                    class="nav-item-text  ">me</span>
+            </div>
+        </a>
+        <a href="/projects">
+            <div class="nav-item  "> <span
+                    class=" nav-item-text ">myProjects</span></div>
+        </a>
+        <a href="/blogs">
+            <div class="nav-item "> <span class=" nav-item-text">
+                    myBlogs</span></div>
+        </a>
+        <div class="header-btn theme-swticher theme-switcher-btn text-center m-md-4 d-none">
+            <span class="mdi mdi-brightness-6 fs-5"></span>
+        </div>
+    </div>
+    <div class="profile-cover">
+
+        <!-- content  -->
+        <!-- ...  -->
+
+    <!-- blog portion  -->
+    <div class="blog-content">
+        <div>
+            <span class="blog-date-badge">Last Edited : 24 Jun 2024</span>
+        </div>
+        <br>
+        <html><head></head><body><h1>Let's do the sin: Creating a reverse proxy in Python :)</h1>
+<p><br><br></p>
+<center>
+<img src="/./src/writings/blogs/12.reverse-proxy-in-python/./py.nginx.png" height="15%" style="max-width: 75%; max-height: 18%">
+</center>
+<p><br><br></p>
+<p><strong>NB: Python is surely a wonderful language. For this reason, it can be used to solve many problems that it's not specifically designed for. This is one such problem.</strong></p>
+<p>Reverse proxies are cool. Recently (relative to June 24, 2024), I built a simple web proxy that supports HTTP and WebSocket (WS) as part of my hobby project, and it was done in Python.</p>
+<p>For better or worse, one can implement a reverse proxy in Python quite easily. However, if you ever need to write your own reverse proxy for a realistic use case, you should probably consider other platforms.</p>
+<p>That being said, let's write a reverse proxy in Python to handle HTTP and WS traffic.</p>
+<h2>Well, what's a reverse proxy?</h2>
+<p>Quoting <a href="https://en.wikipedia.org/wiki/Reverse_proxy">wikipedia</a> <em>"In computer networks, a reverse proxy or surrogate server is a proxy server that appears to any client to be an ordinary web server, but in reality merely acts as an intermediary that forwards the client's requests to one or more ordinary web servers.[1][2] Reverse proxies help increase scalability, performance, resilience, and security"</em></p>
+<p>Simply, it acts as an intermediary between the client and your actual web server. By extending its functionality, one can use it to manage multiple servers under the same domain, handle authentication, manage application access, and many more. <code>Nginx</code> is good example.</p>
+<center><img src="/./src/writings/blogs/12.reverse-proxy-in-python/./reverse-proxy.png" style="max-width: 75%; max-height: 18%"></center>
+<p>Basically that's it. Let's jump to the code</p>
+<h2>Building the Python proxy</h2>
+<h3>1. Requirements</h3>
+<ol>
+<li>
+<p>As a web proxy, we should first be able to receive network requests from the client (only then can we route them to a different server of choice). To handle that part, we require a web server—specifically, an <code>ASGI</code> web server, as we are going to build the proxy in Python. Essentially, a web server will help us easily bind to a system port and listen for HTTP/WS requests.
+I am going with <code>uvicorn</code> for this example. Feel free to choose any other <code>ASGI</code> server of your choice, BTW, <code>hypercorn</code> is a good alternative. (One can also choose a <code>WSGI</code> server as well, though it may lack some features and require changes in the code).</p>
+</li>
+<li>
+<p>The second step is to hand over the request data from the client to the target application server and pass the application's response back to the client. Let me pick the <code>aiohttp</code> module for this. It can be used as an HTTP/WS client to pass the data from our client to the target server via HTTP/WS.</p>
+</li>
+<li>
+<p>And we need a python interpreter :)</p>
+</li>
+</ol>
+<p><strong>NB</strong>: For extended features one can go for a ASGI based web framework for python like, Quart, Starlette or FastAPI (quite dense though). For this example, lets go raw.</p>
+<p>If we got python and <code>pip</code> dependency manager in hand, the requirements can be installed using</p>
+<pre><code class="hljs">pip3 install uvicorn aiohttp
+</code></pre>
+<h3>2. Code</h3>
+<p>Let me begin with some configurable constants; I think that will make the goal clearer. Our main objective will be to replicate the proxy passing setup of Nginx. Along the way, one can add some additional header parameters or perform any other manipulations as needed</p>
+<p>For testing purposes, let me take some example endpoints from <a href="https://hoppscotch.io/">hoppscotch</a>. (For those who don't know, hoppscotch is a great platform for web API developers and a modern alternative to Postman.) To start, let's route all API calls that come to our proxy server with path /http to 'https://echo.hoppscotch.io' and those with /ws to an example WebSocket endpoint, 'wss://echo-websocket.hoppscotch.io'. Of course, you can change these endpoints as needed</p>
+<p>Lets express the above described configuration as follows,</p>
+<pre><code class="hljs">ROUTE_TABLE = {
+    <span class="hljs-string">"/ws"</span> : {
+        <span class="hljs-string">"proxy_pass"</span>: <span class="hljs-string">"wss://echo-websocket.hoppscotch.io"</span>,
+    },
+    <span class="hljs-string">"/http"</span> : {
+        <span class="hljs-string">"proxy_pass"</span>: <span class="hljs-string">"https://echo.hoppscotch.io"</span>,
+    }
+}
+</code></pre>
+<p>Now we can focus on creating the ASGI app. If you are not familiar with <a href="https://asgi.readthedocs.io/en/latest/">ASGI</a> standards, one can create a simple HTTP server serving a simple 200 response with the <code>app</code> function shown below.</p>
+<pre><code class="hljs"><span class="hljs-string">"""A sample ASGI based HTTP server"""</span>
+<span class="hljs-keyword">from</span> typing <span class="hljs-keyword">import</span> <span class="hljs-type">Coroutine</span> 
+
+<span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">app</span>(<span class="hljs-params">scope:<span class="hljs-built_in">dict</span>, receive:<span class="hljs-type">Coroutine</span>, send:<span class="hljs-built_in">callable</span></span>):
+    <span class="hljs-string">"""an example ASGI app"""</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f"got a '<span class="hljs-subst">{scope[<span class="hljs-string">'method'</span>]}</span>' call to '<span class="hljs-subst">{scope[<span class="hljs-string">'path'</span>]}</span>'"</span>)
+    <span class="hljs-comment"># sending the response back</span>
+    <span class="hljs-keyword">await</span> send({
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"http.response.start"</span>,
+        <span class="hljs-string">"status"</span>: <span class="hljs-number">200</span>,
+        <span class="hljs-string">"headers"</span>: [
+            (<span class="hljs-string">b"Content-Type"</span>, <span class="hljs-string">b"text/plain"</span>),
+        ],
+    })
+    <span class="hljs-keyword">await</span> send({
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"http.response.body"</span>,
+        <span class="hljs-string">"body"</span>: <span class="hljs-string">b'got your call'</span>,
+    })
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:
+    <span class="hljs-keyword">import</span> uvicorn
+    uvicorn.run(app, host=<span class="hljs-string">"localhost"</span>, port=<span class="hljs-number">8001</span>)
+</code></pre>
+<p>Enough explanations, lets code the proxy!</p>
+<p>So the <code>app</code> module for our proxy server should be something like this,</p>
+<pre><code class="hljs">
+<span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">app</span>(<span class="hljs-params">scope, receive, send</span>):
+    <span class="hljs-string">"""The ASGI app"""</span>
+    <span class="hljs-keyword">if</span> scope[<span class="hljs-string">"path"</span>] <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> ROUTE_TABLE:
+        ...
+        <span class="hljs-comment"># return 404 error message</span>
+
+    <span class="hljs-keyword">if</span> scope[<span class="hljs-string">"type"</span>] == <span class="hljs-string">"http"</span>:
+        ...
+        <span class="hljs-comment"># handle http proxying</span>
+           
+    <span class="hljs-keyword">elif</span> scope[<span class="hljs-string">"type"</span>] == <span class="hljs-string">"websocket"</span>:
+        ...
+        <span class="hljs-comment"># handle ws proxying</span>
+</code></pre>
+<p>Now let's create a simple error handler to send back a status code and some simple plain-text response back to the client, if anything goes wrong</p>
+<pre><code class="hljs"><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">send_error_resp</span>(<span class="hljs-params">send, status_code:<span class="hljs-built_in">int</span>=<span class="hljs-number">400</span>, msg:<span class="hljs-built_in">str</span>=<span class="hljs-string">"Something Went Wrong"</span></span>):
+    <span class="hljs-string">"""send error response back to the client"""</span>
+    <span class="hljs-keyword">await</span> send({
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"http.response.start"</span>,
+        <span class="hljs-string">"status"</span>: status_code,
+        <span class="hljs-string">"headers"</span>: [
+            (<span class="hljs-string">b"Content-Type"</span>, <span class="hljs-string">b"text/plain"</span>),
+        ],
+    })
+    <span class="hljs-keyword">await</span> send({
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"http.response.body"</span>,
+        <span class="hljs-string">"body"</span>: msg.encode(<span class="hljs-string">"utf-8"</span>),
+    })
+</code></pre>
+<h4>Proxying the HTTP Requests</h4>
+<p>This part can be a bit tricky. One can simply write an application to buffer data from the client to the proxy and then send all the data to the target server. Afterwards, wait for the response and send it back to our client system.</p>
+<p>This approach may result in increased latency and cause a larger memory footprint on the proxy server. Also, make sure not to use synchronous/blocking I/O operations in our proxy code, as they may affect the concurrency of the application.</p>
+<p>In an ideal scenario, after verifying the header bytes, we should be able to stream the request body to the target application and stream the response back to the client asynchronously.</p>
+<p>The code shown below accomplishes this task,</p>
+<pre><code class="hljs"><span class="hljs-keyword">import</span> aiohttp
+
+<span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">proxy_http</span>(<span class="hljs-params">
+    scope: <span class="hljs-built_in">dict</span>,
+    receive,
+    send,
+    target_server_props: <span class="hljs-built_in">dict</span>,
+</span>) -&gt; <span class="hljs-literal">None</span>:
+    <span class="hljs-string">"""Proxy http request to target server
+    """</span>
+
+    <span class="hljs-comment"># create an async generator to yield the client request chunks</span>
+    <span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">_generate_request_body</span>() -&gt; <span class="hljs-built_in">iter</span>:
+        <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
+            message = <span class="hljs-keyword">await</span> receive()
+            <span class="hljs-keyword">if</span> message[<span class="hljs-string">"type"</span>] == <span class="hljs-string">"http.request"</span>:
+                body = message.get(<span class="hljs-string">"body"</span>, <span class="hljs-string">b""</span>)
+                <span class="hljs-keyword">if</span> body:
+                    <span class="hljs-keyword">yield</span> body
+                <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> message.get(<span class="hljs-string">"more_body"</span>, <span class="hljs-literal">False</span>):
+                    <span class="hljs-keyword">break</span>
+    
+    <span class="hljs-comment"># creating an asynchronous http client session</span>
+    connector = aiohttp.TCPConnector(ssl=<span class="hljs-literal">False</span>)
+    <span class="hljs-keyword">async</span> <span class="hljs-keyword">with</span> aiohttp.ClientSession(connector=connector, timeout=aiohttp.ClientTimeout(total=<span class="hljs-number">60</span>)) <span class="hljs-keyword">as</span> client:
+        method = scope[<span class="hljs-string">"method"</span>]
+        headers = {                 <span class="hljs-comment"># formatting the headers </span>
+            key.decode(<span class="hljs-string">'utf-8'</span>): value.decode(<span class="hljs-string">'utf-8'</span>) <span class="hljs-keyword">for</span> key, value <span class="hljs-keyword">in</span> scope[<span class="hljs-string">"headers"</span>]
+            <span class="hljs-keyword">if</span> key.lower() <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> [<span class="hljs-string">b'host'</span>, ]   <span class="hljs-comment"># (optionally) removing the host headers to avoid validation errors in the target server</span>
+        }
+
+        <span class="hljs-comment"># passing request header and stream the body to target server</span>
+        <span class="hljs-keyword">async</span> <span class="hljs-keyword">with</span> client.request(  
+            method,
+            target_server_props[<span class="hljs-string">"proxy_pass"</span>],
+            headers=headers,
+            data=_generate_request_body(),
+        ) <span class="hljs-keyword">as</span> proxied_resp:
+            <span class="hljs-comment"># prepare response headers</span>
+            response_headers = [        <span class="hljs-comment"># formatting response headers from target server</span>
+                (key.encode(<span class="hljs-string">'utf-8'</span>), value.encode(<span class="hljs-string">'utf-8'</span>))
+                    <span class="hljs-keyword">for</span> key, value <span class="hljs-keyword">in</span> proxied_resp.headers.items()
+            ] 
+            <span class="hljs-comment"># send back response headers from target server to the client</span>
+            <span class="hljs-keyword">await</span> send(
+                {
+                    <span class="hljs-string">"type"</span>: <span class="hljs-string">"http.response.start"</span>,
+                    <span class="hljs-string">"status"</span>: proxied_resp.status,
+                    <span class="hljs-string">"headers"</span>: response_headers,
+                }
+            )
+            <span class="hljs-comment"># sending response body to the client</span>
+            <span class="hljs-keyword">async</span> <span class="hljs-keyword">for</span> chunk, end_of_http_chunk <span class="hljs-keyword">in</span> proxied_resp.content.iter_chunks():
+                <span class="hljs-keyword">await</span> send(
+                    {<span class="hljs-string">"type"</span>: <span class="hljs-string">"http.response.body"</span>, <span class="hljs-string">"body"</span>: chunk, <span class="hljs-string">"more_body"</span>: <span class="hljs-literal">True</span>}
+                )
+                <span class="hljs-keyword">if</span> end_of_http_chunk:
+                    <span class="hljs-keyword">await</span> send({
+                            <span class="hljs-string">"type"</span>: <span class="hljs-string">"http.response.body"</span>,
+                            <span class="hljs-string">"body"</span>: <span class="hljs-string">b""</span>,
+                            <span class="hljs-string">"more_body"</span>: <span class="hljs-literal">False</span>,
+                    })
+
+</code></pre>
+<h4>Proxying WS connection</h4>
+<p>In a similar fashion, we can proxy WebSocket (WS) requests to the target server. Unlike HTTP requests, here we may need to manage full-duplex communication.</p>
+<pre><code class="hljs"><span class="hljs-keyword">import</span> aiohttp
+
+<span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">proxy_ws</span>(<span class="hljs-params">
+    scope: <span class="hljs-built_in">dict</span>,
+    receive,
+    send,
+    target_server_props: <span class="hljs-built_in">dict</span>,
+</span>):
+    <span class="hljs-string">"""Proxy websocket request to target server
+    """</span>
+    <span class="hljs-comment"># creating a client session</span>
+    <span class="hljs-keyword">async</span> <span class="hljs-keyword">with</span> aiohttp.ClientSession() <span class="hljs-keyword">as</span> session:
+        <span class="hljs-keyword">try</span>:
+            <span class="hljs-comment"># connecting to the target server </span>
+            <span class="hljs-keyword">async</span> <span class="hljs-keyword">with</span> session.ws_connect(
+                target_server_props[<span class="hljs-string">"proxy_pass"</span>], timeout=<span class="hljs-number">10</span>
+            ) <span class="hljs-keyword">as</span> websocket:
+                
+                <span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">forward_to_backend</span>():
+                    <span class="hljs-string">"""Forward message from client to target server!"""</span>
+                    <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
+                        message = <span class="hljs-keyword">await</span> receive()
+                        <span class="hljs-keyword">if</span> message[<span class="hljs-string">"type"</span>] == <span class="hljs-string">"websocket.connect"</span>:
+                            <span class="hljs-comment"># inform request acceptance to the client</span>
+                            <span class="hljs-keyword">await</span> send({<span class="hljs-string">"type"</span>: <span class="hljs-string">"websocket.accept"</span>})
+                        <span class="hljs-keyword">if</span> message[<span class="hljs-string">"type"</span>] == <span class="hljs-string">"websocket.receive"</span>:
+                            <span class="hljs-comment"># forward messages to target server</span>
+                            data = message.get(<span class="hljs-string">"text"</span>, message.get(<span class="hljs-string">"bytes"</span>))
+                            <span class="hljs-keyword">if</span> data <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>: <span class="hljs-keyword">raise</span> Exception(<span class="hljs-string">"Empty message!"</span>)
+                            <span class="hljs-keyword">if</span> <span class="hljs-built_in">isinstance</span>(data, <span class="hljs-built_in">bytes</span>):
+                                <span class="hljs-keyword">await</span> websocket.send_bytes(data)
+                            <span class="hljs-keyword">else</span>:
+                                <span class="hljs-keyword">await</span> websocket.send_str(data)
+                        <span class="hljs-keyword">elif</span> message[<span class="hljs-string">"type"</span>] == <span class="hljs-string">"websocket.disconnect"</span>:
+                            <span class="hljs-keyword">raise</span> Exception(<span class="hljs-string">"Client Disconnect!"</span>)
+                        <span class="hljs-keyword">elif</span> message[<span class="hljs-string">"type"</span>] == <span class="hljs-string">"websocket.close"</span>:
+                            <span class="hljs-keyword">await</span> websocket.close(code=message.get(<span class="hljs-string">"code"</span>, <span class="hljs-number">1006</span>))
+                            <span class="hljs-keyword">raise</span> Exception(<span class="hljs-string">"Client Close Req!"</span>)
+
+                <span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">forward_to_client</span>():
+                    <span class="hljs-string">"""Forward messages from target server to client"""</span>
+                    <span class="hljs-keyword">async</span> <span class="hljs-keyword">for</span> message <span class="hljs-keyword">in</span> websocket:
+                        <span class="hljs-comment"># forward messages to client</span>
+                        <span class="hljs-keyword">if</span> message.<span class="hljs-built_in">type</span> == aiohttp.WSMsgType.TEXT:
+                            <span class="hljs-keyword">await</span> send({<span class="hljs-string">"type"</span>: <span class="hljs-string">"websocket.send"</span>, <span class="hljs-string">"text"</span>: message.data})
+                        <span class="hljs-keyword">elif</span> message.<span class="hljs-built_in">type</span> == aiohttp.WSMsgType.BINARY:
+                            <span class="hljs-keyword">await</span> send({<span class="hljs-string">"type"</span>: <span class="hljs-string">"websocket.send"</span>, <span class="hljs-string">"bytes"</span>: message.data})
+                        <span class="hljs-comment"># disconnect events</span>
+                        <span class="hljs-keyword">elif</span> message.<span class="hljs-built_in">type</span> == aiohttp.WSMsgType.CLOSE:
+                            <span class="hljs-keyword">raise</span> Exception(<span class="hljs-string">"Server Close Req!"</span>)
+
+                        <span class="hljs-keyword">elif</span> message.<span class="hljs-built_in">type</span> == aiohttp.WSMsgType.ERROR:
+                            <span class="hljs-keyword">raise</span> Exception(<span class="hljs-string">f"Server Error! <span class="hljs-subst">{message.data}</span>"</span>)
+                    <span class="hljs-keyword">raise</span> Exception(
+                        <span class="hljs-string">f"closing session - <span class="hljs-subst">{websocket.close_code}</span>"</span>
+                    )
+
+                <span class="hljs-keyword">try</span>:
+                    <span class="hljs-comment"># forward messages in both directions in parallel (asynchronously)</span>
+                    <span class="hljs-keyword">await</span> asyncio.gather(forward_to_backend(), forward_to_client())
+                <span class="hljs-keyword">finally</span>:
+                    <span class="hljs-comment"># connection garbage collection</span>
+                    <span class="hljs-keyword">await</span> websocket.close()
+                    <span class="hljs-keyword">try</span>: <span class="hljs-keyword">await</span> send({
+                        <span class="hljs-string">"type"</span>: <span class="hljs-string">"websocket.close"</span>,
+                        <span class="hljs-string">"code"</span>: websocket.close_code <span class="hljs-keyword">or</span> <span class="hljs-number">1006</span>,
+                    })
+                    <span class="hljs-keyword">except</span>: <span class="hljs-keyword">pass</span>
+
+        <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+            <span class="hljs-comment"># close the client connection if the target server is not responding</span>
+            <span class="hljs-keyword">try</span>: <span class="hljs-keyword">await</span> send({
+                <span class="hljs-string">"type"</span>: <span class="hljs-string">"websocket.close"</span>,
+                <span class="hljs-string">"code"</span>: <span class="hljs-number">1014</span>,
+                <span class="hljs-string">"reason"</span>: <span class="hljs-string">"Server Not Responding!"</span>,
+            })
+            <span class="hljs-keyword">except</span>: <span class="hljs-keyword">pass</span>
+
+</code></pre>
+<h4>The updated ASGI module</h4>
+<p>Combining the <code>proxy_ws</code>, <code>proxy_http</code> and <code>send_error_resp</code> we can rewrite the asgi application module as bellow,</p>
+<pre><code class="hljs">
+<span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">app</span>(<span class="hljs-params">scope, receive, send</span>):
+    <span class="hljs-string">"""The ASGI app"""</span>
+    <span class="hljs-keyword">if</span> scope[<span class="hljs-string">"path"</span>] <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> ROUTE_TABLE:
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> send_error_resp(send, <span class="hljs-number">404</span>, <span class="hljs-string">"Not Found"</span>)
+    
+    <span class="hljs-keyword">if</span> scope[<span class="hljs-string">"type"</span>] == <span class="hljs-string">"http"</span>:
+        <span class="hljs-comment"># handle http proxying</span>
+        <span class="hljs-keyword">try</span>: <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> proxy_http(scope, receive, send, ROUTE_TABLE[scope[<span class="hljs-string">'path'</span>]])
+        <span class="hljs-keyword">except</span>: <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> send_error_resp(send, <span class="hljs-number">502</span>, <span class="hljs-string">"Bad Gateway"</span>)
+        
+    <span class="hljs-keyword">elif</span> scope[<span class="hljs-string">"type"</span>] == <span class="hljs-string">"websocket"</span>:
+        <span class="hljs-comment"># handle ws proxying</span>
+        <span class="hljs-keyword">try</span>: <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> proxy_ws(scope, receive, send, ROUTE_TABLE[scope[<span class="hljs-string">'path'</span>]])
+        <span class="hljs-keyword">except</span>: <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> send_error_resp(send, <span class="hljs-number">502</span>, <span class="hljs-string">"Bad Gateway"</span>)
+</code></pre>
+<h3>3. Running the proxy server</h3>
+<p>Now to serve the application we can make use of our ASGI server. After saving the code into a file say, <code>main.py</code> which contains the callable <code>app</code>, we can start the proxy server with,</p>
+<pre><code class="hljs">uvicorn main:app --host localhost --port 8000
+</code></pre>
+<h2>Testing</h2>
+<p>If everything went well, one will get the exact same response of both 'https://echo.hoppscotch.io' and 'wss://echo-websocket.hoppscotch.io' when we hit to <code>http://localhost:8000/http</code> and 'ws://localhost:8000/ws' respectively.</p>
+<p><strong>Tip</strong>: <code>wscat</code> is a decent command line utility to test ws endpoints. BTW, If you are looking for a UI, <a href="https://hoppscotch.io/">hoppscotch</a> is also a good option for testing http and ws. It also support other protocol standards like SSE, MQTT, SOCKET IO and GraphQL. (PS: not a paid promotion :)</p>
+<p><strong>Whoop!</strong> Enjoy using the proxy, and try not to use it for a real use case.</p>
+<blockquote>
+<p>PFA the complete code over <a href="https://gist.github.com/bRuttaZz/a16e0b7d0c604aa7f13c1cb6efbc0cfa">here</a></p>
+</blockquote>
+</body></html>    
+    </div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/default.min.css">
+    <style>
+        .hljs {
+            background: var(--hlgs-bg);
+            color: var(--hlgs-text);
+        }
+    </style>
+
+<!-- content  -->
+
+        </div>
+    </body>
+    <footer>
+        <center class="copyright">© 2024 Agraj P Das</center>
+    </footer>
+</html>
