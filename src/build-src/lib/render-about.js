@@ -6,7 +6,7 @@ const blogs = require("./render-blogs")
 
 function renderBio() {
     const bioString = `<div class="bio-info">
-        <span>KEYY</span><b> &nbspVALL </b>
+        <span class="badge">KEYY</span><b>VALL</b>
     </div>`
 
     let outString = ""

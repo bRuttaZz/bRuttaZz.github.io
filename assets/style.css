@@ -20,7 +20,7 @@ body {
     /* default to light mode  */
     --background-color: #ffffff;
     --profile-cover-bg: #e6e6e6;
-    --profile-cover-text-color: #464646;
+    --profile-cover-text-color: #5a5a5a;
     --profile-cover-secondary-text-color: rgb(124, 124, 123);
     --profile-cover-bio-text-color: rgb(73, 73, 73);
     --profile-cover-bio-badge-bg-color: rgb(158, 191, 253);
@@ -31,11 +31,12 @@ body {
     --project-section-bg: #d0d0d0;
     --project-section-text: gray;
     --project-card-bg: white;
-    --project-card-text: rgb(80, 80, 80);
+    --project-card-text: rgb(113, 113, 113);
     --project-card-badge-bg: rgba(158, 191, 253);
     --anchor-txt-color: #177d97;
     --blog-content-text: #252323b0;
-    --hlgs-bg: #f3f3f3;        /** code snippet **/
+    --hlgs-bg: #f3f3f3;
+    /** code snippet **/
     --hlgs-text: #444;
 
     background-color: var(--background-color);
@@ -60,7 +61,8 @@ body {
     --project-card-badge-bg: rgb(145, 152, 166);
     --anchor-txt-color: #cef083;
     --blog-content-text: #fafafaa3;
-    --hlgs-bg: #f3f3f30d;        /** code snippet **/
+    --hlgs-bg: #f3f3f30d;
+    /** code snippet **/
     --hlgs-text: #fff;
 }
 
@@ -73,7 +75,7 @@ a {
     background-color: var(--profile-cover-bg);
     color: var(--profile-cover-text-color);
     margin: 10px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     padding: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -83,7 +85,7 @@ a {
 .profile-cover .short-catch {
     margin-top: -20px;
     color: var(--profile-cover-secondary-text-color);
-    font-size: small;
+    font-size: smaller;
 }
 
 .profile-cover .container {
@@ -119,18 +121,23 @@ a {
 }
 
 .profile-cover .container .bio-info {
-    padding-top: 10px;
+    padding-top: 7px;
     color: var(--profile-cover-bio-text-color);
+    display: flex;
 }
 
-.profile-cover .container .bio-info span {
+.profile-cover .container .bio-info .badge {
     padding: 2px;
     padding-left: 10px;
     padding-right: 10px;
+    white-space: nowrap;
+    height: fit-content;
 
     background-color: var(--profile-cover-bio-badge-bg-color);
     border-radius: 6px;
     color: var(--profile-cover-bio-badge-text-color);
+    width: fit-content;
+    margin-right: 10px;
 }
 
 .profile-cover .container .profile-img img {
@@ -179,12 +186,18 @@ a {
     padding-bottom: 20px;
 }
 
-.project-sec-heading span img {
-    margin-bottom: -5px;
+.project-sec-heading span {
+    align-self: center;
 }
 
 .project-sec-heading {
+    display: flex;
     color: var(--project-section-text);
+}
+
+.project-sec-heading .mdi {
+    padding-right: 10px;
+    font-size: x-large;
 }
 
 .project-cards {
@@ -197,6 +210,7 @@ a {
 
 .project-only-sec .project-card {
     margin-bottom: 18px;
+    margin-right: 0;
 }
 
 .project-sec .project-card {
@@ -210,18 +224,24 @@ a {
     align-items: left;
     text-align: left;
     background-color: var(--project-card-bg);
-    height: 190px;
+    min-height: fit-content;
+    max-height: 100%;
     border-radius: 5px;
-    padding: 8px;
-    padding-bottom: 10px;
+    padding: 10px;
     margin-top: 10px;
     margin-right: 10px;
     font-family: 'RedHatMonoRegular' monospace;
     font-size: smaller;
 }
 
+@media screen and (orientation: landscape) {
+    .project-card {
+        padding-left: 15px;
+    }
+}
+
 .project-card div b {
-    font-size: large;
+    font-size: medium;
     font-weight: 800;
 }
 
@@ -265,6 +285,7 @@ a {
     border-radius: 5px;
     padding: 8px;
     padding-bottom: 10px;
+    padding-top: 19px;
     margin-top: 10px;
     font-family: 'RedHatMonoRegular' monospace;
     font-size: smaller;
@@ -276,7 +297,7 @@ a {
 }
 
 .blog-card .title {
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     color: var(--profile-cover-text-color);
 }
 
@@ -327,6 +348,10 @@ a {
 
 .vertical-align-center {
     align-content: center;
+}
+
+.vertical-align-center .shortInfo {
+    font-weight: 500;
 }
 
 /* .switch-box {
