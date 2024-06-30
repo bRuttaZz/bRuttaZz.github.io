@@ -56,8 +56,8 @@ body {
     --profile-cover-about-text-secondary: rgb(142, 162, 133);
     --project-section-bg: rgba(179, 179, 179, 0.2);
     --project-section-text: gray;
-    --project-card-bg: #c1bfbf66;
-    --project-card-text: rgb(34, 34, 34);
+    --project-card-bg: #8f8f8f66;
+    --project-card-text: rgb(200, 200, 200);
     --project-card-badge-bg: rgb(145, 152, 166);
     --anchor-txt-color: #cef083;
     --blog-content-text: #fafafaa3;
@@ -145,15 +145,14 @@ a {
     width: 180px;
     height: 180px;
     margin-right: 20px;
-    cursor: pointer;
 }
 
 .profile-about {
     margin-top: 20px;
     border-radius: 10px;
-    width: calc(100% - 20px);
+    width: calc(100% - 40px);
     background-color: var(--profile-cover-about-bg);
-    padding: 10px;
+    padding: 20px;
     color: var(--profile-cover-about-text);
     font-size: medium;
 }
@@ -175,6 +174,20 @@ a {
 .profile-about .container-about .right {
     text-align: right;
     justify-content: right;
+}
+
+.about-me {
+    font-size: 0.9rem;
+    /* font-weight: 300; */
+}
+
+.bordered-about {
+    color: var(--profile-cover-bio-text-color);
+    background-color: transparent;
+    border-color: var(--profile-cover-about-bg);
+    border-width: 3px;
+    border-style: solid;
+    width: calc(100% - 40px - 6px);
 }
 
 .project-sec {
@@ -436,4 +449,9 @@ a {
 
 .copyright {
     color: #868686b0;
+    font-size: smaller;
+}
+
+summary {
+    cursor: pointer;
 }

@@ -15,8 +15,6 @@ async function updateRenderData() {
         about: {
             bioDat: aboutPage.renderBio(),
             contactPortion: aboutPage.renderAbout(),
-            projectCards: aboutPage.renderProjectCards(),
-            blogCards: await aboutPage.renderBlogCards(),
             baseUrl: ""
         },
         projects: {

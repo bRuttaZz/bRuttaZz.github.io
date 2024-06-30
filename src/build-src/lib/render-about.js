@@ -1,12 +1,10 @@
 "use strict"
-const renderers = require("./common/renderers")
 const about = require("../../writings/configs/about.me.json")
-const projects = require("../../writings/configs/projects.json")
-const blogs = require("./render-blogs")
+
 
 function renderBio() {
     const bioString = `<div class="bio-info">
-        <span class="badge">KEYY</span><b>VALL</b>
+        <span class="badge">KEYY</span>VALL
     </div>`
 
     let outString = ""
@@ -54,18 +52,8 @@ function renderAbout() {
     return contactInfo;
 }
 
-async function renderBlogCards() {
-    const blogList = await blogs.listBlogs()
-    return renderers.renderBlogCards(blogList, blogList.pinned, true)
-}
-
-function renderProjectCards() {
-    return renderers.renderProjectCards(projects.projects, projects.pinned,)
-}
 
 module.exports = {
     renderAbout, 
     renderBio, 
-    renderProjectCards,
-    renderBlogCards
 }
