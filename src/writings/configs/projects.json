@@ -1,45 +1,50 @@
 {
-    "pinned": [
-        "devc",
-        "sittytalky",
-        "stmp"
-    ],
-    "projects": {
-        "devc": {
-            "name": "devC",
-            "shortInfo": "A linux command line utility to build 'python venv' like reusable virtualenv from Dockerfile/Containerfile or directly from a container image. Virtualenv for containers!",
-            "detailedInfo": "A linux command line utility to build 'python venv' like reusable virtualenv from Dockerfile/Containerfile or directly from a container image. Virtualenv for containers!",
-            "source": "https://github.com/bruttazz/devc",
-            "license": "GPLv3",
-            "link": "https://bruttazz.github.io/devc",
-            "coverimage": "https://raw.githubusercontent.com/bRuttaZz/devc/main/assets/tad.png"
-        },
-        "sittytalky": {
-            "name": "SittyTalky",
-            "shortInfo": "SittyTalky: a primitive zero-configuration local network GNOME application purely written in python, originally intended for tinkering with my office mates over LAN!",
-            "detailedInfo": "SittyTalky: a primitive zero-configuration local network GNOME application purely written in python, originally intended for tinkering with my office mates over LAN!",
-            "source": "https://github.com/bRuttaZz/sittytalky",
-            "license": "GPLv3",
-            "link": "https://github.com/bRuttaZz/sittytalky",
-            "coverimage": "https://github.com/bRuttaZz/sittytalky/raw/DEV/data/icons/hicolor/scalable/apps/site.brutt.sittytalky.svg"
-        },
-        "stmp": {
-            "name": "STMP",
-            "shortInfo": "STMP: Sitty Talky Messaging Protocol, a primitive zero-configuration local network protocol purely written in python, originally intended for tinkering with my office mates over LAN!",
-            "detailedInfo": "STMP: Sitty Talky Messaging Protocol, a primitive zero-configuration local network protocol purely written in python, originally intended for tinkering with my office mates over LAN!",
-            "source": "https://github.com/bRuttaZz/stmp",
-            "license": "MIT",
-            "link": "https://github.com/bRuttaZz/stmp",
-            "coverimage": "https://github.com/bRuttaZz/stmp/raw/main/.assets/logo.png"
-        },
-        "colbaking": {
-            "name": "Colbaking",
-            "shortInfo": "Nothing but an old school chrome-dino-game clone!",
-            "detailedInfo": "Nothing but an old school chrome-dino-game clone!",
-            "source": "https://github.com/bruttazz/colbaking",
-            "license": "MIT",
-            "link": "https://bruttazz.github.io/colbaking",
-            "coverimage": "https://raw.githubusercontent.com/bRuttaZz/colbaking/main/game/preview.png"
-        }
+  "pinned": ["devc", "sittytalky", "stmp"],
+  "projects": {
+    "devc": {
+      "name": "devC",
+      "shortInfo": "A linux command line utility to build 'python venv' like reusable virtualenv from Dockerfile/Containerfile or directly from a container image. Virtualenv for containers!",
+      "detailedInfo": "A linux command line utility to build 'python venv' like reusable virtualenv from Dockerfile/Containerfile or directly from a container image. Virtualenv for containers!",
+      "source": "https://github.com/bruttazz/devc",
+      "license": "GPLv3",
+      "link": "https://bruttazz.github.io/devc",
+      "coverimage": "https://raw.githubusercontent.com/bRuttaZz/devc/main/assets/tad.png"
+    },
+    "sittytalky": {
+      "name": "SittyTalky",
+      "shortInfo": "SittyTalky: a primitive zero-configuration local network GNOME application purely written in python, originally intended for tinkering with my office mates over LAN!",
+      "detailedInfo": "SittyTalky: a primitive zero-configuration local network GNOME application purely written in python, originally intended for tinkering with my office mates over LAN!",
+      "source": "https://github.com/bRuttaZz/sittytalky",
+      "license": "GPLv3",
+      "link": "https://github.com/bRuttaZz/sittytalky",
+      "coverimage": "https://github.com/bRuttaZz/sittytalky/raw/DEV/data/icons/hicolor/scalable/apps/site.brutt.sittytalky.svg"
+    },
+    "stmp": {
+      "name": "STMP",
+      "shortInfo": "STMP: Sitty Talky Messaging Protocol, a primitive zero-configuration local network protocol purely written in python, originally intended for tinkering with my office mates over LAN!",
+      "detailedInfo": "STMP: Sitty Talky Messaging Protocol, a primitive zero-configuration local network protocol purely written in python, originally intended for tinkering with my office mates over LAN!",
+      "source": "https://github.com/bRuttaZz/stmp",
+      "license": "MIT",
+      "link": "https://github.com/bRuttaZz/stmp",
+      "coverimage": "https://github.com/bRuttaZz/stmp/raw/main/.assets/logo.png"
+    },
+    "serveM": {
+      "name": "serveM",
+      "shortInfo": "A simple Python script (package) to share my screen over a local network. (More like a code dump from another project of mine.)",
+      "detailedInfo": "A simple Python script (package) to share the GNU/Linux desktop screen over a local network. (It's not primarily meant to be a standalone project, but more like a code dump from another project of mine.)",
+      "source": "https://github.com/bRuttaZz/serveM",
+      "license": "GPLv3",
+      "link": "https://pypi.org/project/serveM",
+      "coverimage": "https://github.com/bRuttaZz/serveM/raw/main/.assets/logo.png"
+    },
+    "colbaking": {
+      "name": "Colbaking",
+      "shortInfo": "Nothing but an old school chrome-dino-game clone!",
+      "detailedInfo": "Nothing but an old school chrome-dino-game clone!",
+      "source": "https://github.com/bruttazz/colbaking",
+      "license": "MIT",
+      "link": "https://bruttazz.github.io/colbaking",
+      "coverimage": "https://raw.githubusercontent.com/bRuttaZz/colbaking/main/game/preview.png"
     }
+  }
 }
