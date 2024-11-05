@@ -10,6 +10,15 @@
       "link": "https://bruttazz.github.io/devc",
       "coverimage": "https://raw.githubusercontent.com/bRuttaZz/devc/main/assets/tad.png"
     },
+    "cerve": {
+      "name": "cerve",
+      "shortInfo": "A multi-worker HTTP server written in C. Nothing too special, just another personal project of mine!",
+      "detailedInfo": "A multi-worker HTTP server written in C. Yet another hackable http-file-server written by a C-lang noob for noobies",
+      "source": "https://github.com/bruttazz/cerve",
+      "license": "GPLv3",
+      "link": "https://github.com/bRuttaZz/cerve",
+      "coverimage": "https://raw.githubusercontent.com/bRuttaZz/cerve/main/misc/logo.png"
+    },
     "sittytalky": {
       "name": "SittyTalky",
       "shortInfo": "SittyTalky: a primitive zero-configuration local network GNOME application purely written in python, originally intended for tinkering with my office mates over LAN!",
