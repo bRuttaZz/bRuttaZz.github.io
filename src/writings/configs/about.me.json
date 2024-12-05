@@ -1,33 +1,33 @@
 {
-    "shortInfo": "\"Just another Software Enthusiast, FOSS Lover And Philanthropist!\"",
-    "generalInfo": {
-        "dob": "28-10-2001",
-        "height": "not yet measured",
-        "working-as": "R&D Engineer, Pixdynamics Pvt Ltd",
-        "locale": "Kochi, Kerala",
-        "good-at": "Web Technologies, Applied AI, System Design, Containers",
-        "human-languages": "Malayalam, English",
-        "computer-languages": "Python, JS, Go, C",
-        "ask-me-about": "System Design, Containers, Computer Networking",
-        "gpg-keys": "<a href=\"_source/writings/configs/pgp.key\" >4546 EC98 5FA6 E6CD E09A 5114 18CD 31EE 87B1 AA02</a>"
-    },
-    "contacts": {
-        "email": "<a href=\"mailto:agrajpdas@gmail.com\">agrajpdas@gmail.com</a>",
-        "telegram": "<a href=\"https://t.me/bruttazz57\">@bruttazz57</a>",
-        "matrix": "<a href=\"https://matrix.to/#/@bruttazz:matrix.org\">@bruttazz:matrix.org</a>"
-    },
-    "socialMedia": {
-        "mastodon": "https://fosstodon.org/@bRuttaZz",
-        "github": "https://github.com/bruttazz",
-        "instagram": "https://www.instagram.com/bRuttaZz",
-        "linkedin": "https://www.linkedin.com/in/agraj-p-das",
-        "twitter": "https://twitter.com/bruttazz_"
-    },
-    "socialMediaList": {
-        "github": "mdi mdi-github",
-        "mastodon": "mdi mdi-mastodon",
-        "instagram": "mdi mdi-instagram",
-        "linkedin": "mdi mdi-linkedin",
-        "twitter": "mdi mdi-twitter"
-    }
+  "shortInfo": "\"Just another Software Enthusiast, FOSS Lover And Philanthropist!\"",
+  "generalInfo": {
+    "dob": "28-10-2001",
+    "height": "not yet measured",
+    "working-as": "Software Engineer @ KnowBe4",
+    "locale": "Kochi, Kerala",
+    "good-at": "Web Technologies, Applied AI, System Design, Containers",
+    "human-languages": "Malayalam, English",
+    "computer-languages": "Python, JS, Go, C",
+    "ask-me-about": "System Design, Containers, Computer Networking",
+    "gpg-keys": "<a href=\"_source/writings/configs/pgp.key\" >4546 EC98 5FA6 E6CD E09A 5114 18CD 31EE 87B1 AA02</a>"
+  },
+  "contacts": {
+    "email": "<a href=\"mailto:agrajpdas@gmail.com\">agrajpdas@gmail.com</a>",
+    "telegram": "<a href=\"https://t.me/bruttazz57\">@bruttazz57</a>",
+    "matrix": "<a href=\"https://matrix.to/#/@bruttazz:matrix.org\">@bruttazz:matrix.org</a>"
+  },
+  "socialMedia": {
+    "mastodon": "https://fosstodon.org/@bRuttaZz",
+    "github": "https://github.com/bruttazz",
+    "instagram": "https://www.instagram.com/bRuttaZz",
+    "linkedin": "https://www.linkedin.com/in/agraj-p-das",
+    "twitter": "https://twitter.com/bruttazz_"
+  },
+  "socialMediaList": {
+    "github": "mdi mdi-github",
+    "mastodon": "mdi mdi-mastodon",
+    "instagram": "mdi mdi-instagram",
+    "linkedin": "mdi mdi-linkedin",
+    "twitter": "mdi mdi-twitter"
+  }
 }
