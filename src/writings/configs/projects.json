@@ -54,6 +54,24 @@
       "license": "MIT",
       "link": "https://bruttazz.github.io/colbaking",
       "coverimage": "https://raw.githubusercontent.com/bRuttaZz/colbaking/main/game/preview.png"
+    },
+    "stk-ksrtc": {
+      "name": "KSRTC (STK Kart)",
+      "shortInfo": "Nothing special, just a binary dump (🙃) of a KSRTC (Kerala State Road Transport Corporation) Kart developed for SuperTuxkart!",
+      "detailedInfo": "Nothing special, just a binary dump (🙃) of a KSRTC (Kerala State Road Transport Corporation) Kart developed for SuperTuxkart, by a Blender Noob.",
+      "source": "https://github.com/bruttazz/kart-ksrtc",
+      "license": "CC0 1.0",
+      "link": "https://github.com/bruttazz/kart-ksrtc",
+      "coverimage": "https://github.com/bRuttaZz/kart-ksrtc/blob/main/blends/cartoonish_with_vasu/icon.png?raw=true"
+    },
+    "tty-html": {
+      "name": "[Pre]tty-HTML",
+      "shortInfo": "[Pre]tty-html: (the logo reads as: 'pookie html') A minimalist python script to pretty print html docs to unix terminal. ",
+      "detailedInfo": "[Pre]tty-html: (the logo reads as: 'pookie html') A minimalist python script to pretty print html docs to unix terminal. ",
+      "source": "https://github.com/bRuttaZz/tty-html",
+      "license": "GPLv3",
+      "link": "https://pypi.org/project/tty-html/",
+      "coverimage": "https://raw.githubusercontent.com/bRuttaZz/tty-html/refs/heads/main/misc/logo.png"
     }
   }
 }
