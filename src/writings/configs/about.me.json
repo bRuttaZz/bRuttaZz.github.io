@@ -1,13 +1,13 @@
 {
   "shortInfo": "\"Just another Software Enthusiast, FOSS Lover And Philanthropist!\"",
   "generalInfo": {
-    "dob": "28-10-2001",
+    "born": "21.09 yrs Before Chatgpt",
     "height": "not yet measured",
-    "working-as": "Software Engineer @ KnowBe4",
+    "working-as": "Software Engineer @&nbsp<a href=\"https://www.knowbe4.com\">KnowBe4</a>",
     "locale": "Kochi, Kerala",
     "good-at": "Web Technologies, Applied AI, System Design, Containers",
     "human-languages": "Malayalam, English",
-    "computer-languages": "Python, JS, Go, C",
+    "computer-languages": "Python, JS, C, Go",
     "ask-me-about": "System Design, Containers, Computer Networking",
     "gpg-keys": "<a href=\"_source/writings/configs/pgp.key\" >4546 EC98 5FA6 E6CD E09A 5114 18CD 31EE 87B1 AA02</a>"
   },
