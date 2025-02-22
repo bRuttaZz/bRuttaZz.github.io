@@ -20,14 +20,12 @@
     "mastodon": "https://fosstodon.org/@bRuttaZz",
     "github": "https://github.com/bruttazz",
     "instagram": "https://www.instagram.com/bRuttaZz",
-    "linkedin": "https://www.linkedin.com/in/agraj-p-das",
-    "twitter": "https://twitter.com/bruttazz_"
+    "linkedin": "https://www.linkedin.com/in/agraj-p-das"
   },
   "socialMediaList": {
-    "github": "mdi mdi-github",
     "mastodon": "mdi mdi-mastodon",
+    "github": "mdi mdi-github",
     "instagram": "mdi mdi-instagram",
-    "linkedin": "mdi mdi-linkedin",
-    "twitter": "mdi mdi-twitter"
+    "linkedin": "mdi mdi-linkedin"
   }
 }

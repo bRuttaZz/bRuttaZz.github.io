@@ -2,7 +2,7 @@
 <%- include('partials/header.ejs', {
     name: "blog",
     title: title,
-    description: description, 
+    description: description,
     ldJson: `{
         "@context": "https://schema.org",
         "@id": "https://brutt.site",
@@ -10,10 +10,10 @@
         "name": title,
         "url": url,
         "description": description,
-        "logo": "https://brutt.site/assets/images/avatar.jpg",
+        "logo": "https://brutt.site/assets/images/avatar.jpg"
     }`,
     keywords: keywords,
-    shareImage: shareImage || "https://brutt.site/assets/images/avatar.jpg",
+    shareImage: shareImage || "https://brutt.site/assets/images/avatar.jpg"
     }); %>
 
     <!-- blog portion  -->
@@ -22,7 +22,7 @@
             <span class="blog-date-badge">Last Edited : <%= lastUpdateDate %></span>
         </div>
         <br>
-        <%- content %>    
+        <%- content %>
     </div>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/default.min.css">
     <style>
