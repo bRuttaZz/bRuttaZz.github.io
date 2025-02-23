@@ -28,7 +28,7 @@ async function updateRenderData() {
 }
 
 async function buildAll(devMode = false) {
-  console.debug(`DEBUG MODE : ${devMode}`);
+  console.debug(`DEBUG MODE  : ${devMode}`);
 
   const urls = [];
   if (!devMode) fs.rmSync(OUT_DIR, { recursive: true, force: true });
