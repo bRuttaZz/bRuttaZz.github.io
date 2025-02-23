@@ -9,7 +9,7 @@
     "human-languages": "Malayalam, English",
     "computer-languages": "Python, JS, C, Go",
     "ask-me-about": "System Design, Containers, Computer Networking",
-    "gpg-keys": "<a href=\"_source/writings/configs/pgp.key\" >4546 EC98 5FA6 E6CD E09A 5114 18CD 31EE 87B1 AA02</a>"
+    "gpg-keys": "<a href=\"/assets/pgp.key\" >4546 EC98 5FA6 E6CD E09A 5114 18CD 31EE 87B1 AA02</a>"
   },
   "contacts": {
     "email": "<a href=\"mailto:agrajpdas@gmail.com\">agrajpdas@gmail.com</a>",

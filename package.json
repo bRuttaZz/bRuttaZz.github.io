@@ -4,10 +4,9 @@
   "description": "just a profile webpage",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "http-server",
-    "test": "node src/build-src/index.js",
-    "build": "node src/build-src/index.js",
-    "dev": "nodemon -e js,ejs,json,md src/build-src/index.js & http-server"
+    "start": "http-server ./dist",
+    "build": "node src/index.js",
+    "dev": "nodemon -e js,ejs,json,md --ignore ./dist src/index.js debug & http-server ./dist"
   },
   "repository": {
     "type": "git",
