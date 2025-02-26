@@ -1,11 +1,11 @@
 
 # Picking Sides!
 
-<small>⚠️ Caution: The following content is written within the seclusion of my thoughts, and you may encounter more opinions than facts.</small>
+<small>⚠️ Caution: The following content is written within the seclusion of my thoughts so you might encounter more opinions than facts.</small>
 
 <center> 
 
-<img src="./spiderman-picking-side.png" width="90%" alt="spiderman picking sides" />
+<img src="./spiderman-picking-side.jpg" width="90%" alt="spiderman picking sides" />
 
 <small>
 
@@ -33,7 +33,7 @@ Why? I don't know, it just seems natural/intuitive. Maybe there are several reas
 2. A cat doesn't have the complex relationships, intelligence, and emotions that a human does, so it seems more "just" to save the human. (In comparison.)
 3. ...
 
-Let me explain this simple solution we've arrived at, based on the idea of **"Tribe selection"**. 
+Let me explain this simple solution we've arrived at based on the idea of **"Tribe selection"**. 
 <br>When we're in a crisis where we need to choose between two things, we usually do a quick analysis to pick the side that aligns most closely with our tribe mentality. Here, we've teamed up with the lady because she is a more suitable member of our tribe, in comparison.
 <br>Why do we behave like this? Because all our viewpoints, our laws, our sense of right and wrong, are bound to this tribe mentality of ours. That's why, sometimes, it's easy to choose sides in a war between soldiers—if one of them is serving our country, it often doesn’t even matter whether both sides are fighting for the same goal (maybe just expanding or holding onto their land) (I admit, the example is super simplified, but you got the point).
 
@@ -43,13 +43,13 @@ Think about it—tribe mentality can be seen in a lot of modern species that liv
 
 ### Problem 2
 
-**Context**: "Again, you are Spider-Man/Spider-Woman. This time, instead of choosing between a cat and a lady, you have to save one person from ethnicity "X" and another from ethnicity "Y." You can save only one of them."
+**Context**: "Again, you are Spider-Man/Spider-Woman. This time, instead of choosing between a cat and a lady, you have to save one person from ethnicity "X" and another from ethnicity "Y". You can save only one of them."
 
 **Question**: Which side are you going to choose? Or which tribe are you going to pick?
 
 Seems hard, right?
 
-Maybe not... If we were to travel back in time, at least for most of the population, the answer might seem easy if we can tweak the values of "X" and "Y." Let’s say we go to the Victorian era, just about 120 years ago. The answer might vary depending on who you ask, right? The so-called "elite" ethnicity might choose someone similar from either X or Y. If I’m not wrong, slavery was officially ended in the mid-19th century (on paper). To quote a local example, in Kerala, about just one generation ago (around ~100 years ago), only about 1% of the population was able to enter temples.
+Maybe not... If we were to travel back in time, at least for most of the population, the answer might seem easy if we can tweak the values of "X" and "Y". Let’s say we go to the Victorian era, just about 120 years ago. The answer might vary depending on who you ask, right? The so-called "elite" ethnicity might choose someone similar from either X or Y. If I’m not wrong, slavery was officially ended in the mid-19th century (on paper). To quote a local example, in Kerala, about just one generation ago (around ~100 years ago), only about 1% of the population was able to enter temples.
 
 I admit, things may not be perfect today, but things have changed for sure.
 <br>Coming back to the second problem, here in 2025, it’s somewhat hard for us (at least for most of us) to choose between these two given options.

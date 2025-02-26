@@ -9,7 +9,7 @@ By nature, the repo root directory itself is containing script generated htmls (
 
 Dependencies :
  - [pictogrammers](https://pictogrammers.com)
- - [font : red-hat-mono](https://redhatofficial.github.io/RedHatFont/)
+ - [font : Fira Code](https://github.com/tonsky/FiraCode)
  - [markdown it](https://github.com/markdown-it)
  - [ejs](https://ejs.co/)
  - [highlightjs](https://highlightjs.org/)

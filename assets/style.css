@@ -1,16 +1,8 @@
-@font-face {
-    font-family: "RedHatMono";
-    font-weight: 100;
-    font-size: 1rem;
-    src: url(./fonts/red_hat_mono/mono/RedHatMono-Medium.woff2) format(woff2);
-}
 
 @font-face {
-    /* font-family: 'Roboto', sans-serif; */
-    font-family: "RedHatMonoRegular";
-    font-weight: 100;
+    font-family: "FiraCode";
     font-size: 1rem;
-    src: url(./fonts/red_hat_mono/mono/RedHatMono-Regular.woff2) format(woff2);
+    src: url(./fonts/fira-code/FiraCode-VariableFont_wght.ttf) format(ttf);
 }
 
 html {
@@ -22,7 +14,7 @@ div, img, a {
 }
 
 body {
-    font-family: "RedHatMono", monospace;
+    font-family: "FiraCode", monospace;
 }
 
 :root {
@@ -256,7 +248,7 @@ a {
     padding: 10px;
     margin-top: 10px;
     margin-right: 10px;
-    font-family: "RedHatMonoRegular" monospace;
+    /* font-family: "RedHatMonoRegular" monospace; */
     font-size: smaller;
 }
 
@@ -313,7 +305,7 @@ a {
     padding-bottom: 10px;
     padding-top: 19px;
     margin-top: 10px;
-    font-family: "RedHatMonoRegular" monospace;
+    /* font-family: "RedHatMonoRegular" monospace; */
     font-size: smaller;
 }
 
@@ -379,7 +371,7 @@ a {
 }
 
 .vertical-align-center .shortInfo {
-    font-family: "RedHatMono", monospace;
+    /* font-family: "RedHatMono", monospace; */
     font-weight: 500;
 }
 
@@ -469,19 +461,22 @@ a {
 }
 
 .blog-content {
-    font-family: "RedHatMono", monospace;
-    font-size: 1rem;
+    font-family: "FiraCode", monospace;
+    font-weight: 500;
+    font-size: 0.85rem;
     color: var(--blog-content-text);
+    line-height: 1.12rem;
 }
 
 .blog-content h1 {
-    font-family: "RedHatMono", monospace;
+    /* font-family: "RedHatMono", monospace; */
     color: var(--profile-cover-text-color);
 }
 
 @media (max-width: 768px) {
     .blog-content h1 {
         font-size: 1.5rem;
+        line-height: 2rem;
     }
 }
 
