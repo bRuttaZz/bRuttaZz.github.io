@@ -8,7 +8,7 @@ const { TEMPLATE_DIR } = require("../settings")
  * @param {Object} data - data object to be passed 
  * @param {Array} templateDirs - array of paths containing templates/partials 
  */
-function renderFromFile(infile, data={}, templateDirs=[TEMPLATE_DIR]) {
+function renderFromFile(infile, data, templateDirs=[TEMPLATE_DIR]) {
     const dat = fs.readFileSync(infile, { encoding: "utf-8" });
     return ejs.render(dat, data, {
         views: templateDirs
