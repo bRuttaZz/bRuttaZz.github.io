@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="description" content="<%= description %>">
     <meta name="keywords" content="<%= keywords %>">
@@ -18,7 +18,7 @@
         <%- ldJson %>
     </script>
 
-    <link rel="stylesheet" href="<%= baseUrl %>./assets/style.css">
+    <link rel="stylesheet" href="<%= baseUrl %>./assets/style.css?tag=<%= Math.random() %>">
     <!-- <link rel="shortcut icon" href="<%= baseUrl %>./assets/images/avatar.jpg" type="image/x-icon"> -->
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet"
         crossorigin="anonymous">
@@ -30,7 +30,7 @@
     <meta property="og:url" content="https://brutt.site">
     <meta property="og:site_name" content="<%= title %>">
     <meta property="og:image" content="<%= shareImage %>">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="<%= shareImage %>">
     <meta name="twitter:title" content="<%= title %>">
     <meta name="twitter:description" content="<%= description %>">
     <meta name="twitter:site" content="@bRuttaZz">

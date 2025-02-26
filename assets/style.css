@@ -1,14 +1,24 @@
 @font-face {
     font-family: "RedHatMono";
-    font-weight: 200;
+    font-weight: 100;
+    font-size: 1rem;
     src: url(./fonts/red_hat_mono/mono/RedHatMono-Medium.woff2) format(woff2);
 }
 
 @font-face {
     /* font-family: 'Roboto', sans-serif; */
     font-family: "RedHatMonoRegular";
-    font-weight: 200;
+    font-weight: 100;
+    font-size: 1rem;
     src: url(./fonts/red_hat_mono/mono/RedHatMono-Regular.woff2) format(woff2);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+div, img, a {
+    -webkit-tap-highlight-color: transparent; 
 }
 
 body {
@@ -75,7 +85,7 @@ a {
     color: var(--profile-cover-text-color);
     margin: 10px;
     /* margin-top: 20px; */
-    padding: 20px;
+    padding: 15px;
     padding-top: 20px;
     padding-bottom: 20px;
     border-radius: 10px;
@@ -84,7 +94,6 @@ a {
 .profile-cover .short-catch {
     margin-top: -20px;
     color: var(--profile-cover-secondary-text-color);
-    font-size: smaller;
 }
 
 .profile-cover .container {
@@ -111,12 +120,17 @@ a {
         flex-direction: row;
         /* Stack divs vertically */
     }
+
+    .profile-cover .container .bio {
+        margin-top: 0px;
+    }
 }
 
 .profile-cover .container .bio {
     text-align: left;
     justify-content: left;
     min-width: 50%;
+    margin-top: 20px;
 }
 
 .profile-cover .container .bio-info {
@@ -215,8 +229,18 @@ a {
 .project-cards {
     overflow-x: scroll;
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     text-align: left;
+}
+
+.project-img-width {
+    max-width: 100px;
+    min-width: 60px;
+}
+
+.project-img-sec-width {
+    max-width: 130px;
+    min-width: 60px;
 }
 
 .project-only-sec .project-card {
@@ -331,6 +355,7 @@ a {
     padding-left: 8px;
     padding-right: 8px;
     border-radius: 8px;
+    font-size: small;
 }
 
 .ps-1 {
@@ -359,10 +384,18 @@ a {
 
 .vertical-align-center {
     align-content: center;
+    flex-grow: 1; 
 }
 
 .vertical-align-center .shortInfo {
+    font-family: "RedHatMono", monospace;
     font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .vertical-align-center .shortInfo {
+        font-size: small;  
+    }
 }
 
 /* .switch-box {
@@ -428,17 +461,24 @@ a {
 }
 
 .project-img-sec {
-    width: 130px;
+    font-size: medium;
 }
 
 .blog-content {
     font-family: "RedHatMono", monospace;
-    font-size: medium;
+    font-size: 1rem;
     color: var(--blog-content-text);
 }
 
 .blog-content h1 {
+    font-family: "RedHatMono", monospace;
     color: var(--profile-cover-text-color);
+}
+
+@media (max-width: 768px) {
+    .blog-content h1 {
+        font-size: 1.5rem;
+    }
 }
 
 .blog-content p {

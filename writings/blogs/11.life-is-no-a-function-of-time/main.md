@@ -2,7 +2,7 @@
 # Good thing is: Life is not a univariate function of time. Or is it?
 
 <center>    
-<img src="./laplace-deamon.jpg" width="75%" alt="Viktor Beekman’s rendition of Laplace’s demon">
+<img src="./laplace-deamon.jpg" width="90%" alt="Viktor Beekman’s rendition of Laplace’s demon">
 
 *Figure: [Viktor Beekman](https://www.instagram.com/viktordepictor/)’s rendition of Laplace’s demon*
 
