@@ -1,12 +1,17 @@
 
 # Picking Sides!
 
-> ⚠️ Caution: The following content is written within the seclusion of my thoughts, and you may encounter more opinions than facts.
+<small>⚠️ Caution: The following content is written within the seclusion of my thoughts, and you may encounter more opinions than facts.</small>
 
-![spiderman picking sides](./spiderman-picking-side.png)
 <center> 
 
+<img src="./spiderman-picking-side.png" width="90%" alt="spiderman picking sides" />
+
+<small>
+
 **[Credits]** Movie: Spider-man | Scene: The Women You Love Or Helpless Children
+
+</small>
 
 </center>
 
