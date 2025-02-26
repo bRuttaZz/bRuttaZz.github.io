@@ -6,7 +6,7 @@
   "scripts": {
     "start": "http-server ./dist",
     "build": "node src/index.js",
-    "dev": "nodemon -e js,ejs,json,md --ignore ./dist src/index.js debug & http-server ./dist"
+    "dev": "nodemon -e js,ejs,json,md,css --ignore ./dist src/index.js debug & http-server ./dist"
   },
   "repository": {
     "type": "git",
