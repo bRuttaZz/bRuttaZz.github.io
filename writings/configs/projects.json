@@ -1,5 +1,9 @@
 {
-  "pinned": ["devc", "sittytalky", "stmp"],
+  "pinned": [
+    "devc",
+    "sittytalky",
+    "stmp"
+  ],
   "projects": {
     "devc": {
       "name": "devC",
@@ -9,6 +13,15 @@
       "license": "GPLv3",
       "link": "https://bruttazz.github.io/devc",
       "coverimage": "https://raw.githubusercontent.com/bRuttaZz/devc/main/assets/tad.png"
+    },
+    "run-unni": {
+      "name": "Run Unni",
+      "shortInfo": "Just a 2D game built for the sake of building it, in collab with my game artist roommate Dev G.",
+      "detailedInfo": "Our charming, old-school Keralite (a kind of South Indian) hero, 'Unni' (/ʊnniː/), has gotten into a bit of trouble. Let’s see how long you can keep him out of it!",
+      "source": "https://github.com/bruttazz/run-unni",
+      "license": "MIT",
+      "link": "https://brutt.site/run-unni",
+      "coverimage": "https://raw.githubusercontent.com/bRuttaZz/run-unni/refs/heads/main/assets/logo.png"
     },
     "cerve": {
       "name": "cerve",
@@ -45,15 +58,6 @@
       "license": "GPLv3",
       "link": "https://pypi.org/project/serveM",
       "coverimage": "https://github.com/bRuttaZz/serveM/raw/main/.assets/logo.png"
-    },
-    "colbaking": {
-      "name": "Colbaking",
-      "shortInfo": "Nothing but an old school chrome-dino-game clone!",
-      "detailedInfo": "Nothing but an old school chrome-dino-game clone!",
-      "source": "https://github.com/bruttazz/colbaking",
-      "license": "MIT",
-      "link": "https://bruttazz.github.io/colbaking",
-      "coverimage": "https://raw.githubusercontent.com/bRuttaZz/colbaking/main/game/preview.png"
     },
     "stk-ksrtc": {
       "name": "KSRTC (STK Kart)",
