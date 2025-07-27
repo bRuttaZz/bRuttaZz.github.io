@@ -5,12 +5,24 @@
     description: description,
     ldJson: `{
         "@context": "https://schema.org",
-        "@id": "https://brutt.site",
-        "@type": "WebPage",
-        "name": title,
-        "url": url,
-        "description": description,
-        "logo": "https://brutt.site/assets/images/avatar.jpg"
+        "@id": "https://brutt.site${url}",
+        "@type": "BlogPosting",
+        "headline": "${title}",
+        "url": "https://brutt.site${url}",
+        "description": "${description}",
+        "image": {
+            "@type": "ImageObject",
+            "url": "${shareImage || "https://brutt.site/assets/images/avatar.jpg"}"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Agraj P Das",
+            "url": "https://brutt.site"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://brutt.site${url}"
+        }
     }`,
     keywords: keywords,
     shareImage: shareImage || "https://brutt.site/assets/images/avatar.jpg"
