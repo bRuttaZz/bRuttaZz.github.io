@@ -10,7 +10,7 @@ html {
 }
 
 div, img, a {
-    -webkit-tap-highlight-color: transparent; 
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -367,7 +367,7 @@ a {
 
 .vertical-align-center {
     align-content: center;
-    flex-grow: 1; 
+    flex-grow: 1;
 }
 
 .vertical-align-center .shortInfo {
@@ -377,7 +377,7 @@ a {
 
 @media (max-width: 768px) {
     .vertical-align-center .shortInfo {
-        font-size: small;  
+        font-size: small;
     }
 }
 
@@ -495,4 +495,15 @@ a {
 
 summary {
     cursor: pointer;
+}
+
+.bottom-clause {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    justify-text: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 0.7rem;
+    color: grey;
 }
