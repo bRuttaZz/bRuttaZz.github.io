@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tiago's Minimal Page</title>
+        <!-- Using Roboto Mono font as requested -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css"
+            rel="stylesheet"
+            crossorigin="anonymous"
+        />
+        <style>
+            /* CSS variables for easy color management */
+            :root {
+                /* Light Theme Defaults */
+                --text-color: #999;
+                --text-color-bold: #000;
+                --highlight-color: #96e2ff;
+                --highlight-color-socials: #4fc4f0;
+                --background-color: #ffffff;
+                --max-content-width: 600px;
+            }
+
+            /* Dark Theme Overrides */
+            body.dark-mode {
+                --text-color: #9a9a9a;
+                --text-color-bold: #fff;
+                --background-color: #1a1a1a;
+            }
+
+            body {
+                /* Changed to Roboto Mono */
+                font-family: "Roboto Mono", sans-serif;
+                background-color: var(--background-color);
+                color: var(--text-color);
+                margin: 0;
+                padding: 0;
+                /* Smooth transition for theme change */
+                transition:
+                    background-color 0.3s,
+                    color 0.3s;
+                /* Flexbox setup to vertically and horizontally center the main content */
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+            }
+
+            summary {
+                cursor: pointer;
+            }
+
+            .header {
+                padding: 2rem 1.5rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1.5rem;
+            }
+
+            /* Wrapper to help center the nav links */
+            .nav-center-wrapper {
+                flex-grow: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .nav-link {
+                text-decoration: none;
+                color: var(--text-color);
+                font-weight: 400;
+                margin: 0 1.5rem;
+                transition: color 0.1s;
+            }
+
+            .nav-link:hover {
+                color: var(--highlight-color);
+            }
+
+            .header-side-btn {
+                width: 50px;
+            }
+
+            .header-btn {
+                text-align: center;
+                cursor: pointer;
+                font-size: larger;
+            }
+
+            .main-content {
+                flex-grow: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0 1rem 4rem 1rem;
+            }
+
+            .text-container {
+                width: 100%;
+                max-width: var(--max-content-width);
+                text-align: left;
+                line-height: 1.6rem;
+                font-size: 0.9rem;
+                font-weight: 400;
+                color: var(--text-color);
+            }
+
+            .text-container .profile-img {
+                width: 100px;
+                height: 100px;
+                object-fit: fill;
+                border-radius: 50%;
+                margin-bottom: 1.2rem;
+            }
+
+            .text-container .greeting {
+                font-weight: 600;
+                color: var(--text-color-bold);
+            }
+
+            .text-container .tagline {
+                margin-bottom: 1.2rem;
+            }
+
+            .link-text {
+                color: #575757;
+                background-color: var(--highlight-color);
+                text-decoration: none;
+                padding: 2px 4px;
+                border-radius: 4px;
+
+                box-decoration-break: clone;
+                -webkit-box-decoration-break: clone;
+
+                transition: opacity 0.2s;
+                display: inline;
+            }
+
+            ::selection {
+                background-color: var(--highlight-color);
+                color: #575757;
+            }
+
+            .link-text:hover {
+                opacity: 0.8;
+            }
+
+            .link-text-text {
+                color: var(--highlight-color-socials);
+                background-color: transparent;
+                font-weight: 600;
+            }
+
+            .paragraph {
+                margin-bottom: 1.5rem;
+            }
+
+            .socials {
+                font-size: 1.2rem;
+            }
+
+            .socials a {
+                text-decoration: none;
+                color: var(--highlight-color-socials);
+            }
+
+            /* --- Responsive Styles --- */
+            @media (max-width: 768px) {
+                .text-container {
+                    font-size: 1rem;
+                }
+                .greeting {
+                    font-size: 1.125rem;
+                }
+                .nav-link {
+                    margin: 0 0.8rem;
+                }
+                .paragraph {
+                    margin-bottom: 1.2rem;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .header {
+                    padding: 1.5rem 1rem;
+                }
+                .nav-link {
+                    margin: 0 0.5rem; /* Tighter spacing for mobile nav */
+                }
+                .main-content {
+                    padding-bottom: 2rem;
+                }
+            }
+
+            .d-none {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <!-- Placeholder to help center the nav links relative to the button -->
+            <div class="header-side-btn"></div>
+
+            <!-- Minimal Page Navigation (Centered) -->
+            <div class="nav-center-wrapper">
+                <nav>
+                    <a href="#" class="nav-link">me</a>
+                    <a href="#" class="nav-link">projects</a>
+                    <a href="#" class="nav-link">blogs</a>
+                </nav>
+            </div>
+            <!-- Theme Switch Button (Top Right) -->
+            <div class="header-side-btn header-btn theme-switcher d-none">
+                <span class="mdi mdi-brightness-6 fs-5"></span>
+            </div>
+        </div>
+
+        <!-- Main Centered Content -->
+        <div class="main-content">
+            <div class="text-container">
+                <img class="profile-img" src="./me-pixelated.jpg" />
+
+                <p class="greeting">Hi, me Agraj P Das.</p>
+                <p class="tagline">
+                    I build software stuffs!
+                    <br />
+                    <b>gpg keys</b>:
+                    <a href="#gpg-keys" class="link-text link-text-text">
+                        33B2 D900 0DC9 C4EB EA99 CAE7 64C4 AB4F DCA2 F4B5
+                    </a>
+                    <!--yet another software enthusiast, FOSS lover and
+                    philanthropist!-->
+                </p>
+
+                <p class="paragraph">
+                    Broadly speaking, I'm just a random lad from Kerala, born
+                    about 21.10411 years BC (before ChatGPT 3.5), often found
+                    online as <i>bRuttaZz</i>, currently working as a Software
+                    Engineer at
+                    <a
+                        href="https://knowbe4.com?ref=brutt.site"
+                        class="link-text"
+                        >Knowbe4</a
+                    >.
+                </p>
+
+                <p class="paragraph">
+                    <b>More specs</b>: As of today, I'm somewhat good with 2
+                    human languages: <i>Malayalam</i> and <i>English</i>, and 5
+                    computer languages: <i>Python</i>, <i>JS</i>, <i>C</i>,
+                    <i>Go</i> and <i>Ruby</i>. If we ever meet with enough time
+                    and tea (..and whatever things are required for you to
+                    settle down), we can talk about anything between
+                    <i>Computer Networks</i>, <i>System Design</i>,
+                    <i>Linux</i>, <i>FOSS</i> or <i>Politics</i>. And also about
+                    <a
+                        href="https://open.spotify.com/user/31nfl5znljrwp4r5v4a3pcingxam"
+                        class="link-text"
+                        >music</a
+                    >.
+                </p>
+                <details>
+                    <summary><b>More yapping on me..</b></summary>
+                    <p class="paragraph">
+                        I was a hardcore science enthusiast from my primary
+                        school days, a physics enthusiast to be specific. I'm
+                        the kind of person who gets easily amazed by some
+                        simple, cool natural phenomena.
+                    </p>
+                    <p class="paragraph">
+                        It was back then, when I was doing some simulation for
+                        my physics mini-project on
+                        <a
+                            href="https://en.wikipedia.org/wiki/Percolation_theory"
+                            class="link-text"
+                            >Percolation Theory</a
+                        >, that I was drawn into the realm of computer science
+                        and programming in general. Since then, I’ve been
+                        building some useless-but-otherwise-cool-for-me stuff to
+                        fulfill my temporary personal needs (at that time, also
+                        to impress my ex-girlfriend).
+                    </p>
+                    <p class="paragraph">
+                        As a netizen once famously said:
+                        <i>
+                            "If you’ve got a creative itch, programming can
+                            scratch that itch!"
+                        </i>
+                    </p>
+                    <p class="paragraph">
+                        I found programming to be a good way to satisfy my
+                        instant-gratification-monkey (I mean my brain)! Like any
+                        other passionate developer out there, I also love
+                        FOSS/FLOSS and am highly motivated by its philosophies.
+                        Thanks to GNU and Linux.
+                    </p>
+
+                    <details>
+                        <summary>
+                            <b>More details? Sure, I got a lot...</b>
+                        </summary>
+                        <ul>
+                            <li>I use GNU/Linux as my daily driver</li>
+                            <li>
+                                I am a fan of federated systems like,
+                                <a
+                                    href="https://en.wikipedia.org/wiki/ActivityPub"
+                                    class="link-text"
+                                    >activityPub</a
+                                >, email,
+                                <a href="https://matrix.org/" class="link-text"
+                                    >matrix</a
+                                >, etc.
+                            </li>
+                            <li>
+                                I consider politics to be of great value and
+                                something that should be constantly discussed by
+                                all of us.
+                            </li>
+                            <li>
+                                I found myself more aligned with Left wing
+                                political ideologies.
+                            </li>
+                            <li>
+                                I strongly believe FOSS plays a much more
+                                significant role than it&#39;s praised for.
+                            </li>
+                            <li>
+                                I love music and sounds in general, and secretly
+                                try to learn guitar, violin, or at least a
+                                harmonica whenever I&#39;m free and motivated
+                                (which is a rare scenario).
+                            </li>
+                            <li>
+                                As a remaining of my old Physics degree, I
+                                possess
+                                <a
+                                    href="https://en.wikipedia.org/wiki/David_J._Griffiths"
+                                    class="link-text"
+                                    >David Griffith&#39;s</a
+                                >,
+                                <a
+                                    href="https://www.cambridge.org/highereducation/books/introduction-to-quantum-mechanics/990799CA07A83FC5312402AF6860311E#overview"
+                                    class="link-text"
+                                    >Introduction to Quantum Mechanics</a
+                                >, and tries to complete reading it whenever
+                                I&#39;m free and motivated (again, a rare
+                                scenario).
+                            </li>
+                            <li>
+                                In my sleep, I dream about becoming a kernel
+                                developer.
+                            </li>
+                            <li>I love writing scripts.</li>
+                            <li>
+                                I don&#39;t like God(s) but Humans. Among them,
+                                like Girls slightly more, especially those ones
+                                who talk about politics.
+                            </li>
+                        </ul>
+                        <p>(A lot of &#39;I&#39;s there.)</p>
+                        <p>
+                            Let me stop here, this&#39;s way more than my
+                            Google-Portfolio.
+                        </p>
+                    </details>
+                </details>
+
+                <p class="paragraph socials">
+                    <a href="mailto:agrajpdas@gmail.com">
+                        <span class="mdi mdi-at"></span>
+                    </a>
+                    <a href="https://matrix.to/#/@bruttazz:matrix.org">
+                        <span class="mdi mdi-matrix"></span>
+                    </a>
+                    <a href="https://fosstodon.org/@bRuttaZz">
+                        <span class="mdi mdi-mastodon"></span>
+                    </a>
+                    <a href="https://github.com/bruttazz">
+                        <span class="mdi mdi-github"></span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/agraj-p-das">
+                        <span class="mdi mdi-linkedin"></span>
+                    </a>
+                    <a href="https://www.instagram.com/bRuttaZz">
+                        <span class="mdi mdi-instagram"></span>
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <script>
+            /**
+             * Bind theming switching and ..you knw..!
+             */
+            (() => {
+                const body = document.body;
+                const cachedState = sessionStorage.getItem("theme-selection");
+                const systemMode = window.matchMedia(
+                    "(prefers-color-scheme: dark)",
+                );
+
+                const setSysTheme = () => {
+                    if (systemMode.matches) {
+                        body.classList.add("dark-mode");
+                        sessionStorage.setItem("theme-selection", "dark");
+                    } else {
+                        body.classList.remove("dark-mode");
+                        sessionStorage.setItem("theme-selection", "light");
+                    }
+                };
+
+                // set sys theme
+                if (cachedState === "dark") body.classList.add("dark-mode");
+                else if (!cachedState) setSysTheme();
+
+                systemMode.addEventListener("change", setSysTheme);
+
+                // add custom button functionality
+                window.addEventListener("load", () => {
+                    document
+                        .querySelector(".theme-switcher")
+                        .classList.remove("d-none");
+                    document
+                        .querySelector(".theme-switcher")
+                        ?.addEventListener("click", (e) => {
+                            if (body.classList.contains("dark-mode")) {
+                                body.classList.remove("dark-mode");
+                                sessionStorage.setItem(
+                                    "theme-selection",
+                                    "light",
+                                );
+                            } else {
+                                body.classList.add("dark-mode");
+                                sessionStorage.setItem(
+                                    "theme-selection",
+                                    "dark",
+                                );
+                            }
+                        });
+                });
+            })();
+        </script>
+    </body>
+</html>
