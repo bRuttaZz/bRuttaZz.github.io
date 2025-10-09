@@ -1,0 +1,13 @@
+/* Light Theme Defaults */
+:root {
+    --text-color: #7d7d7d;
+    --text-color-bold: #515151;
+    --text-color-blog: #7d7d7d;
+    --text-color-footer: #909497;
+    --highlight-color: #96e2ff;
+    --highlight-color-text: #575757;
+    --highlight-color-socials: #4fc4f0;
+    --background-color: #ffffff;
+    --hr-divider-color: #f0f0f0;
+    --max-content-width: 600px;
+}

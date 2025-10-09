@@ -2,17 +2,17 @@
  * Bind theming switching and ..you knw..!
  */
 function bindThemeToggle() {
-  const body = document.body;
+  const darkThemeStyleSheet = document.getElementById("dark-theme-style");
   const cachedState = sessionStorage.getItem("theme-selection");
   const systemMode = window.matchMedia("(prefers-color-scheme: dark)");
 
   const setDarkTheme = () => {
-    body.classList.add("dark-mode");
+    darkThemeStyleSheet.disabled = false;
     sessionStorage.setItem("theme-selection", "dark");
   };
 
   const setLightTheme = () => {
-    body.classList.remove("dark-mode");
+    darkThemeStyleSheet.disabled = true;
     sessionStorage.setItem("theme-selection", "light");
   };
 
@@ -34,8 +34,8 @@ function bindThemeToggle() {
     document
       .querySelector(".theme-switcher")
       ?.addEventListener("click", (e) => {
-        if (body.classList.contains("dark-mode")) setLightTheme();
-        else setDarkTheme();
+        if (darkThemeStyleSheet.disabled) setDarkTheme();
+        else setLightTheme();
       });
   });
 }
