@@ -1,30 +1,32 @@
 /* CSS variables for easy color management */
 :root {
     /* Light Theme Defaults */
-    --text-color: #999;
-    --text-color-bold: #000;
-    --text-color-blog: #626262;
+    --text-color: #7d7d7d;
+    --text-color-bold: #515151;
+    --text-color-blog: #7d7d7d;
     --text-color-footer: #a2a2a2;
     --highlight-color: #96e2ff;
+    --highlight-color-text: #575757;
     --highlight-color-socials: #4fc4f0;
     --background-color: #ffffff;
+    --hr-divider-color: #f0f0f0;
     --max-content-width: 600px;
 }
 
 /* Dark Theme Overrides */
 body.dark-mode {
-    --text-color: #9a9a9a;
-    --text-color-bold: #fff;
-    --text-color-blog: #9d9d9d;
-    --text-color-footer: #6a6a6a;
-    --background-color: #1a1a1a;
+    --text-color: #8a8a8a;
+    --text-color-bold: #e0e0e0;
+    --text-color-blog: #8a8a8a;
+    --text-color-footer: #b0b0b0;
+    --highlight-color-text: #262626;
+    --background-color: #1c1c1c;
+    --hr-divider-color: #282828;
 }
 
 div,
 img {
     -webkit-tap-highlight-color: transparent;
-    -webkit-user-select: none;
-    user-select: none;
 }
 
 body {
@@ -121,6 +123,7 @@ summary {
 .text-container .greeting {
     font-weight: 600;
     color: var(--text-color-bold);
+    transition: color 0.3s;
 }
 
 .text-container .tagline {
@@ -128,7 +131,7 @@ summary {
 }
 
 .link-text {
-    color: #575757;
+    color: var(--highlight-color-text) !important;
     background-color: var(--highlight-color);
     text-decoration: none;
     padding: 2px 4px;
@@ -143,7 +146,7 @@ summary {
 
 ::selection {
     background-color: var(--highlight-color);
-    color: #575757;
+    color: var(--highlight-color-text);
 }
 
 .link-text:hover {
@@ -151,7 +154,7 @@ summary {
 }
 
 .link-text-text {
-    color: var(--highlight-color-socials);
+    color: var(--highlight-color-socials) !important;
     background-color: transparent;
     font-weight: 600;
 }
@@ -205,14 +208,24 @@ footer {
     color: var(--text-color-footer);
 }
 
+.footer-a {
+    color: unset;
+}
+
 .d-none {
     display: none;
 }
 
 /*Projects page specifics*/
+
+hr {
+    border: 0.5px solid var(--hr-divider-color);
+    transition: border-color 0.3s;
+}
+
 .item-card {
     display: flex;
-    font-size: 400;
+    font-weight: 400;
     margin-top: 2rem;
 }
 
@@ -230,6 +243,7 @@ footer {
 
 .item-card .item-title {
     font-weight: 600;
+    font-size: 1rem;
     color: var(--text-color-bold);
 }
 
