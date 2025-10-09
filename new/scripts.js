@@ -6,19 +6,25 @@ function bindThemeToggle() {
   const cachedState = sessionStorage.getItem("theme-selection");
   const systemMode = window.matchMedia("(prefers-color-scheme: dark)");
 
+  const setDarkTheme = () => {
+    body.classList.add("dark-mode");
+    sessionStorage.setItem("theme-selection", "dark");
+  };
+
+  const setLightTheme = () => {
+    body.classList.remove("dark-mode");
+    sessionStorage.setItem("theme-selection", "light");
+  };
+
   const setSysTheme = () => {
-    if (systemMode.matches) {
-      body.classList.add("dark-mode");
-      sessionStorage.setItem("theme-selection", "dark");
-    } else {
-      body.classList.remove("dark-mode");
-      sessionStorage.setItem("theme-selection", "light");
-    }
+    if (systemMode.matches) setDarkTheme();
+    else setLightTheme();
   };
 
   // set sys theme
-  if (cachedState === "dark") body.classList.add("dark-mode");
-  else if (!cachedState) setSysTheme();
+  if (cachedState === "dark") setDarkTheme();
+  else if (cachedState === "light") setLightTheme();
+  else setSysTheme();
 
   systemMode.addEventListener("change", setSysTheme);
 
@@ -28,13 +34,8 @@ function bindThemeToggle() {
     document
       .querySelector(".theme-switcher")
       ?.addEventListener("click", (e) => {
-        if (body.classList.contains("dark-mode")) {
-          body.classList.remove("dark-mode");
-          sessionStorage.setItem("theme-selection", "light");
-        } else {
-          body.classList.add("dark-mode");
-          sessionStorage.setItem("theme-selection", "dark");
-        }
+        if (body.classList.contains("dark-mode")) setLightTheme();
+        else setDarkTheme();
       });
   });
 }

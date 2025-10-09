@@ -1,29 +1,3 @@
-/* CSS variables for easy color management */
-:root {
-    /* Light Theme Defaults */
-    --text-color: #7d7d7d;
-    --text-color-bold: #515151;
-    --text-color-blog: #7d7d7d;
-    --text-color-footer: #a2a2a2;
-    --highlight-color: #96e2ff;
-    --highlight-color-text: #575757;
-    --highlight-color-socials: #4fc4f0;
-    --background-color: #ffffff;
-    --hr-divider-color: #f0f0f0;
-    --max-content-width: 600px;
-}
-
-/* Dark Theme Overrides */
-body.dark-mode {
-    --text-color: #8a8a8a;
-    --text-color-bold: #e0e0e0;
-    --text-color-blog: #8a8a8a;
-    --text-color-footer: #b0b0b0;
-    --highlight-color-text: #262626;
-    --background-color: #1c1c1c;
-    --hr-divider-color: #282828;
-}
-
 div,
 img {
     -webkit-tap-highlight-color: transparent;
