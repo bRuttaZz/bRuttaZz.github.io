@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Tiago's Minimal Page</title>
+        <title>bRuttaZz</title>
         <!-- Using Roboto Mono font as requested -->
         <link
             href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap"
@@ -14,193 +14,7 @@
             rel="stylesheet"
             crossorigin="anonymous"
         />
-        <style>
-            /* CSS variables for easy color management */
-            :root {
-                /* Light Theme Defaults */
-                --text-color: #999;
-                --text-color-bold: #000;
-                --highlight-color: #96e2ff;
-                --highlight-color-socials: #4fc4f0;
-                --background-color: #ffffff;
-                --max-content-width: 600px;
-            }
-
-            /* Dark Theme Overrides */
-            body.dark-mode {
-                --text-color: #9a9a9a;
-                --text-color-bold: #fff;
-                --background-color: #1a1a1a;
-            }
-
-            body {
-                /* Changed to Roboto Mono */
-                font-family: "Roboto Mono", sans-serif;
-                background-color: var(--background-color);
-                color: var(--text-color);
-                margin: 0;
-                padding: 0;
-                /* Smooth transition for theme change */
-                transition:
-                    background-color 0.3s,
-                    color 0.3s;
-                /* Flexbox setup to vertically and horizontally center the main content */
-                display: flex;
-                flex-direction: column;
-                min-height: 100vh;
-            }
-
-            summary {
-                cursor: pointer;
-            }
-
-            .header {
-                padding: 2rem 1.5rem;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 1.5rem;
-            }
-
-            /* Wrapper to help center the nav links */
-            .nav-center-wrapper {
-                flex-grow: 1;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .nav-link {
-                text-decoration: none;
-                color: var(--text-color);
-                font-weight: 400;
-                margin: 0 1.5rem;
-                transition: color 0.1s;
-            }
-
-            .nav-link:hover {
-                color: var(--highlight-color);
-            }
-
-            .header-side-btn {
-                width: 50px;
-            }
-
-            .header-btn {
-                text-align: center;
-                cursor: pointer;
-                font-size: larger;
-            }
-
-            .main-content {
-                flex-grow: 1;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 0 1rem 4rem 1rem;
-            }
-
-            .text-container {
-                width: 100%;
-                max-width: var(--max-content-width);
-                text-align: left;
-                line-height: 1.6rem;
-                font-size: 0.9rem;
-                font-weight: 400;
-                color: var(--text-color);
-            }
-
-            .text-container .profile-img {
-                width: 100px;
-                height: 100px;
-                object-fit: fill;
-                border-radius: 50%;
-                margin-bottom: 1.2rem;
-            }
-
-            .text-container .greeting {
-                font-weight: 600;
-                color: var(--text-color-bold);
-            }
-
-            .text-container .tagline {
-                margin-bottom: 1.2rem;
-            }
-
-            .link-text {
-                color: #575757;
-                background-color: var(--highlight-color);
-                text-decoration: none;
-                padding: 2px 4px;
-                border-radius: 4px;
-
-                box-decoration-break: clone;
-                -webkit-box-decoration-break: clone;
-
-                transition: opacity 0.2s;
-                display: inline;
-            }
-
-            ::selection {
-                background-color: var(--highlight-color);
-                color: #575757;
-            }
-
-            .link-text:hover {
-                opacity: 0.8;
-            }
-
-            .link-text-text {
-                color: var(--highlight-color-socials);
-                background-color: transparent;
-                font-weight: 600;
-            }
-
-            .paragraph {
-                margin-bottom: 1.5rem;
-            }
-
-            .socials {
-                font-size: 1.2rem;
-            }
-
-            .socials a {
-                text-decoration: none;
-                color: var(--highlight-color-socials);
-            }
-
-            /* --- Responsive Styles --- */
-            @media (max-width: 768px) {
-                .text-container {
-                    font-size: 1rem;
-                }
-                .greeting {
-                    font-size: 1.125rem;
-                }
-                .nav-link {
-                    margin: 0 0.8rem;
-                }
-                .paragraph {
-                    margin-bottom: 1.2rem;
-                }
-            }
-
-            @media (max-width: 480px) {
-                .header {
-                    padding: 1.5rem 1rem;
-                }
-                .nav-link {
-                    margin: 0 0.5rem; /* Tighter spacing for mobile nav */
-                }
-                .main-content {
-                    padding-bottom: 2rem;
-                }
-            }
-
-            .d-none {
-                display: none;
-            }
-        </style>
+        <link href="./style.css" rel="stylesheet" />
     </head>
     <body>
         <div class="header">
@@ -210,9 +24,9 @@
             <!-- Minimal Page Navigation (Centered) -->
             <div class="nav-center-wrapper">
                 <nav>
-                    <a href="#" class="nav-link">about</a>
-                    <a href="#" class="nav-link">projects</a>
-                    <a href="#" class="nav-link">blogs</a>
+                    <a href="/" class="nav-link selected">about</a>
+                    <a href="/projects.html" class="nav-link">projects</a>
+                    <a href="/blogs.html" class="nav-link">blogs</a>
                 </nav>
             </div>
             <!-- Theme Switch Button (Top Right) -->
@@ -392,58 +206,15 @@
                 </p>
             </div>
         </div>
-
-        <script>
-            /**
-             * Bind theming switching and ..you knw..!
-             */
-            (() => {
-                const body = document.body;
-                const cachedState = sessionStorage.getItem("theme-selection");
-                const systemMode = window.matchMedia(
-                    "(prefers-color-scheme: dark)",
-                );
-
-                const setSysTheme = () => {
-                    if (systemMode.matches) {
-                        body.classList.add("dark-mode");
-                        sessionStorage.setItem("theme-selection", "dark");
-                    } else {
-                        body.classList.remove("dark-mode");
-                        sessionStorage.setItem("theme-selection", "light");
-                    }
-                };
-
-                // set sys theme
-                if (cachedState === "dark") body.classList.add("dark-mode");
-                else if (!cachedState) setSysTheme();
-
-                systemMode.addEventListener("change", setSysTheme);
-
-                // add custom button functionality
-                window.addEventListener("load", () => {
-                    document
-                        .querySelector(".theme-switcher")
-                        .classList.remove("d-none");
-                    document
-                        .querySelector(".theme-switcher")
-                        ?.addEventListener("click", (e) => {
-                            if (body.classList.contains("dark-mode")) {
-                                body.classList.remove("dark-mode");
-                                sessionStorage.setItem(
-                                    "theme-selection",
-                                    "light",
-                                );
-                            } else {
-                                body.classList.add("dark-mode");
-                                sessionStorage.setItem(
-                                    "theme-selection",
-                                    "dark",
-                                );
-                            }
-                        });
-                });
-            })();
-        </script>
+        <script src="./scripts.js" anonymoue></script>
     </body>
+    <footer>
+        <center>
+            <div><span class="mdi mdi-copyleft"></span> 2025 Agraj P Das</div>
+            <div>
+                Note: This site was developed and works best in the Firefox
+                browser. (solely personal)
+            </div>
+        </center>
+    </footer>
 </html>
