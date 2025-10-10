@@ -16,6 +16,7 @@ logger.setLevel(logging.DEBUG if os.getenv("DEBUG") == "true" else logging.INFO)
 template_dir = Path.joinpath(Path(__file__).parent.parent, "templates")
 writings_conf_dir = Path.joinpath(Path(__file__).parent.parent, "writings", "configs")
 writings_blogs_dir = Path.joinpath(Path(__file__).parent.parent, "writings", "blogs")
+assets_dir = Path.joinpath(Path(__file__).parent.parent, "assets")
 
 blog_asset_uri = "/assets/blogs"
 
@@ -30,9 +31,9 @@ encoding = "utf-8"
 
 # Dev server setups
 dev_server_rout_table = {
-    "/favicon.ico": "assets",
+    "/favicon.ico": assets_dir,
     "/assets/blogs": dist_path.joinpath("assets", "blogs"),
-    "/assets": "assets",
+    "/assets": assets_dir,
     "/": dist_path,
 }
 dev_server_port: int = int(os.getenv("PORT", 8000))

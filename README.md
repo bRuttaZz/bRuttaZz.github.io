@@ -2,19 +2,13 @@ Nothing but my personal webpage
 
 Find it over [here (brutt.site)](https://bruttazz.github.io)
 
-**NB**: For better SEO and noscript rendering (and of course for serving using github, under limited proxy conf support), this website is maintained as a multipage app :) 
-
-### Navigating the project dir
-By nature, the repo root directory itself is containing script generated htmls (build files). Find the source files under `src` directory.
+**NB**: For better SEO and noscript rendering (and of course for serving using github, under limited proxy conf support), this website is maintained as a multipage app :)
 
 Dependencies :
- - [pictogrammers](https://pictogrammers.com)
- - [font : Fira Code](https://github.com/tonsky/FiraCode)
- - [markdown it](https://github.com/markdown-it)
- - [ejs](https://ejs.co/)
- - [highlightjs](https://highlightjs.org/)
- - [JSDOM](https://www.npmjs.com/package/jsdom)
+ - [Pictogrammers Material Icons](https://pictogrammers.com)
+ - [Google Fonts - Roboto Mono]("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght);
+ - [Markdown (pypi)](https://pypi.org/project/Markdown/) + [Pygments (pypi)](https://pypi.org/project/Pygments/)
+ - [Jinja2](https://pypi.org/project/Jinja2/)
 
-Dev Dependencies :
-- [nodemon](https://www.npmjs.com/package/nodemon)
-
+Dev Flow:
+- Feel free to start by executing `make` command to see the entire workflow

@@ -21,11 +21,11 @@ render_confs: dict[str, RenderConf] = {
         "file": "about.html",
         "confs": load_about_conf(),
     },
-    "blogs.html": {
+    "blogs/index.html": {
         "file": "blogs.html",
         "confs": load_blogs_conf(),
     },
-    "projects.html": {
+    "projects/index.html": {
         "file": "projects.html",
         "confs": load_projects_conf(),
     },
