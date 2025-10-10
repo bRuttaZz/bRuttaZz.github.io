@@ -10,17 +10,23 @@
 <p class="tagline">
     I build software stuff!
     <br />
-    <b>GPG keys</b>:
-    <a href="#gpg-keys" class="link-text link-text-text">
-        33B2 D900 0DC9 C4EB EA99 CAE7 64C4 AB4F DCA2 F4B5
+    <b>PGP keys</b>:
+    <a
+        href="{{ asset_dir }}/{{ aboutConf.pgpRelPath }}"
+        class="link-text link-text-text"
+    >
+        {{ aboutConf.pgpKeySign }}
     </a>
 </p>
 
 <p class="paragraph">
-    Broadly speaking, I'm just a random lad from Kerala, born about 21.104 years
-    BC (before ChatGPT 3.5 release), often found online as <i>bRuttaZz</i>,
-    currently working as a Software Engineer at
-    <a href="https://knowbe4.com?ref=brutt.site" class="link-text">Knowbe4</a>.
+    <!-- prettier-ignore -->
+    Broadly speaking, I'm just a random lad from Kerala, born about
+    {{ aboutConf.bornBC }} BC (before ChatGPT 3.5 release), often found online as
+    <i>bRuttaZz</i>, currently working as a {{ aboutConf.jobTitle }} at
+    <a href="{{ aboutConf.jobFirmUrl }}" class="link-text"
+        >{{ aboutConf.jobFirm }}</a
+    >.
 </p>
 
 <p class="paragraph">
@@ -30,12 +36,7 @@
     meet with enough time and tea (..and whatever things are required for you to
     settle down), we can talk about anything between <i>Computer Networks</i>,
     <i>System Design</i>, <i>Linux</i>, <i>FOSS</i> or <i>Politics</i>. And also
-    about
-    <a
-        href="https://open.spotify.com/user/31nfl5znljrwp4r5v4a3pcingxam"
-        class="link-text"
-        >music</a
-    >.
+    about <a href="{{ aboutConf.spotifyProfile }}" class="link-text">music</a>.
 </p>
 <details>
     <summary><b>More yapping on me..</b></summary>
@@ -127,22 +128,22 @@
 </details>
 
 <p class="paragraph socials">
-    <a href="mailto:agrajpdas@gmail.com">
+    <a href="{{ aboutConf.contacts.email }}">
         <span class="mdi mdi-at"></span>
     </a>
-    <a href="https://matrix.to/#/@bruttazz:matrix.org">
+    <a href="{{ aboutConf.contacts.matrix }}">
         <span class="mdi mdi-matrix"></span>
     </a>
-    <a href="https://fosstodon.org/@bRuttaZz">
+    <a href="{{ aboutConf.contacts.mastodon }}">
         <span class="mdi mdi-mastodon"></span>
     </a>
-    <a href="https://github.com/bruttazz">
+    <a href="{{ aboutConf.contacts.github }}">
         <span class="mdi mdi-github"></span>
     </a>
-    <a href="https://www.linkedin.com/in/agraj-p-das">
+    <a href="{{ aboutConf.contacts.linkedin }}">
         <span class="mdi mdi-linkedin"></span>
     </a>
-    <a href="https://www.instagram.com/bRuttaZz">
+    <a href="{{ aboutConf.contacts.instagram }}">
         <span class="mdi mdi-instagram"></span>
     </a>
 </p>

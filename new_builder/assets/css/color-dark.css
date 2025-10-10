@@ -8,4 +8,7 @@
     --highlight-color-text: #262626;
     --background-color: #1c1c1c;
     --hr-divider-color: #282828;
+
+    --codehilite-bg: #1f1f1f;
+    --codehilite-text: #fff;
 }

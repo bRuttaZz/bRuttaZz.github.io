@@ -1,12 +1,12 @@
-{% macro blog_card(title, description, last_edited) -%}
+{% macro blog_card(title, description, last_edited, route) -%}
 <div class="item-card">
-    <a href="{{ asset_dir }}/blogs/ai-and-tribe.html">
+    <a href="{{ asset_dir }}/blogs/{{ route }}.html">
         <div class="item-data">
             <div class="item-title">{{ title }}</div>
             <div class="item-description">{{ description }}</div>
             <div class="item-date">
                 <span class="mdi mdi-clock-edit-outline"></span>
-                {{ last_edited }}
+                {{ last_edited.strftime("%d %b %Y") }}
             </div>
         </div>
     </a>

@@ -6,7 +6,7 @@ from typing import override
 from urllib.parse import unquote
 from . import settings
 
-logger = logging.getLogger("dev_server")
+logger = logging.getLogger("server")
 
 
 class CustomHandler(http.server.SimpleHTTPRequestHandler):
@@ -30,7 +30,9 @@ class TCPServer(socketserver.TCPServer):
 
 def dev_server():
     with TCPServer(("", settings.dev_server_port), CustomHandler) as httpd:
-        logger.info(f"Serving at http://localhost:{settings.dev_server_port}")
+        logger.info(
+            f"Serving at \033[1;32mhttp://localhost:{settings.dev_server_port}\033[0m"
+        )
         logger.info("Mounted directories:")
         for url, path in settings.dev_server_rout_table.items():
             logger.info(f"  {url} → {path}")

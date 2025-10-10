@@ -13,7 +13,7 @@
 <!-- prettier-ignore -->
 {% from "partials/blog-item-card.html" import blog_card %}
 {% for blog in blogs %}
-    {{ blog_card(blog.title, blog.description, blog.last_edited) }}
+    {{ blog_card(blog.title, blog.longDescription, blog.lastEdit, blog.route) }}
 {% endfor %}
 
 {% endblock %}

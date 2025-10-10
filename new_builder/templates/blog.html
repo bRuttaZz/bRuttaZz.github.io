@@ -7,21 +7,30 @@
 <!-- blog portion  -->
 <div class="blog-content">
     <div>
-        <span class="blog-date-badge">Last edited: {{ last_edited }}</span>
+        <span class="blog-date-badge"
+            >Last edited: {{ last_edited.strftime("%d %b %Y") }}</span
+        >
     </div>
 
     <!--Render engine generated content -->
     <div class="generated-content">{{ generated_content|safe }}</div>
     <!-- content  -->
 
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/default.min.css"
-    />
     <style>
-        .hljs {
-            background: var(--hlgs-bg);
-            color: var(--hlgs-text);
+        .codehilite pre {
+            /*white-space: pre-wrap;*/
+            /*word-break: break-word;*/
+            overflow-x: auto;
+            color: var(--codehilite-text);
+            background-color: var(--codehilite-bg);
+            border-radius: 10px;
+            padding: 10px;
+        }
+        .codehilite {
+            background-color: unset !important;
+        }
+        :not(.codehilite) > code {
+            color: var(--codehilite-text);
         }
     </style>
 </div>
@@ -31,6 +40,7 @@
 {% block footer_block %}
 <div class="bottom-clause">
     Got any objections to my points? love to hear them. Feel free to drop me an
-    email or ping me on Matrix.
+    <a href="{{ contacts.email }}" class="footer-a">email</a> or ping me on
+    <a href="{{ contacts.matrix }}" class="footer-a">Matrix</a>.
 </div>
 {% endblock %}

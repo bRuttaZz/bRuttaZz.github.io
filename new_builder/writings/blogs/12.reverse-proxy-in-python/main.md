@@ -24,7 +24,7 @@ Simply, it acts as an intermediary between the client and your actual web server
 
 <center><img src="./reverse-proxy.png" style="max-width: 75%; max-height: 18%"></center>
 
-Basically that's it. Let's jump to the code 
+Basically that's it. Let's jump to the code
 
 ## Building the Python proxy
 ### 1. Requirements
@@ -32,13 +32,13 @@ Basically that's it. Let's jump to the code
 1. As a web proxy, we should first be able to receive network requests from the client (only then can we route them to a different server of choice). To handle that part, we require a web server—specifically, an `ASGI` web server, as we are going to build the proxy in Python. Essentially, a web server will help us easily bind to a system port and listen for HTTP/WS requests.
 I am going with `uvicorn` for this example. Feel free to choose any other `ASGI` server of your choice, BTW, `hypercorn` is a good alternative. (One can also choose a `WSGI` server as well, though it may lack some features and require changes in the code).
 
-2. The second step is to hand over the request data from the client to the target application server and pass the application's response back to the client. Let me pick the `aiohttp` module for this. It can be used as an HTTP/WS client to pass the data from our client to the target server via HTTP/WS. 
+2. The second step is to hand over the request data from the client to the target application server and pass the application's response back to the client. Let me pick the `aiohttp` module for this. It can be used as an HTTP/WS client to pass the data from our client to the target server via HTTP/WS.
 
 3. And we need a python interpreter :)
 
 **NB**: For extended features one can go for a ASGI based web framework for python like, Quart, Starlette or FastAPI (quite dense though). For this example, lets go raw.
 
-If we got python and `pip` dependency manager in hand, the requirements can be installed using 
+If we got python and `pip` dependency manager in hand, the requirements can be installed using
 ```sh
 pip3 install uvicorn aiohttp
 ```
@@ -63,7 +63,7 @@ ROUTE_TABLE = {
 Now we can focus on creating the ASGI app. If you are not familiar with [ASGI](https://asgi.readthedocs.io/en/latest/) standards, one can create a simple HTTP server serving a simple 200 response with the `app` function shown below.
 ```py
 """A sample ASGI based HTTP server"""
-from typing import Coroutine 
+from typing import Coroutine
 
 async def app(scope:dict, receive:Coroutine, send:callable):
     """an example ASGI app"""
@@ -101,7 +101,7 @@ async def app(scope, receive, send):
     if scope["type"] == "http":
         ...
         # handle http proxying
-           
+
     elif scope["type"] == "websocket":
         ...
         # handle ws proxying
@@ -155,18 +155,18 @@ async def proxy_http(
                     yield body
                 if not message.get("more_body", False):
                     break
-    
+
     # creating an asynchronous http client session
     connector = aiohttp.TCPConnector(ssl=False)
     async with aiohttp.ClientSession(connector=connector, timeout=aiohttp.ClientTimeout(total=60)) as client:
         method = scope["method"]
-        headers = {                 # formatting the headers 
+        headers = {                 # formatting the headers
             key.decode('utf-8'): value.decode('utf-8') for key, value in scope["headers"]
             if key.lower() not in [b'host', ]   # (optionally) removing the host headers to avoid validation errors in the target server
         }
 
         # passing request header and stream the body to target server
-        async with client.request(  
+        async with client.request(
             method,
             target_server_props["proxy_pass"],
             headers=headers,
@@ -176,7 +176,7 @@ async def proxy_http(
             response_headers = [        # formatting response headers from target server
                 (key.encode('utf-8'), value.encode('utf-8'))
                     for key, value in proxied_resp.headers.items()
-            ] 
+            ]
             # send back response headers from target server to the client
             await send(
                 {
@@ -217,11 +217,11 @@ async def proxy_ws(
     # creating a client session
     async with aiohttp.ClientSession() as session:
         try:
-            # connecting to the target server 
+            # connecting to the target server
             async with session.ws_connect(
                 target_server_props["proxy_pass"], timeout=10
             ) as websocket:
-                
+
                 async def forward_to_backend():
                     """Forward message from client to target server!"""
                     while True:
@@ -293,12 +293,12 @@ async def app(scope, receive, send):
     """The ASGI app"""
     if scope["path"] not in ROUTE_TABLE:
         return await send_error_resp(send, 404, "Not Found")
-    
+
     if scope["type"] == "http":
         # handle http proxying
         try: return await proxy_http(scope, receive, send, ROUTE_TABLE[scope['path']])
         except: return await send_error_resp(send, 502, "Bad Gateway")
-        
+
     elif scope["type"] == "websocket":
         # handle ws proxying
         try: return await proxy_ws(scope, receive, send, ROUTE_TABLE[scope['path']])
@@ -307,14 +307,14 @@ async def app(scope, receive, send):
 
 ### 3. Running the proxy server
 
-Now to serve the application we can make use of our ASGI server. After saving the code into a file say, `main.py` which contains the callable `app`, we can start the proxy server with, 
+Now to serve the application we can make use of our ASGI server. After saving the code into a file say, `main.py` which contains the callable `app`, we can start the proxy server with,
 ```sh
 uvicorn main:app --host localhost --port 8000
 ```
 
-## Testing 
+## Testing
 
-If everything went well, one will get the exact same response of both 'https://echo.hoppscotch.io' and 'wss://echo-websocket.hoppscotch.io' when we hit to `http://localhost:8000/http` and 'ws://localhost:8000/ws' respectively.
+If everything went well, one will get the exact same response of both `https://echo.hoppscotch.io` and `wss://echo-websocket.hoppscotch.io` when we hit to `http://localhost:8000/http` and `ws://localhost:8000/ws` respectively.
 
 **Tip**: `wscat` is a decent command line utility to test ws endpoints. BTW, If you are looking for a UI, [hoppscotch](https://hoppscotch.io/) is also a good option for testing http and ws. It also support other protocol standards like SSE, MQTT, SOCKET IO and GraphQL. (PS: not a paid promotion :)
 

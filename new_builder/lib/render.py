@@ -1,28 +1,40 @@
-from typing import TypedDict
+import logging
+from typing import TypedDict, Any
 from jinja2 import FileSystemLoader, Environment, select_autoescape
 
 from . import settings
-from .settings import logger
-from .render_configs import load_projects_conf
+from .render_configs.about import load_about_conf
+from .render_configs.projects import load_projects_conf
+from .render_configs.blogs import load_blogs_conf, list_blogs
+from .render_configs.blog import load_blog_conf
+
+logger = logging.getLogger("builder")
 
 
 class RenderConf(TypedDict):
     file: str
-    confs: dict[str, object]
+    confs: dict[str, Any]
 
 
 render_confs: dict[str, RenderConf] = {
     "index.html": {
         "file": "about.html",
-        "confs": {},
+        "confs": load_about_conf(),
     },
     "blogs.html": {
         "file": "blogs.html",
-        "confs": {"blogs": []},
+        "confs": load_blogs_conf(),
     },
     "projects.html": {
         "file": "projects.html",
         "confs": load_projects_conf(),
+    },
+    **{
+        f"blogs/{blog['route']}.html": {
+            "file": "blog.html",
+            "confs": load_blog_conf(blog),
+        }
+        for blog in list_blogs()
     },
 }
 
@@ -35,15 +47,15 @@ def render_all() -> int:
 
     for name, confs in render_confs.items():
         logger.info(f"rendering '{name}'..")
+        file_name = settings.dist_path.joinpath(name)
+        file_name.parent.mkdir(exist_ok=True, parents=True)
         try:
             tmplt = env.get_template(confs["file"])
         except Exception as exp:
             logger.error(f"Error loading template '{confs['file']}': {exp}")
             return 2
 
-        with open(
-            settings.dist_path.joinpath(name), "w", encoding=settings.encoding
-        ) as file:
+        with open(file_name, "w", encoding=settings.encoding) as file:
             _ = file.write(
                 tmplt.render(
                     **settings.render_confs,
@@ -51,6 +63,5 @@ def render_all() -> int:
                 )
             )
             file.flush()
-        logger.info(f"rendering competed :'{name}'!")
 
     return 0

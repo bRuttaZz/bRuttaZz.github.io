@@ -10,4 +10,7 @@
     --background-color: #ffffff;
     --hr-divider-color: #f0f0f0;
     --max-content-width: 600px;
+
+    --codehilite-bg: #f3f3f3;
+    --codehilite-text: #444;
 }
