@@ -24,7 +24,8 @@
             />
         </noscript>
         <link href="{{ asset_dir }}/css/style.css" rel="stylesheet" />
-        <title>{% block title %}{% endblock %}</title>
+        <title>{{ title }}</title>
+        {% include "partials/seo-headers.html" %}
     </head>
     <body>
         <div class="header">

@@ -4,14 +4,8 @@ import logging
 import datetime
 from pathlib import Path
 
-logger = logging.getLogger()
-lhandler = logging.StreamHandler(sys.stdout)
-lhandler.setFormatter(
-    logging.Formatter("[{levelname:^4}] \033[1;31m{name}\033[0m: {message}", style="{")
-)
-logger.addHandler(lhandler)
-logger.setLevel(logging.DEBUG if os.getenv("DEBUG") == "true" else logging.INFO)
-
+domain = "brutt.site"
+og_base_url = f"https://{domain}"
 
 template_dir = Path.joinpath(Path(__file__).parent.parent, "templates")
 writings_conf_dir = Path.joinpath(Path(__file__).parent.parent, "writings", "configs")
@@ -37,3 +31,13 @@ dev_server_rout_table = {
     "/": dist_path,
 }
 dev_server_port: int = int(os.getenv("PORT", 8000))
+
+
+# Setup logger
+logger = logging.getLogger()
+lhandler = logging.StreamHandler(sys.stdout)
+lhandler.setFormatter(
+    logging.Formatter("[{levelname:^4}] \033[1;31m{name}\033[0m: {message}", style="{")
+)
+logger.addHandler(lhandler)
+logger.setLevel(logging.DEBUG if os.getenv("DEBUG") == "true" else logging.INFO)

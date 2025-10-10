@@ -1,3 +1,4 @@
+import json
 import os
 import logging
 import shutil
@@ -55,11 +56,38 @@ def render_blog(md_path: Path, asset_url_prefix: str) -> str:
 
 def load_blog_conf(conf: BlogConf):
     _copy_assets(conf["dirPath"], conf["dirName"])
+    og_url = f"{settings.og_base_url}/blogs/{conf['route']}"
     return {
+        "title": conf["title"],
         "last_edited": conf.get("lastEdit"),
         "generated_content": render_blog(
             conf["dirPath"].joinpath("main.md"),
             os.path.join(settings.blog_asset_uri, conf["dirName"]),
         ),
         "contacts": load_about_conf()["aboutConf"]["contacts"],
+        "description": conf["longDescription"],
+        "keywords": ", ".join(conf["keyWords"]),
+        "url": og_url,
+        "shareImage": conf["shareImage"],
+        "ldJson": json.dumps(
+            {
+                "@context": "https://schema.org",
+                "@id": og_url,
+                "@type": "BlogPosting",
+                "headline": conf["title"],
+                "url": og_url,
+                "description": conf["longDescription"],
+                "image": {
+                    "@type": "ImageObject",
+                    "url": conf["shareImage"],
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Agraj P Das",
+                    "url": settings.og_base_url,
+                },
+                "mainEntityOfPage": {"@type": "WebPage", "@id": og_url},
+            },
+            indent=2,
+        ),
     }

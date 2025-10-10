@@ -1,3 +1,4 @@
+import json
 import logging
 import subprocess
 import yaml
@@ -93,6 +94,35 @@ def list_blogs() -> list[BlogConf]:
 
 
 def load_blogs_conf():
+    og_url = f"{settings.og_base_url}/blogs"
+    share_img = (
+        f"{settings.og_base_url}{settings.render_confs['asset_dir']}/imgs/avatar.jpg"
+    )
     return {
         "blogs": list_blogs(),
+        "title": "Blogs | bRuttaZz",
+        "description": "Blogs of bRuttaZz (Agraj P Das)! List of some of my blog posts..",
+        "keywords": "blogs, allblogs, writings, docs, agraj, agrajpdas, bruttazz, brutt, bruttsite, brutt.site",
+        "url": og_url,
+        "shareImage": share_img,
+        "ldJson": json.dumps(
+            {
+                "@context": "https://schema.org",
+                "@id": og_url,
+                "@type": "WebPage",
+                "name": "Blogs | bRuttaZz",
+                "url": og_url,
+                "description": "Blogs of bRuttaZz (Agraj P Das)! List of some of my blog posts..",
+                "primaryImageOfPage": {
+                    "@type": "ImageObject",
+                    "url": share_img,
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Agraj P Das",
+                    "url": settings.og_base_url,
+                },
+            },
+            indent=2,
+        ),
     }

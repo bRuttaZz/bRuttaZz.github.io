@@ -1,3 +1,5 @@
+description: Projects of bRuttaZz (Agraj P Das) | List of some of my 'just for fun' projects..
+
 projects:
   - name: devC
     shortInfo: A linux command line utility to build 'python venv' like
@@ -105,3 +107,15 @@ projects:
     license: GPLv3
     link: https://github.com/bRuttaZz/sittytalky
     coverimage: https://raw.githubusercontent.com/bRuttaZz/sittytalky/main/data/icons/hicolor/scalable/apps/site.brutt.sittytalky.svg
+
+keywords:
+  - projects
+  - allprojects
+  - works
+  - docs
+  - agraj
+  - agrajpdas
+  - bruttazz
+  - brutt
+  - bruttsite
+  - brutt.site
