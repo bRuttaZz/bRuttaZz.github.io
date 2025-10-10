@@ -1,0 +1,23 @@
+<!-- prettier-ignore -->
+{% macro project_card(name, description, source_url, site_url, img_url, license) -%}
+<div class="item-card">
+    <div class="item-img">
+        <a href="{{ site_url }}">
+            <img src="{{ img_url }}" crossorigin="anonymous" />
+        </a>
+    </div>
+    <div class="item-data">
+        <div class="item-title">{{ name }}</div>
+        <div class="item-description">
+            {{ description }}
+            <p>
+                <span>
+                    <a href="{{ source_url }}" class="link-text">source</a>
+                </span>
+                <span> <span class="mdi mdi-license"></span>{{ license }}</span>
+            </p>
+        </div>
+    </div>
+</div>
+<hr />
+{%- endmacro %}

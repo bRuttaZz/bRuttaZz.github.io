@@ -1,0 +1,36 @@
+<!-- prettier-ignore -->
+{% extends "base/main.html" %}
+{% block title %}{{ blog_title }}{% endblock %}
+{% block nav_blogs_class %} selected {% endblock %}
+{% block content_block %}
+
+<!-- blog portion  -->
+<div class="blog-content">
+    <div>
+        <span class="blog-date-badge">Last edited: {{ last_edited }}</span>
+    </div>
+
+    <!--Render engine generated content -->
+    <div class="generated-content">{{ generated_content|safe }}</div>
+    <!-- content  -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/default.min.css"
+    />
+    <style>
+        .hljs {
+            background: var(--hlgs-bg);
+            color: var(--hlgs-text);
+        }
+    </style>
+</div>
+<!-- prettier-ignore -->
+{% endblock %}
+
+{% block footer_block %}
+<div class="bottom-clause">
+    Got any objections to my points? love to hear them. Feel free to drop me an
+    email or ping me on Matrix.
+</div>
+{% endblock %}

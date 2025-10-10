@@ -1,0 +1,107 @@
+projects:
+  - name: devC
+    shortInfo: A linux command line utility to build 'python venv' like
+      reusable virtualenv from Dockerfile/Containerfile or directly from a
+      container image. Virtualenv for containers!
+    detailedInfo: A linux command line utility to build 'python venv' like
+      reusable virtualenv from Dockerfile/Containerfile or directly from a
+      container image. Virtualenv for containers!
+    source: https://github.com/bruttazz/devc
+    license: GPLv3
+    link: https://bruttazz.github.io/devc
+    coverimage: https://raw.githubusercontent.com/bRuttaZz/devc/main/assets/tad.png
+
+  - name: Run Unni
+    shortInfo: Just a 2D game built for the sake of building it, in collab
+      with my game artist roommate Dev G.
+    detailedInfo: Our charming, old-school Keralite (a kind of South Indian)
+      hero, 'Unni' (/ʊnniː/), has gotten into a bit of trouble. Let’s see
+      how long you can keep him out of it!
+    source: https://github.com/bruttazz/run-unni
+    license: MIT
+    link: https://brutt.site/run-unni
+    coverimage: https://raw.githubusercontent.com/bRuttaZz/run-unni/refs/heads/main/assets/logo.png
+
+  - name: Vanillacorn
+    shortInfo: A single-file, multi-worker ASGI server (spec 2.5) written in
+      vanilla Python — all in one file, with HTTP, WebSocket, and TLS
+      support.
+    detailedInfo: A simple implementation of the ASGI specification 2.5
+      (2024-06-05) using pure Python and asyncio (Py3.9 or above). The
+      system is meant to use zero external libraries and contained in a
+      single file, because why not...?
+    source: https://github.com/bRuttaZz/vanillacorn
+    license: GPLv3
+    link: https://github.com/bRuttaZz/vanillacorn
+    coverimage: https://raw.githubusercontent.com/bRuttaZz/vanillacorn/refs/heads/main/misc/logo.png
+
+  - name: cerve
+    shortInfo: A multi-worker HTTP server written in C. Nothing too special,
+      just another personal project of mine!
+    detailedInfo: A multi-worker HTTP server written in C. Yet another
+      hackable http-file-server written by a C-lang noob for noobies
+    source: https://github.com/bruttazz/cerve
+    license: GPLv3
+    link: https://github.com/bRuttaZz/cerve
+    coverimage: https://raw.githubusercontent.com/bRuttaZz/cerve/main/misc/logo.png
+
+  - name: STMP
+    shortInfo:
+      "STMP: Sitty Talky Messaging Protocol, a primitive zero-configuration
+      local network protocol purely written in python, originally intended for
+      tinkering with my office mates over LAN!"
+    detailedInfo:
+      "STMP: Sitty Talky Messaging Protocol, a primitive zero-configuration
+      local network protocol purely written in python, originally intended for
+      tinkering with my office mates over LAN!"
+    source: https://github.com/bRuttaZz/stmp
+    license: MIT
+    link: https://github.com/bRuttaZz/stmp
+    coverimage: https://raw.githubusercontent.com/bRuttaZz/stmp/main/.assets/logo.png
+
+  - name: serveM
+    shortInfo: A simple Python script (package) to share my screen over a
+      local network. (More like a code dump from another project of mine.)
+    detailedInfo: A simple Python script (package) to share the GNU/Linux
+      desktop screen over a local network. (It's not primarily meant to be
+      a standalone project, but more like a code dump from another project
+      of mine.)
+    source: https://github.com/bRuttaZz/serveM
+    license: GPLv3
+    link: https://pypi.org/project/serveM
+    coverimage: https://raw.githubusercontent.com/bRuttaZz/serveM/main/.assets/logo.png
+
+  - name: KSRTC (STK Kart)
+    shortInfo: Nothing special, just a binary dump (🙃) of a KSRTC (Kerala
+      State Road Transport Corporation) Kart developed for SuperTuxkart!
+    detailedInfo: Nothing special, just a binary dump (🙃) of a KSRTC (Kerala
+      State Road Transport Corporation) Kart developed for SuperTuxkart,
+      by a Blender Noob.
+    source: https://github.com/bruttazz/kart-ksrtc
+    license: CC0 1.0
+    link: https://github.com/bruttazz/kart-ksrtc
+    coverimage: https://raw.githubusercontent.com/bRuttaZz/kart-ksrtc/main/blends/cartoonish_with_vasu/icon.png
+
+  - name: "[Pre]tty-HTML"
+    shortInfo: "[Pre]tty-html: (the logo reads as: 'pookie html') A minimalist
+      python script to pretty print html docs to unix terminal. "
+    detailedInfo:
+      "[Pre]tty-html: (the logo reads as: 'pookie html') A minimalist
+      python script to pretty print html docs to unix terminal. "
+    source: https://github.com/bRuttaZz/tty-html
+    license: GPLv3
+    link: https://pypi.org/project/tty-html/
+    coverimage: https://raw.githubusercontent.com/bRuttaZz/tty-html/refs/heads/main/misc/logo.png
+
+  - name: SittyTalky
+    shortInfo: "SittyTalky: a primitive zero-configuration local network GNOME
+      application purely written in python, originally intended for tinkering
+      with my office mates over LAN!"
+    detailedInfo:
+      "SittyTalky: a primitive zero-configuration local network GNOME
+      application purely written in python, originally intended for tinkering
+      with my office mates over LAN!"
+    source: https://github.com/bRuttaZz/sittytalky
+    license: GPLv3
+    link: https://github.com/bRuttaZz/sittytalky
+    coverimage: https://raw.githubusercontent.com/bRuttaZz/sittytalky/main/data/icons/hicolor/scalable/apps/site.brutt.sittytalky.svg

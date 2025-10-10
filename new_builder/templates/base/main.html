@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css"
+            rel="stylesheet"
+            crossorigin="anonymous"
+        />
+        <link href="{{ asset_dir }}/css/color.css" rel="stylesheet" />
+        <link
+            href="{{ asset_dir }}/css/color-dark.css"
+            rel="stylesheet"
+            disabled
+            id="dark-theme-style"
+        />
+        <noscript>
+            <link
+                href="{{ asset_dir }}/css/color-dark.css"
+                rel="stylesheet"
+                media="(prefers-color-scheme: dark)"
+            />
+        </noscript>
+        <link href="{{ asset_dir }}/css/style.css" rel="stylesheet" />
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        <div class="header">
+            <!-- Placeholder -->
+            <div class="header-side-btn"></div>
+            <!-- Page Navigation -->
+            <div class="nav-center-wrapper">
+                <nav>
+                    <a
+                        href="/"
+                        class="nav-link {% block nav_about_class %}{% endblock %}"
+                        >about</a
+                    >
+                    <a
+                        href="/projects.html"
+                        class="nav-link {% block nav_projects_class %}{% endblock %}"
+                        >projects</a
+                    >
+                    <a
+                        href="/blogs.html"
+                        class="nav-link {% block nav_blogs_class %}{% endblock %}"
+                        >blogs</a
+                    >
+                </nav>
+            </div>
+            <!-- Theme Switch Button (Top Right) -->
+            <div class="header-side-btn header-btn theme-switcher d-none">
+                <span class="mdi mdi-brightness-6 fs-5"></span>
+            </div>
+        </div>
+
+        <!-- Main Centered Content -->
+        <div class="main-content">
+            <div class="text-container">
+                {% block content_block %}{% endblock %}
+            </div>
+        </div>
+        <script src="{{ asset_dir }}/scripts/scripts.js" anonymoue></script>
+    </body>
+    <footer>
+        <center>
+            {% block footer_block %}{% endblock %}
+            <div><span class="mdi mdi-copyleft"></span> 2025 Agraj P Das</div>
+            <div>
+                Note: This site was developed and works best in the
+                <a href="https://www.firefox.com" class="footer-a"
+                    >Firefox browser</a
+                >
+                (solely personal)
+            </div>
+        </center>
+    </footer>
+</html>

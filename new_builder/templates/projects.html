@@ -1,0 +1,15 @@
+<!-- prettier-ignore -->
+{% extends "base/main.html" %}
+{% block title %}Projects | bRuttaZz{% endblock %}
+{% block nav_projects_class %} selected {% endblock %}
+{% block content_block %}
+
+<p class="tagline">At times, I do some useless projects..</p>
+
+<!-- prettier-ignore -->
+{% from "partials/project-item-card.html" import project_card %}
+{% for prjct in projects %}
+    {{ project_card( prjct.name, prjct.shortInfo, prjct.source, prjct.link, prjct.coverimage, prjct.license ) }}
+{% endfor %}
+
+{% endblock %}

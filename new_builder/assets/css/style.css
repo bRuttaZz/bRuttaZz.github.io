@@ -208,8 +208,8 @@ hr {
 }
 
 .item-card .item-img img {
-    width: 100px;
-    aspect-ratio: 1;
+    width: 90px;
+    /*aspect-ratio: 1;*/
 }
 
 .item-card .item-title {

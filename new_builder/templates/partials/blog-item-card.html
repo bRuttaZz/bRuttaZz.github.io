@@ -1,0 +1,15 @@
+{% macro blog_card(title, description, last_edited) -%}
+<div class="item-card">
+    <a href="{{ asset_dir }}/blogs/ai-and-tribe.html">
+        <div class="item-data">
+            <div class="item-title">{{ title }}</div>
+            <div class="item-description">{{ description }}</div>
+            <div class="item-date">
+                <span class="mdi mdi-clock-edit-outline"></span>
+                {{ last_edited }}
+            </div>
+        </div>
+    </a>
+</div>
+<hr />
+{%- endmacro %}
