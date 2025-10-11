@@ -1,9 +1,0 @@
-{
-    "title": "Let's do the sin: Creating a reverse proxy in Python :)",
-    "shortDescription": "If you ever insists to build a http reverse proxy in Python, I got some handy code snippets (as I also insisted for the same, long back)",
-    "longDescription": "If you ever plans to create a HTTP/WS reverse proxy, Of course python is not the answer. But if you insists so, I got some handy code snippets (as I also insisted for the same, long back)",
-    "keyWords": [
-        "reverse-proxy", "python", "gaetway", "apigateway", "proxy-in-python", "ws-proxying", "websocket"
-    ],
-    "shareImage": "https://brutt.site/assets/blog/12.reverse-proxy-in-python/py.nginx.png"
-}

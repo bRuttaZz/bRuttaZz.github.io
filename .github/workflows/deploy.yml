@@ -26,14 +26,12 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Setup node
-        uses: actions/setup-node@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          node-version: 22
-      - name: Install Build Deps
-        run: npm install
+          python-version: "3.13"
       - name: Build
-        run: npm run build
+        run: make build-prod
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact

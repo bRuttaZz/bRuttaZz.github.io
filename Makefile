@@ -38,3 +38,4 @@ watch-build:
 
 clean:	## Clean all build
 	@$(RM) -rf $(build_dir)
+	@$(RM) -rf .venv
