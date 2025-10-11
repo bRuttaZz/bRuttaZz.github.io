@@ -1,19 +1,18 @@
 /**
  * Bind theming switching and ..you knw..!
  */
-function bindThemeToggle() {
+function bindThemeSetup() {
   const darkThemeStyleSheet = document.getElementById("dark-theme-style");
-  const cachedState = sessionStorage.getItem("theme-selection");
   const systemMode = window.matchMedia("(prefers-color-scheme: dark)");
 
   const setDarkTheme = () => {
     darkThemeStyleSheet.disabled = false;
-    sessionStorage.setItem("theme-selection", "dark");
+    localStorage.setItem("theme-selection", "dark");
   };
 
   const setLightTheme = () => {
     darkThemeStyleSheet.disabled = true;
-    sessionStorage.setItem("theme-selection", "light");
+    localStorage.setItem("theme-selection", "light");
   };
 
   const setSysTheme = () => {
@@ -21,24 +20,24 @@ function bindThemeToggle() {
     else setLightTheme();
   };
 
-  // set sys theme
-  if (cachedState === "dark") setDarkTheme();
-  else if (cachedState === "light") setLightTheme();
-  else setSysTheme();
+  // set initial theme
+  function setInitialTheme() {
+    const cachedState = localStorage.getItem("theme-selection");
 
-  systemMode.addEventListener("change", setSysTheme);
+    if (cachedState === "dark") setDarkTheme();
+    else if (cachedState === "light") setLightTheme();
+    else setSysTheme();
+  }
 
-  // add custom button functionality
-  window.addEventListener("load", () => {
-    document.querySelector(".theme-switcher").classList.remove("d-none");
-    document
-      .querySelector(".theme-switcher")
-      ?.addEventListener("click", (e) => {
-        if (darkThemeStyleSheet.disabled) setDarkTheme();
-        else setLightTheme();
-      });
+  // bind toggle button
+  document.querySelector(".theme-switcher").classList.remove("d-none");
+  document.querySelector(".theme-switcher")?.addEventListener("click", (e) => {
+    if (darkThemeStyleSheet.disabled) setDarkTheme();
+    else setLightTheme();
   });
+  systemMode.addEventListener("change", setSysTheme);
+  window.addEventListener("pageshow", setInitialTheme);
+  setInitialTheme();
 }
 
-// Entrypoints
-bindThemeToggle();
+window.addEventListener("load", bindThemeSetup);

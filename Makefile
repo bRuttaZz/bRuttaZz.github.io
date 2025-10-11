@@ -17,7 +17,7 @@ build-prod: clean .venv	## Create production build
 prod-run: build-prod ## Build and run from prod build
 	@DEBUG=$(DEBUG) $(PYTHON) -m http.server -d $(build_dir) 8080
 
-dev: clean build-dev	## Development mode run server + inotifywait
+dev: clean-build build-dev	## Development mode run server + inotifywait
 	@$(MAKE) -j 2 watch-build dev-run
 
 dev-run:
@@ -36,6 +36,8 @@ watch-build:
 	@python3 -m venv .venv
 	@$(PYTHON) -m pip install -r requirements.txt
 
-clean:	## Clean all build
+clean-build:
 	@$(RM) -rf $(build_dir)
+
+clean:	clean-build ## Clean all build
 	@$(RM) -rf .venv
