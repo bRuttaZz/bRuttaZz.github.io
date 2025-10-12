@@ -1,10 +1,13 @@
 
 # Good thing is: Life is not a univariate function of time. Or is it?
 
-<center>    
+<center>
 <img src="./laplace-deamon.jpg" width="90%" alt="Viktor Beekman’s rendition of Laplace’s demon">
+<br>
 
-*Figure: [Viktor Beekman](https://www.instagram.com/viktordepictor/)’s rendition of Laplace’s demon*
+
+Figure: <a href="https://www.instagram.com/viktordepictor/">Viktor Beekman</a>’s rendition of Laplace’s demon
+
 
 </center>
 <br>
@@ -13,7 +16,7 @@
 
 Let me detail; By the late 1700s, classical mechanics had grown enough that most physicists at that time believed that every secret in physics had almost been figured out, and only some detailed explanations were left for some physical phenomena. That belief naturally led to the question: if everything in this world can be completely described using the laws of classical mechanics, can we predict the future with it?
 
-For instance, using the laws of classical mechanics, we can determine the exact location and momentum of an atom in the next instant, provided we know the exact initial conditions. As one can see, the atmosphere, nature, the stars, and everything else is made up of such particles. This implies we can predict the fate of all of these things, assuming we know the initial conditions. 
+For instance, using the laws of classical mechanics, we can determine the exact location and momentum of an atom in the next instant, provided we know the exact initial conditions. As one can see, the atmosphere, nature, the stars, and everything else is made up of such particles. This implies we can predict the fate of all of these things, assuming we know the initial conditions.
 <br>It even applies to complex biological beings. From our hunger and appetite to our emotions and deeds, and even the next word I'm going to type on my computer, everything can be described as an aftereffect of previous events from the surroundings, hormonal states, neural activity, etc. (As there is no strong evidence of God, let's ignore that for now).
 
 In general, we could predict the whole universe if we were able to know the initial conditions or state of the entirety. The French scholar [Pierre-Simon Laplace](https://en.wikipedia.org/wiki/Pierre-Simon_Laplace) was the first to popularize this idea. He said that if there is a being (let me call it a demon) that knows the complete state of the universe, including the exact momentum and position of every molecule, and has enough computational ability to process this information using the laws of science, it could describe the future as clearly as the past. This conceptual being is known as **Laplace's Demon**.
@@ -43,15 +46,15 @@ So,
 
 The point is, if Laplace's Demon is possible, then the entropy of the universe should remain constant, as shown in the figure.
 
-Fortunately, as implied by **[second law of thermodynamics](https://en.wikipedia.org/wiki/Second_law_of_thermodynamics)** we are not living in such a universe. 
+Fortunately, as implied by **[second law of thermodynamics](https://en.wikipedia.org/wiki/Second_law_of_thermodynamics)** we are not living in such a universe.
 <br>In our universe, the state of entropy will keep on increasing. So the graph should resemble the one shown below.
 
 <center>
     <img src="./information-time.png" style="max-width: 75%; max-height: 18%" >
 </center>
 
-Aand what does it mean?? 
-<br>Laplace's demon is not a possible one. 
+Aand what does it mean??
+<br>Laplace's demon is not a possible one.
 <br>The universe is not solely a function of time (at least we cannot predict it with time alone).
 <br>And the future cannot be predicted.
 
@@ -62,6 +65,6 @@ That's it! When you wake up from your bed, if you ever feel like life is boring,
 
 > Wait a min, where does the additional information come from? Not sure, maybe from the events when quantum mechanical [wave functions collapses](https://en.wikipedia.org/wiki/Wave_function_collapse)..
 
-> There is a problem. Even in this case, the newly emerging information is completely random, right? Still, nothing is within our control, right?? 
+> There is a problem. Even in this case, the newly emerging information is completely random, right? Still, nothing is within our control, right??
 
 > (Leave me alone! I'm tired of these questions.)

@@ -7,10 +7,10 @@
 
 <img src="./guardians-of-galaxy.jpg" width="90%" alt="Guardians of the galaxy comic book poster" >
 
+<br>
 <small>
 
-**[Image Credits]**: Marvel Comics
-
+[Image Credits]: Marvel Comics
 
 </small>
 
