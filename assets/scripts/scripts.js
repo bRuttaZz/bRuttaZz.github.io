@@ -29,15 +29,19 @@ function bindThemeSetup() {
     else setSysTheme();
   }
 
-  // bind toggle button
-  document.querySelector(".theme-switcher").classList.remove("d-none");
-  document.querySelector(".theme-switcher")?.addEventListener("click", (e) => {
-    if (darkThemeStyleSheet.disabled) setDarkTheme();
-    else setLightTheme();
-  });
-  systemMode.addEventListener("change", setSysTheme);
-  window.addEventListener("pageshow", setInitialTheme);
   setInitialTheme();
+  // bind toggle button
+  window.addEventListener("load", () => {
+    document.querySelector(".theme-switcher").classList.remove("d-none");
+    document
+      .querySelector(".theme-switcher")
+      ?.addEventListener("click", (e) => {
+        if (darkThemeStyleSheet.disabled) setDarkTheme();
+        else setLightTheme();
+      });
+    systemMode.addEventListener("change", setSysTheme);
+    window.addEventListener("pageshow", setInitialTheme);
+  });
 }
 
-window.addEventListener("load", bindThemeSetup);
+bindThemeSetup();

@@ -16,6 +16,7 @@
             disabled
             id="dark-theme-style"
         />
+        <link href="{{ asset_dir }}/css/style.css" rel="stylesheet" />
         <noscript>
             <link
                 href="{{ asset_dir }}/css/color-dark.css"
@@ -23,7 +24,7 @@
                 media="(prefers-color-scheme: dark)"
             />
         </noscript>
-        <link href="{{ asset_dir }}/css/style.css" rel="stylesheet" />
+        <script src="{{ asset_dir }}/scripts/scripts.js" anonymoue></script>
         <title>{{ title }}</title>
         {% include "partials/seo-headers.html" %}
     </head>
@@ -63,7 +64,6 @@
                 {% block content_block %}{% endblock %}
             </div>
         </div>
-        <script src="{{ asset_dir }}/scripts/scripts.js" anonymoue></script>
     </body>
     <footer>
         <center>
