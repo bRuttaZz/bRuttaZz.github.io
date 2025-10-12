@@ -21,6 +21,11 @@ summary {
     cursor: pointer;
 }
 
+div,
+img {
+    -webkit-tap-highlight-color: transparent;
+}
+
 .header {
     padding: 2rem 1.5rem;
     display: flex;
