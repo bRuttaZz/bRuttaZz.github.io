@@ -7,6 +7,7 @@ from .render_configs.about import load_about_conf
 from .render_configs.projects import load_projects_conf
 from .render_configs.blogs import load_blogs_conf, list_blogs
 from .render_configs.blog import load_blog_conf
+from .site_map import generate_sitemap
 
 logger = logging.getLogger("builder")
 
@@ -63,5 +64,8 @@ def render_all() -> int:
                 )
             )
             file.flush()
+
+    logger.info("generating sitemap..")
+    generate_sitemap()
 
     return 0
