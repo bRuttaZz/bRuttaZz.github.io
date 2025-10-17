@@ -102,6 +102,11 @@ img {
     transition: color 0.3s;
 }
 
+.greeting .ipa {
+    font-weight: normal;
+    color: var(--text-color);
+}
+
 .text-container .tagline {
     margin-bottom: 1.2rem;
 }
