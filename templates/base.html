@@ -53,8 +53,16 @@
                 </nav>
             </div>
             <!-- Theme Switch Button (Top Right) -->
-            <div class="header-side-btn header-btn theme-switcher d-none">
-                <span class="mdi mdi-brightness-6 fs-5"></span>
+            <div class="header-side-btn header-btn">
+                <a
+                    href="https://dash.brutt.site"
+                    class="{% block dashboard_btn_class_block %}d-none{% endblock %}"
+                >
+                    <span class="mdi mdi-view-dashboard"> </span>
+                </a>
+                <span
+                    class="mdi mdi-brightness-6 fs-5 theme-switcher d-none"
+                ></span>
             </div>
         </div>
 
