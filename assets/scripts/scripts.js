@@ -8,13 +8,11 @@ function bindThemeSetup() {
   const setDarkTheme = () => {
     darkThemeStyleSheet.disabled = false;
     localStorage.setItem("theme-selection", "dark");
-    document.cookie = "theme=; expires=Thu, 01 Jan 1970 00:00:00 UTC;"; // for glance dashboard
   };
 
   const setLightTheme = () => {
     darkThemeStyleSheet.disabled = true;
     localStorage.setItem("theme-selection", "light");
-    document.cookie = "theme=default-light"; // for glance dashboard
   };
 
   const setSysTheme = () => {
