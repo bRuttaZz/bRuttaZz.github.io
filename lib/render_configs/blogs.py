@@ -55,7 +55,7 @@ def _get_last_commit_date(file_path: Path) -> datetime:
             text=True,
             check=True,
         )
-        date = result.stdout.strip()
+        date = result.stdout.strip().split(" ")[0]
         return datetime.strptime(date, "%Y-%m-%d") if date else datetime.now()
     except subprocess.CalledProcessError as e:
         raise RuntimeError(f"[BUIDER] Git error: {e.stderr.strip()}") from e
