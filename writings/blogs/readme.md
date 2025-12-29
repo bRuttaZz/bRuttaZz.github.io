@@ -16,6 +16,7 @@
 
 # required fields
 title: <title of the blog>
+tag: <tag to classify>
 shortDescription: <a short description (1 sentence or so)>
 longDescription: <A long description (may be 3 sentences)>
 keyWords:
@@ -23,7 +24,7 @@ keyWords:
     - keywords
     - for
     - seo
-
+shareImage: <https link of publically accessible image card for og title>
 # optional fields
 # last edit overide in YYYY/MM/DD fmt (if not provided will using git commit)
 lastEdit: 2001/10/28
