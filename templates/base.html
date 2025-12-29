@@ -27,6 +27,8 @@
         <script src="{{ asset_dir }}/scripts/scripts.js" anonymous></script>
         <title>{{ title }}</title>
         {% include "partials/seo-headers.html" %}
+        <!-- prettier-ignore -->
+        {% block header_block %}{% endblock %}
     </head>
     <body>
         <div class="header">

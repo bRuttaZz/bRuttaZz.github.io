@@ -1,4 +1,5 @@
 title: "Let's do the sin: Creating a reverse proxy in Python :)"
+tag: tech
 shortDescription: If you ever insists to build a http reverse proxy in Python, I
   got some handy code snippets (as I also insisted for the same, long back)
 longDescription: If you ever plans to create a HTTP/WS reverse proxy, Of course

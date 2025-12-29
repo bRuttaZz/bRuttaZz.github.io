@@ -1,15 +1,22 @@
-{% macro blog_card(title, description, last_edited, route) -%}
-<div class="item-card">
-    <a href="{{ asset_dir }}/blogs/{{ route }}.html">
-        <div class="item-data">
-            <div class="item-title">{{ title }}</div>
-            <div class="item-description">{{ description }}</div>
-            <div class="item-date">
-                <span class="mdi mdi-clock-edit-outline"></span>
-                {{ last_edited.strftime("%d %b %Y") }}
+{% macro blog_card(title, description, last_edited, tag, route) -%}
+<div class="blog-card blog-card-tag-{{ tag.replace(" ", "-") }}">
+    <div class="item-card">
+        <a href="{{ asset_dir }}/blogs/{{ route }}.html">
+            <div class="item-data">
+                <div class="item-title">{{ title }}</div>
+                <div class="item-description">{{ description }}</div>
+                <div class="item-meta">
+                    <div>
+                        <span class="mdi mdi-clock-edit-outline"></span>
+                        {{ last_edited.strftime("%d %b %Y") }}
+                    </div>
+                    <div class="tag">
+                        <span class="mdi mdi-tag-outline"></span> {{ tag }}
+                    </div>
+                </div>
             </div>
-        </div>
-    </a>
+        </a>
+    </div>
+    <hr />
 </div>
-<hr />
 {%- endmacro %}

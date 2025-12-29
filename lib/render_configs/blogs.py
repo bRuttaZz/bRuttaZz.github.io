@@ -1,10 +1,11 @@
 import json
 import logging
 import subprocess
-import yaml
 from datetime import datetime
 from pathlib import Path
-from typing import cast, TypedDict, NotRequired, get_origin
+from typing import NotRequired, TypedDict, cast, get_origin
+
+import yaml
 
 from .. import settings
 
@@ -14,6 +15,7 @@ logger = logging.getLogger("builder")
 
 class BlogYmlConf(TypedDict):
     title: str
+    tag: str
     shortDescription: str
     longDescription: str
     keyWords: list[str]
@@ -98,8 +100,12 @@ def load_blogs_conf():
     share_img = (
         f"{settings.og_base_url}{settings.render_confs['asset_dir']}/imgs/avatar.jpg"
     )
+    blogs = list_blogs()
+    tags = [*{blg["tag"] for blg in blogs}]
+    tags.sort()
     return {
-        "blogs": list_blogs(),
+        "blogs": blogs,
+        "tags": tags,
         "title": "Blogs | bRuttaZz",
         "description": "Blogs of bRuttaZz (Agraj P Das)! List of some of my blog posts..",
         "keywords": "blogs, allblogs, writings, docs, agraj, agrajpdas, bruttazz, brutt, bruttsite, brutt.site",

@@ -1,0 +1,6 @@
+/*Projects page specifics*/
+
+.item-card .item-img img {
+    width: 90px;
+    /*aspect-ratio: 1;*/
+}

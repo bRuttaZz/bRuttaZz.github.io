@@ -1,7 +1,8 @@
 import sys
-from lib.render import render_all
-from lib.dev_server import dev_server
+
 from lib.asset_man import setup_assets
+from lib.dev_server import dev_server
+from lib.render import render_all
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:

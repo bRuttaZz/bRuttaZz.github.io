@@ -1,0 +1,14 @@
+/*Blog page specifics*/
+.blog-content {
+    color: var(--text-color-blog);
+}
+
+.blog-content .blog-date-badge {
+    font-size: 0.8rem;
+    line-height: 1rem;
+}
+
+.blog-content a {
+    text-decoration: none;
+    color: var(--highlight-color-socials);
+}

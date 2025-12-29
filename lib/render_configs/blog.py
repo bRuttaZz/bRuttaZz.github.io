@@ -1,16 +1,16 @@
 import json
-import os
 import logging
+import os
 import shutil
 from pathlib import Path
 
 import markdown
-from pygments.formatters import HtmlFormatter
 from lxml import html as lxml
+from pygments.formatters import HtmlFormatter
 
 from .. import settings
-from .blogs import BlogConf
 from .about import load_about_conf
+from .blogs import BlogConf
 
 logger = logging.getLogger("builder")
 
@@ -60,6 +60,7 @@ def load_blog_conf(conf: BlogConf):
     return {
         "title": conf["title"],
         "last_edited": conf.get("lastEdit"),
+        "tag": conf["tag"],
         "generated_content": render_blog(
             conf["dirPath"].joinpath("main.md"),
             os.path.join(settings.blog_asset_uri, conf["dirName"]),

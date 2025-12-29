@@ -200,10 +200,8 @@ footer {
 }
 
 .d-none {
-    display: none;
+    display: none !important;
 }
-
-/*Projects page specifics*/
 
 hr {
     border: 0.5px solid var(--hr-divider-color);
@@ -223,40 +221,10 @@ hr {
     margin-right: 0.8rem;
 }
 
-.item-card .item-img img {
-    width: 90px;
-    /*aspect-ratio: 1;*/
-}
-
 .item-card .item-title {
     font-weight: 600;
     font-size: 1rem;
     color: var(--text-color-bold);
-}
-
-/*Blogs page specifics*/
-.item-card a {
-    text-decoration: none;
-    color: unset;
-}
-
-.item-data .item-date {
-    margin-top: 0.5rem;
-}
-
-/*Blog page specifics*/
-.blog-content {
-    color: var(--text-color-blog);
-}
-
-.blog-content .blog-date-badge {
-    font-size: 0.8rem;
-    line-height: 1rem;
-}
-
-.blog-content a {
-    text-decoration: none;
-    color: var(--highlight-color-socials);
 }
 
 footer .bottom-clause {

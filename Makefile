@@ -1,7 +1,7 @@
 DEBUG ?= false
 
 PYTHON := .venv/bin/python
-WATCH_DIR := ./writings
+WATCH_DIR := ./writings ./templates ./lib
 
 build_dir = ./dist
 

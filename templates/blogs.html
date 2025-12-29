@@ -1,7 +1,33 @@
 <!-- prettier-ignore -->
 {% extends "base.html" %}
 {% block nav_blogs_class %} selected {% endblock %}
+
+{% block header_block %}
+<link href="{{ asset_dir }}/css/style-blogs.css" rel="stylesheet" />
+<script src="{{ asset_dir }}/scripts/scripts-blogs.js" anonymous></script>
+{% endblock %}
+
+<!-- prettier-ignore -->
 {% block content_block %}
+
+<div class="filter-dropdown d-none">
+    <div class="blogs-filter">
+        <span class="mdi mdi-filter-outline blogs-filter-btn"></span>
+    </div>
+    <div class="filter-menu d-none">
+        <!-- prettier-ignore -->
+        {% for tag in tags %}
+        <label
+            ><input
+                type="checkbox"
+                value="{{ tag }}"
+                class="blog-filter-checkbox"
+            />
+            {{ tag.title() }}</label
+        >
+        {% endfor %}
+    </div>
+</div>
 
 <p class="tagline">
     Human biases are weird; even my dyslexic mind has a thirst for
@@ -12,7 +38,7 @@
 <!-- prettier-ignore -->
 {% from "partials/blog-item-card.html" import blog_card %}
 {% for blog in blogs %}
-    {{ blog_card(blog.title, blog.longDescription, blog.lastEdit, blog.route) }}
+    {{ blog_card(blog.title, blog.longDescription, blog.lastEdit, blog.tag, blog.route) }}
 {% endfor %}
 
 {% endblock %}
