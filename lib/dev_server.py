@@ -16,7 +16,11 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
         for mount_url, dir_path in settings.dev_server_rout_table.items():
             if path.startswith(mount_url):
                 relative_path = path[len(mount_url) :]
-                return os.path.join(os.getcwd(), dir_path, relative_path.lstrip("/"))
+                res = os.path.join(os.getcwd(), dir_path, relative_path.lstrip("/"))
+                res_html = res.rstrip("/") + ".html"
+                if os.path.exists(res_html):
+                    return res_html
+                return res
         return super().translate_path(path)
 
     @override

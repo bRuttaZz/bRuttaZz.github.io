@@ -1,7 +1,7 @@
 {% macro blog_card(title, description, last_edited, tag, route) -%}
 <div class="blog-card blog-card-tag-{{ tag.replace(" ", "-") }}">
     <div class="item-card">
-        <a href="{{ asset_dir }}/blogs/{{ route }}.html">
+        <a href="{{ asset_dir }}/blogs/{{ route }}">
             <div class="item-data">
                 <div class="item-title">{{ title }}</div>
                 <div class="item-description">{{ description }}</div>
